@@ -1,0 +1,142 @@
+# Сборка карт Кладезя: вырезает регионы из сборки Protomaps (данные OpenStreetMap)
+# и выкладывает их в выпуск этого же репозитория вместе со списком maps.json.
+# Кладезъ читает список карт по адресу …/releases/latest/download/maps.json.
+#
+# Токены не нужны: сборка выкладывает в свой репозиторий своими правами (github.token).
+# Можно собирать частями (поле «Только эти регионы» или «Группы»): уже выложенные
+# регионы остаются в списке, ещё не собранные показываются как «скоро».
+name: Сборка карт
+
+on:
+  schedule:
+    - cron: '0 3 1 1,4,7,10 *'
+  workflow_dispatch:
+    inputs:
+      groups:
+        description: 'Группы через запятую (russia,cis,europe,middle-east,north-america)'
+        default: 'russia,cis,europe,middle-east,north-america'
+      only:
+        description: 'Только эти регионы (id через запятую), пусто — все из выбранных групп'
+        default: ''
+      dry_run:
+        description: 'Только оценить размеры, ничего не выкладывать'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-maps
+  cancel-in-progress: false
+
+env:
+  PMTILES_VERSION: 1.31.2
+  PMTILES_SHA256: 3ed7dbf4ec2e6dfe5e25b6f70d1ffc932729f93c86db353bf514dd71010a312f
+  # По расписанию — настоящая сборка; вручную — как выбрано.
+  DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+  REPO: ${{ github.repository }}
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.latest.outputs.tag }}
+      version: ${{ steps.latest.outputs.version }}
+      groups: ${{ steps.groups.outputs.json }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - id: latest
+        working-directory: tools/maps-build
+        run: |
+          info=$(node src/build.mjs latest)
+          echo "version=$(echo "$info" | jq -r .version)" >> "$GITHUB_OUTPUT"
+          echo "tag=maps-$(echo "$info" | jq -r .version)" >> "$GITHUB_OUTPUT"
+      - id: groups
+        env:
+          GROUPS_INPUT: ${{ inputs.groups }}
+        run: |
+          g="${GROUPS_INPUT:-russia,cis,europe,middle-east,north-america}"
+          echo "json=$(echo "$g" | jq -R -c 'split(",") | map(gsub("^\s+|\s+$"; "")) | map(select(length > 0))')" >> "$GITHUB_OUTPUT"
+      - name: Создать выпуск
+        if: env.DRY_RUN != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view "${{ steps.latest.outputs.tag }}" --repo "$REPO" >/dev/null 2>&1 ||
+            gh release create "${{ steps.latest.outputs.tag }}" --repo "$REPO" \
+              --title "Карты ${{ steps.latest.outputs.version }}" --latest=false \
+              --notes "Карты для Кладезя. Данные © участники OpenStreetMap (ODbL), © Protomaps."
+
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        group: ${{ fromJSON(needs.prepare.outputs.groups) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Поставить pmtiles и mktorrent
+        run: |
+          curl -sSL -o pmtiles.tar.gz "https://github.com/protomaps/go-pmtiles/releases/download/v${PMTILES_VERSION}/go-pmtiles_${PMTILES_VERSION}_Linux_x86_64.tar.gz"
+          echo "${PMTILES_SHA256}  pmtiles.tar.gz" | sha256sum -c -
+          tar -xzf pmtiles.tar.gz pmtiles && sudo mv pmtiles /usr/local/bin/
+          sudo apt-get update -qq && sudo apt-get install -y -qq mktorrent
+      - name: Нарезать
+        working-directory: tools/maps-build
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ONLY_INPUT: ${{ inputs.only }}
+          GROUP: ${{ matrix.group }}
+          TAG: ${{ needs.prepare.outputs.tag }}
+        run: |
+          args=(build --group "$GROUP" --out out --tag "$TAG" --repo "$REPO")
+          [ -n "$ONLY_INPUT" ] && args+=(--only "$ONLY_INPUT")
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); else args+=(--upload); fi
+          node src/build.mjs "${args[@]}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: out-${{ matrix.group }}
+          path: |
+            tools/maps-build/out/manifest-*.json
+            tools/maps-build/out/sizes-*.json
+          if-no-files-found: error
+
+  publish:
+    needs: [prepare, build]
+    # Выкладываем список и тогда, когда часть групп не собралась: собранное уже в выпуске.
+    if: always() && needs.prepare.result == 'success' && (github.event_name != 'workflow_dispatch' || !inputs.dry_run)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/download-artifact@v4
+        with: { path: parts, merge-multiple: true }
+      - name: Склеить maps.json и выложить
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.prepare.outputs.tag }}
+        run: |
+          ls parts/manifest-*.json >/dev/null 2>&1 || { echo "ни одна группа не собралась"; exit 1; }
+          # Основа — список из этого же выпуска (если уже есть), иначе прошлый выпуск, иначе черновик.
+          if gh release download "$TAG" --repo "$REPO" --pattern maps.json --dir base-this 2>/dev/null; then
+            base=base-this/maps.json
+          elif gh release download --repo "$REPO" --pattern maps.json --dir base-latest 2>/dev/null; then
+            base=base-latest/maps.json
+          else
+            base=tools/maps-build/draft-maps.json
+          fi
+          echo "основа списка: $base"
+          node tools/maps-build/src/build.mjs merge --out parts --base "$base"
+          gh release upload "$TAG" parts/maps.json tools/maps-build/LICENSE-ODbL.md --repo "$REPO" --clobber
+          gh release edit "$TAG" --repo "$REPO" --latest
+          # Храним две последние версии карт.
+          gh release list --repo "$REPO" --limit 100 --json tagName -q '.[].tagName' | grep '^maps-' | sort -r | tail -n +3 |
+            while read -r old; do gh release delete "$old" --repo "$REPO" --yes --cleanup-tag; done

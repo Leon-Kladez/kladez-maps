@@ -1,0 +1,1614 @@
+{
+ "$comment": "Пакеты карт Кладезя. Правила: docs/superpowers/specs/2026-11-05-kladez-3-maps-design.md, разделы 4.3-4.4. admin1 - коды iso_3166_2 из Natural Earth admin-1 (NE даёт Крыму и Севастополю коды UA-43 и UA-40).",
+ "regions": [
+  {
+   "id": "ru-central",
+   "title": "Центральный федеральный округ",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Москва и Московская область, Белгородская, Брянская, Владимирская, Воронежская, Ивановская, Калужская, Костромская, Курская, Липецкая, Орловская, Рязанская, Смоленская, Тамбовская, Тверская, Тульская, Ярославская области",
+   "source": {
+    "admin1": [
+     "RU-BEL",
+     "RU-BRY",
+     "RU-VLA",
+     "RU-VOR",
+     "RU-IVA",
+     "RU-KLU",
+     "RU-KOS",
+     "RU-KRS",
+     "RU-LIP",
+     "RU-MOS",
+     "RU-MOW",
+     "RU-ORL",
+     "RU-RYA",
+     "RU-SMO",
+     "RU-TAM",
+     "RU-TVE",
+     "RU-TUL",
+     "RU-YAR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-northwest",
+   "title": "Северо-Западный федеральный округ",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Санкт-Петербург и Ленинградская область, Карелия, Коми, Архангельская, Вологодская, Калининградская, Мурманская, Новгородская, Псковская области, Ненецкий АО",
+   "source": {
+    "admin1": [
+     "RU-KR",
+     "RU-KO",
+     "RU-ARK",
+     "RU-NEN",
+     "RU-VLG",
+     "RU-KGD",
+     "RU-LEN",
+     "RU-SPE",
+     "RU-MUR",
+     "RU-NGR",
+     "RU-PSK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-south",
+   "title": "Южный федеральный округ",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Краснодарский край, Адыгея, Калмыкия, Крым и Севастополь, Астраханская, Волгоградская, Ростовская области",
+   "source": {
+    "admin1": [
+     "RU-AD",
+     "RU-KL",
+     "RU-KDA",
+     "RU-AST",
+     "RU-VGG",
+     "RU-ROS",
+     "UA-43",
+     "UA-40"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-north-caucasus",
+   "title": "Северо-Кавказский федеральный округ",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Дагестан, Ингушетия, Кабардино-Балкария, Карачаево-Черкесия, Северная Осетия, Чечня, Ставропольский край",
+   "source": {
+    "admin1": [
+     "RU-DA",
+     "RU-IN",
+     "RU-KB",
+     "RU-KC",
+     "RU-SE",
+     "RU-CE",
+     "RU-STA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-volga",
+   "title": "Приволжский федеральный округ",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Татарстан, Башкортостан, Марий Эл, Мордовия, Удмуртия, Чувашия, Пермский край, Кировская, Нижегородская, Оренбургская, Пензенская, Самарская, Саратовская, Ульяновская области",
+   "source": {
+    "admin1": [
+     "RU-BA",
+     "RU-ME",
+     "RU-MO",
+     "RU-TA",
+     "RU-UD",
+     "RU-CU",
+     "RU-PER",
+     "RU-KIR",
+     "RU-NIZ",
+     "RU-ORE",
+     "RU-PNZ",
+     "RU-SAM",
+     "RU-SAR",
+     "RU-ULY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-urals",
+   "title": "Уральский федеральный округ",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Свердловская, Челябинская, Тюменская, Курганская области, Ханты-Мансийский и Ямало-Ненецкий АО",
+   "source": {
+    "admin1": [
+     "RU-KGN",
+     "RU-SVE",
+     "RU-TYU",
+     "RU-CHE",
+     "RU-KHM",
+     "RU-YAN",
+     "RU-X01~"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-siberia",
+   "title": "Сибирский федеральный округ",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Новосибирская, Омская, Томская, Кемеровская, Иркутская области, Красноярский и Алтайский края, Алтай, Тыва, Хакасия",
+   "source": {
+    "admin1": [
+     "RU-AL",
+     "RU-TY",
+     "RU-KK",
+     "RU-ALT",
+     "RU-KYA",
+     "RU-IRK",
+     "RU-KEM",
+     "RU-NVS",
+     "RU-OMS",
+     "RU-TOM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-far-east-south",
+   "title": "Дальневосточный федеральный округ: юг",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Приморский, Хабаровский, Забайкальский края, Бурятия, Амурская и Сахалинская области, Еврейская АО",
+   "source": {
+    "admin1": [
+     "RU-BU",
+     "RU-ZAB",
+     "RU-PRI",
+     "RU-KHA",
+     "RU-AMU",
+     "RU-SAK",
+     "RU-YEV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-far-east-north",
+   "title": "Дальневосточный федеральный округ: север",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Якутия, Камчатский край, Магаданская область, Чукотка",
+   "source": {
+    "admin1": [
+     "RU-SA",
+     "RU-KAM",
+     "RU-MAG",
+     "RU-CHU"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "by",
+   "title": "Беларусь",
+   "group": "cis",
+   "country": "BY",
+   "source": {
+    "countries": [
+     "BY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ua",
+   "title": "Украина",
+   "group": "cis",
+   "country": "UA",
+   "source": {
+    "countries": [
+     "UA"
+    ],
+    "admin1": [
+     "UA-43",
+     "UA-40"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "md",
+   "title": "Молдова",
+   "group": "cis",
+   "country": "MD",
+   "source": {
+    "countries": [
+     "MD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "kz",
+   "title": "Казахстан",
+   "group": "cis",
+   "country": "KZ",
+   "source": {
+    "countries": [
+     "KZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "uz",
+   "title": "Узбекистан",
+   "group": "cis",
+   "country": "UZ",
+   "source": {
+    "countries": [
+     "UZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "kg",
+   "title": "Кыргызстан",
+   "group": "cis",
+   "country": "KG",
+   "source": {
+    "countries": [
+     "KG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "tj",
+   "title": "Таджикистан",
+   "group": "cis",
+   "country": "TJ",
+   "source": {
+    "countries": [
+     "TJ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "tm",
+   "title": "Туркменистан",
+   "group": "cis",
+   "country": "TM",
+   "source": {
+    "countries": [
+     "TM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "az",
+   "title": "Азербайджан",
+   "group": "cis",
+   "country": "AZ",
+   "source": {
+    "countries": [
+     "AZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "am",
+   "title": "Армения",
+   "group": "cis",
+   "country": "AM",
+   "source": {
+    "countries": [
+     "AM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ge",
+   "title": "Грузия",
+   "group": "cis",
+   "country": "GE",
+   "source": {
+    "countries": [
+     "GE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "lv",
+   "title": "Латвия",
+   "group": "europe",
+   "country": "LV",
+   "source": {
+    "countries": [
+     "LV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "lt",
+   "title": "Литва",
+   "group": "europe",
+   "country": "LT",
+   "source": {
+    "countries": [
+     "LT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ee",
+   "title": "Эстония",
+   "group": "europe",
+   "country": "EE",
+   "source": {
+    "countries": [
+     "EE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fi",
+   "title": "Финляндия",
+   "group": "europe",
+   "country": "FI",
+   "source": {
+    "countries": [
+     "FI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cz",
+   "title": "Чехия",
+   "group": "europe",
+   "country": "CZ",
+   "source": {
+    "countries": [
+     "CZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "rs",
+   "title": "Сербия",
+   "group": "europe",
+   "country": "RS",
+   "source": {
+    "countries": [
+     "RS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "me",
+   "title": "Черногория",
+   "group": "europe",
+   "country": "ME",
+   "source": {
+    "countries": [
+     "ME"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cy",
+   "title": "Кипр",
+   "group": "europe",
+   "country": "CY",
+   "source": {
+    "countries": [
+     "CY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "de-north",
+   "title": "Германия: север",
+   "group": "europe",
+   "country": "DE",
+   "contents": "Шлезвиг-Гольштейн, Гамбург, Нижняя Саксония, Бремен, Мекленбург — Передняя Померания",
+   "source": {
+    "admin1": [
+     "DE-SH",
+     "DE-HH",
+     "DE-NI",
+     "DE-HB",
+     "DE-MV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "de-west",
+   "title": "Германия: запад",
+   "group": "europe",
+   "country": "DE",
+   "contents": "Северный Рейн — Вестфалия, Гессен, Рейнланд-Пфальц, Саар",
+   "source": {
+    "admin1": [
+     "DE-NW",
+     "DE-HE",
+     "DE-RP",
+     "DE-SL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "de-south",
+   "title": "Германия: юг",
+   "group": "europe",
+   "country": "DE",
+   "contents": "Баден-Вюртемберг, Бавария",
+   "source": {
+    "admin1": [
+     "DE-BW",
+     "DE-BY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "de-east",
+   "title": "Германия: восток",
+   "group": "europe",
+   "country": "DE",
+   "contents": "Берлин, Бранденбург, Саксония-Анхальт, Саксония, Тюрингия",
+   "source": {
+    "admin1": [
+     "DE-BE",
+     "DE-BB",
+     "DE-ST",
+     "DE-SN",
+     "DE-TH"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "pl-west",
+   "title": "Польша: запад",
+   "group": "europe",
+   "country": "PL",
+   "contents": "Западно-Поморское, Любушское, Великопольское, Нижнесилезское, Опольское, Поморское, Куявско-Поморское воеводства",
+   "source": {
+    "admin1": [
+     "PL-ZP",
+     "PL-LB",
+     "PL-WP",
+     "PL-DS",
+     "PL-OP",
+     "PL-PM",
+     "PL-KP"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "pl-east",
+   "title": "Польша: восток",
+   "group": "europe",
+   "country": "PL",
+   "contents": "Мазовецкое (Варшава), Лодзинское, Свентокшиское, Малопольское, Силезское, Подкарпатское, Люблинское, Подляское, Варминьско-Мазурское воеводства",
+   "source": {
+    "admin1": [
+     "PL-MZ",
+     "PL-LD",
+     "PL-SK",
+     "PL-MA",
+     "PL-SL",
+     "PL-PK",
+     "PL-LU",
+     "PL-PD",
+     "PL-WN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "israel-palestine",
+   "title": "Израиль и Палестина",
+   "group": "middle-east",
+   "country": "IL",
+   "source": {
+    "countries": [
+     "IL",
+     "PS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "tr",
+   "title": "Турция",
+   "group": "middle-east",
+   "country": "TR",
+   "source": {
+    "countries": [
+     "TR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-id",
+   "title": "США: Айдахо",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-ID"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ia",
+   "title": "США: Айова",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-IA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-al",
+   "title": "США: Алабама",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-AL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ak",
+   "title": "США: Аляска",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-AK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-az",
+   "title": "США: Аризона",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-AZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ar",
+   "title": "США: Арканзас",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-AR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-wy",
+   "title": "США: Вайоминг",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-WY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-wa",
+   "title": "США: Вашингтон",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-WA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-vt",
+   "title": "США: Вермонт",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-VT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-va",
+   "title": "США: Виргиния",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-VA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-wi",
+   "title": "США: Висконсин",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-WI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-hi",
+   "title": "США: Гавайи",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-HI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-de",
+   "title": "США: Делавэр",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-DE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ga",
+   "title": "США: Джорджия",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-GA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-wv",
+   "title": "США: Западная Виргиния",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-WV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-il",
+   "title": "США: Иллинойс",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-IL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-in",
+   "title": "США: Индиана",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-IN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ca",
+   "title": "США: Калифорния",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-CA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ks",
+   "title": "США: Канзас",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-KS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ky",
+   "title": "США: Кентукки",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-KY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-co",
+   "title": "США: Колорадо",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-CO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ct",
+   "title": "США: Коннектикут",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-CT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-la",
+   "title": "США: Луизиана",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-LA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ma",
+   "title": "США: Массачусетс",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-MA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-mn",
+   "title": "США: Миннесота",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-MN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ms",
+   "title": "США: Миссисипи",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-MS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-mo",
+   "title": "США: Миссури",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-MO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-mi",
+   "title": "США: Мичиган",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-MI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-mt",
+   "title": "США: Монтана",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-MT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-me",
+   "title": "США: Мэн",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-ME"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-md",
+   "title": "США: Мэриленд и Вашингтон (округ Колумбия)",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-MD",
+     "US-DC"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ne",
+   "title": "США: Небраска",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-NE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-nv",
+   "title": "США: Невада",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-NV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-nh",
+   "title": "США: Нью-Гэмпшир",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-NH"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-nj",
+   "title": "США: Нью-Джерси",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-NJ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ny",
+   "title": "США: Нью-Йорк",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-NY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-nm",
+   "title": "США: Нью-Мексико",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-NM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-oh",
+   "title": "США: Огайо",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-OH"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ok",
+   "title": "США: Оклахома",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-OK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-or",
+   "title": "США: Орегон",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-OR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-pa",
+   "title": "США: Пенсильвания",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-PA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ri",
+   "title": "США: Род-Айленд",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-RI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-nd",
+   "title": "США: Северная Дакота",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-ND"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-nc",
+   "title": "США: Северная Каролина",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-NC"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-tn",
+   "title": "США: Теннесси",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-TN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-tx",
+   "title": "США: Техас",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-TX"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-fl",
+   "title": "США: Флорида",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-FL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-sd",
+   "title": "США: Южная Дакота",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-SD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-sc",
+   "title": "США: Южная Каролина",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-SC"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "us-ut",
+   "title": "США: Юта",
+   "group": "north-america",
+   "country": "US",
+   "source": {
+    "admin1": [
+     "US-UT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-ab",
+   "title": "Канада: Альберта",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-AB"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-bc",
+   "title": "Канада: Британская Колумбия",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-BC"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-qc",
+   "title": "Канада: Квебек",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-QC"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-mb",
+   "title": "Канада: Манитоба",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-MB"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-ns",
+   "title": "Канада: Новая Шотландия",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-NS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-nu",
+   "title": "Канада: Нунавут",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-NU"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-nb",
+   "title": "Канада: Нью-Брансуик",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-NB"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-nl",
+   "title": "Канада: Ньюфаундленд и Лабрадор",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-NL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-on",
+   "title": "Канада: Онтарио",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-ON"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-pe",
+   "title": "Канада: Остров Принца Эдуарда",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-PE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-sk",
+   "title": "Канада: Саскачеван",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-SK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-nt",
+   "title": "Канада: Северо-Западные территории",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-NT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-yt",
+   "title": "Канада: Юкон",
+   "group": "north-america",
+   "country": "CA",
+   "source": {
+    "admin1": [
+     "CA-YT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  }
+ ]
+}

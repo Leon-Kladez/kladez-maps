@@ -1,0 +1,3052 @@
+{
+ "spec_version": "2026-11-01-draft",
+ "collections": [
+  {
+   "name": "Россия",
+   "slug": "russia",
+   "description": "Карты России по федеральным округам.",
+   "icon": "IconMap",
+   "language": "ru",
+   "resources": [
+    {
+     "id": "ru-central",
+     "version": "2026-11",
+     "title": "Центральный федеральный округ",
+     "description": "Москва и Московская область, Белгородская, Брянская, Владимирская, Воронежская, Ивановская, Калужская, Костромская, Курская, Липецкая, Орловская, Рязанская, Смоленская, Тамбовская, Тверская, Тульская, Ярославская области (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-central_2026-11.pmtiles",
+     "size_mb": 1122,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-central_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Москва и Московская область, Белгородская, Брянская, Владимирская, Воронежская, Ивановская, Калужская, Костромская, Курская, Липецкая, Орловская, Рязанская, Смоленская, Тамбовская, Тверская, Тульская, Ярославская области",
+     "planned": true
+    },
+    {
+     "id": "ru-central-overview",
+     "version": "2026-11",
+     "title": "Центральный федеральный округ (обзорно)",
+     "description": "Москва и Московская область, Белгородская, Брянская, Владимирская, Воронежская, Ивановская, Калужская, Костромская, Курская, Липецкая, Орловская, Рязанская, Смоленская, Тамбовская, Тверская, Тульская, Ярославская области (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-central-overview_2026-11.pmtiles",
+     "size_mb": 281,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-central-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Москва и Московская область, Белгородская, Брянская, Владимирская, Воронежская, Ивановская, Калужская, Костромская, Курская, Липецкая, Орловская, Рязанская, Смоленская, Тамбовская, Тверская, Тульская, Ярославская области",
+     "planned": true
+    },
+    {
+     "id": "ru-northwest",
+     "version": "2026-11",
+     "title": "Северо-Западный федеральный округ",
+     "description": "Санкт-Петербург и Ленинградская область, Карелия, Коми, Архангельская, Вологодская, Калининградская, Мурманская, Новгородская, Псковская области, Ненецкий АО (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-northwest_2026-11.pmtiles",
+     "size_mb": 1195,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-northwest_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Санкт-Петербург и Ленинградская область, Карелия, Коми, Архангельская, Вологодская, Калининградская, Мурманская, Новгородская, Псковская области, Ненецкий АО",
+     "planned": true
+    },
+    {
+     "id": "ru-northwest-overview",
+     "version": "2026-11",
+     "title": "Северо-Западный федеральный округ (обзорно)",
+     "description": "Санкт-Петербург и Ленинградская область, Карелия, Коми, Архангельская, Вологодская, Калининградская, Мурманская, Новгородская, Псковская области, Ненецкий АО (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-northwest-overview_2026-11.pmtiles",
+     "size_mb": 299,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-northwest-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Санкт-Петербург и Ленинградская область, Карелия, Коми, Архангельская, Вологодская, Калининградская, Мурманская, Новгородская, Псковская области, Ненецкий АО",
+     "planned": true
+    },
+    {
+     "id": "ru-south",
+     "version": "2026-11",
+     "title": "Южный федеральный округ",
+     "description": "Краснодарский край, Адыгея, Калмыкия, Крым и Севастополь, Астраханская, Волгоградская, Ростовская области (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-south_2026-11.pmtiles",
+     "size_mb": 466,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-south_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Краснодарский край, Адыгея, Калмыкия, Крым и Севастополь, Астраханская, Волгоградская, Ростовская области",
+     "planned": true
+    },
+    {
+     "id": "ru-south-overview",
+     "version": "2026-11",
+     "title": "Южный федеральный округ (обзорно)",
+     "description": "Краснодарский край, Адыгея, Калмыкия, Крым и Севастополь, Астраханская, Волгоградская, Ростовская области (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-south-overview_2026-11.pmtiles",
+     "size_mb": 117,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-south-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Краснодарский край, Адыгея, Калмыкия, Крым и Севастополь, Астраханская, Волгоградская, Ростовская области",
+     "planned": true
+    },
+    {
+     "id": "ru-north-caucasus",
+     "version": "2026-11",
+     "title": "Северо-Кавказский федеральный округ",
+     "description": "Дагестан, Ингушетия, Кабардино-Балкария, Карачаево-Черкесия, Северная Осетия, Чечня, Ставропольский край (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-north-caucasus_2026-11.pmtiles",
+     "size_mb": 186,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-north-caucasus_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Дагестан, Ингушетия, Кабардино-Балкария, Карачаево-Черкесия, Северная Осетия, Чечня, Ставропольский край",
+     "planned": true
+    },
+    {
+     "id": "ru-north-caucasus-overview",
+     "version": "2026-11",
+     "title": "Северо-Кавказский федеральный округ (обзорно)",
+     "description": "Дагестан, Ингушетия, Кабардино-Балкария, Карачаево-Черкесия, Северная Осетия, Чечня, Ставропольский край (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-north-caucasus-overview_2026-11.pmtiles",
+     "size_mb": 47,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-north-caucasus-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Дагестан, Ингушетия, Кабардино-Балкария, Карачаево-Черкесия, Северная Осетия, Чечня, Ставропольский край",
+     "planned": true
+    },
+    {
+     "id": "ru-volga",
+     "version": "2026-11",
+     "title": "Приволжский федеральный округ",
+     "description": "Татарстан, Башкортостан, Марий Эл, Мордовия, Удмуртия, Чувашия, Пермский край, Кировская, Нижегородская, Оренбургская, Пензенская, Самарская, Саратовская, Ульяновская области (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-volga_2026-11.pmtiles",
+     "size_mb": 1126,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-volga_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Татарстан, Башкортостан, Марий Эл, Мордовия, Удмуртия, Чувашия, Пермский край, Кировская, Нижегородская, Оренбургская, Пензенская, Самарская, Саратовская, Ульяновская области",
+     "planned": true
+    },
+    {
+     "id": "ru-volga-overview",
+     "version": "2026-11",
+     "title": "Приволжский федеральный округ (обзорно)",
+     "description": "Татарстан, Башкортостан, Марий Эл, Мордовия, Удмуртия, Чувашия, Пермский край, Кировская, Нижегородская, Оренбургская, Пензенская, Самарская, Саратовская, Ульяновская области (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-volga-overview_2026-11.pmtiles",
+     "size_mb": 282,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-volga-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Татарстан, Башкортостан, Марий Эл, Мордовия, Удмуртия, Чувашия, Пермский край, Кировская, Нижегородская, Оренбургская, Пензенская, Самарская, Саратовская, Ульяновская области",
+     "planned": true
+    },
+    {
+     "id": "ru-urals",
+     "version": "2026-11",
+     "title": "Уральский федеральный округ",
+     "description": "Свердловская, Челябинская, Тюменская, Курганская области, Ханты-Мансийский и Ямало-Ненецкий АО (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-urals_2026-11.pmtiles",
+     "size_mb": 961,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-urals_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Свердловская, Челябинская, Тюменская, Курганская области, Ханты-Мансийский и Ямало-Ненецкий АО",
+     "planned": true
+    },
+    {
+     "id": "ru-urals-overview",
+     "version": "2026-11",
+     "title": "Уральский федеральный округ (обзорно)",
+     "description": "Свердловская, Челябинская, Тюменская, Курганская области, Ханты-Мансийский и Ямало-Ненецкий АО (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-urals-overview_2026-11.pmtiles",
+     "size_mb": 240,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-urals-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Свердловская, Челябинская, Тюменская, Курганская области, Ханты-Мансийский и Ямало-Ненецкий АО",
+     "planned": true
+    },
+    {
+     "id": "ru-siberia",
+     "version": "2026-11",
+     "title": "Сибирский федеральный округ",
+     "description": "Новосибирская, Омская, Томская, Кемеровская, Иркутская области, Красноярский и Алтайский края, Алтай, Тыва, Хакасия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-siberia_2026-11.pmtiles",
+     "size_mb": 1925,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-siberia_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Новосибирская, Омская, Томская, Кемеровская, Иркутская области, Красноярский и Алтайский края, Алтай, Тыва, Хакасия",
+     "planned": true
+    },
+    {
+     "id": "ru-siberia-overview",
+     "version": "2026-11",
+     "title": "Сибирский федеральный округ (обзорно)",
+     "description": "Новосибирская, Омская, Томская, Кемеровская, Иркутская области, Красноярский и Алтайский края, Алтай, Тыва, Хакасия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-siberia-overview_2026-11.pmtiles",
+     "size_mb": 481,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-siberia-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Новосибирская, Омская, Томская, Кемеровская, Иркутская области, Красноярский и Алтайский края, Алтай, Тыва, Хакасия",
+     "planned": true
+    },
+    {
+     "id": "ru-far-east-south",
+     "version": "2026-11",
+     "title": "Дальневосточный федеральный округ: юг",
+     "description": "Приморский, Хабаровский, Забайкальский края, Бурятия, Амурская и Сахалинская области, Еврейская АО (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-far-east-south_2026-11.pmtiles",
+     "size_mb": 996,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-far-east-south_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Приморский, Хабаровский, Забайкальский края, Бурятия, Амурская и Сахалинская области, Еврейская АО",
+     "planned": true
+    },
+    {
+     "id": "ru-far-east-south-overview",
+     "version": "2026-11",
+     "title": "Дальневосточный федеральный округ: юг (обзорно)",
+     "description": "Приморский, Хабаровский, Забайкальский края, Бурятия, Амурская и Сахалинская области, Еврейская АО (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-far-east-south-overview_2026-11.pmtiles",
+     "size_mb": 249,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-far-east-south-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Приморский, Хабаровский, Забайкальский края, Бурятия, Амурская и Сахалинская области, Еврейская АО",
+     "planned": true
+    },
+    {
+     "id": "ru-far-east-north",
+     "version": "2026-11",
+     "title": "Дальневосточный федеральный округ: север",
+     "description": "Якутия, Камчатский край, Магаданская область, Чукотка (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-far-east-north_2026-11.pmtiles",
+     "size_mb": 1504,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-far-east-north_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Якутия, Камчатский край, Магаданская область, Чукотка",
+     "planned": true
+    },
+    {
+     "id": "ru-far-east-north-overview",
+     "version": "2026-11",
+     "title": "Дальневосточный федеральный округ: север (обзорно)",
+     "description": "Якутия, Камчатский край, Магаданская область, Чукотка (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-far-east-north-overview_2026-11.pmtiles",
+     "size_mb": 376,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ru-far-east-north-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "RU",
+     "countries": [
+      "RU"
+     ],
+     "contents": "Якутия, Камчатский край, Магаданская область, Чукотка",
+     "planned": true
+    }
+   ]
+  },
+  {
+   "name": "СНГ и соседи",
+   "slug": "cis",
+   "description": "Карты стран СНГ и соседних стран.",
+   "icon": "IconMap",
+   "language": "ru",
+   "resources": [
+    {
+     "id": "by",
+     "version": "2026-11",
+     "title": "Беларусь",
+     "description": "Карта: Беларусь (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/by_2026-11.pmtiles",
+     "size_mb": 431,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/by_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "BY",
+     "countries": [
+      "BY"
+     ],
+     "planned": true
+    },
+    {
+     "id": "by-overview",
+     "version": "2026-11",
+     "title": "Беларусь (обзорно)",
+     "description": "Карта: Беларусь (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/by-overview_2026-11.pmtiles",
+     "size_mb": 108,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/by-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "BY",
+     "countries": [
+      "BY"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ua",
+     "version": "2026-11",
+     "title": "Украина",
+     "description": "Карта: Украина (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ua_2026-11.pmtiles",
+     "size_mb": 1107,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ua_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "UA",
+     "countries": [
+      "UA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ua-overview",
+     "version": "2026-11",
+     "title": "Украина (обзорно)",
+     "description": "Карта: Украина (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ua-overview_2026-11.pmtiles",
+     "size_mb": 277,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ua-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "UA",
+     "countries": [
+      "UA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "md",
+     "version": "2026-11",
+     "title": "Молдова",
+     "description": "Карта: Молдова (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/md_2026-11.pmtiles",
+     "size_mb": 116,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/md_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "MD",
+     "countries": [
+      "MD"
+     ],
+     "planned": true
+    },
+    {
+     "id": "md-overview",
+     "version": "2026-11",
+     "title": "Молдова (обзорно)",
+     "description": "Карта: Молдова (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/md-overview_2026-11.pmtiles",
+     "size_mb": 29,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/md-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "MD",
+     "countries": [
+      "MD"
+     ],
+     "planned": true
+    },
+    {
+     "id": "kz",
+     "version": "2026-11",
+     "title": "Казахстан",
+     "description": "Карта: Казахстан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/kz_2026-11.pmtiles",
+     "size_mb": 1054,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/kz_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "KZ",
+     "countries": [
+      "KZ"
+     ],
+     "planned": true
+    },
+    {
+     "id": "kz-overview",
+     "version": "2026-11",
+     "title": "Казахстан (обзорно)",
+     "description": "Карта: Казахстан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/kz-overview_2026-11.pmtiles",
+     "size_mb": 264,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/kz-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "KZ",
+     "countries": [
+      "KZ"
+     ],
+     "planned": true
+    },
+    {
+     "id": "uz",
+     "version": "2026-11",
+     "title": "Узбекистан",
+     "description": "Карта: Узбекистан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/uz_2026-11.pmtiles",
+     "size_mb": 266,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/uz_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "UZ",
+     "countries": [
+      "UZ"
+     ],
+     "planned": true
+    },
+    {
+     "id": "uz-overview",
+     "version": "2026-11",
+     "title": "Узбекистан (обзорно)",
+     "description": "Карта: Узбекистан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/uz-overview_2026-11.pmtiles",
+     "size_mb": 67,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/uz-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "UZ",
+     "countries": [
+      "UZ"
+     ],
+     "planned": true
+    },
+    {
+     "id": "kg",
+     "version": "2026-11",
+     "title": "Кыргызстан",
+     "description": "Карта: Кыргызстан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/kg_2026-11.pmtiles",
+     "size_mb": 126,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/kg_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "KG",
+     "countries": [
+      "KG"
+     ],
+     "planned": true
+    },
+    {
+     "id": "kg-overview",
+     "version": "2026-11",
+     "title": "Кыргызстан (обзорно)",
+     "description": "Карта: Кыргызстан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/kg-overview_2026-11.pmtiles",
+     "size_mb": 32,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/kg-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "KG",
+     "countries": [
+      "KG"
+     ],
+     "planned": true
+    },
+    {
+     "id": "tj",
+     "version": "2026-11",
+     "title": "Таджикистан",
+     "description": "Карта: Таджикистан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tj_2026-11.pmtiles",
+     "size_mb": 94,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tj_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "TJ",
+     "countries": [
+      "TJ"
+     ],
+     "planned": true
+    },
+    {
+     "id": "tj-overview",
+     "version": "2026-11",
+     "title": "Таджикистан (обзорно)",
+     "description": "Карта: Таджикистан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tj-overview_2026-11.pmtiles",
+     "size_mb": 24,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tj-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "TJ",
+     "countries": [
+      "TJ"
+     ],
+     "planned": true
+    },
+    {
+     "id": "tm",
+     "version": "2026-11",
+     "title": "Туркменистан",
+     "description": "Карта: Туркменистан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tm_2026-11.pmtiles",
+     "size_mb": 174,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tm_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "TM",
+     "countries": [
+      "TM"
+     ],
+     "planned": true
+    },
+    {
+     "id": "tm-overview",
+     "version": "2026-11",
+     "title": "Туркменистан (обзорно)",
+     "description": "Карта: Туркменистан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tm-overview_2026-11.pmtiles",
+     "size_mb": 44,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tm-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "TM",
+     "countries": [
+      "TM"
+     ],
+     "planned": true
+    },
+    {
+     "id": "az",
+     "version": "2026-11",
+     "title": "Азербайджан",
+     "description": "Карта: Азербайджан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/az_2026-11.pmtiles",
+     "size_mb": 76,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/az_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "AZ",
+     "countries": [
+      "AZ"
+     ],
+     "planned": true
+    },
+    {
+     "id": "az-overview",
+     "version": "2026-11",
+     "title": "Азербайджан (обзорно)",
+     "description": "Карта: Азербайджан (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/az-overview_2026-11.pmtiles",
+     "size_mb": 19,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/az-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "AZ",
+     "countries": [
+      "AZ"
+     ],
+     "planned": true
+    },
+    {
+     "id": "am",
+     "version": "2026-11",
+     "title": "Армения",
+     "description": "Карта: Армения (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/am_2026-11.pmtiles",
+     "size_mb": 65,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/am_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "AM",
+     "countries": [
+      "AM"
+     ],
+     "planned": true
+    },
+    {
+     "id": "am-overview",
+     "version": "2026-11",
+     "title": "Армения (обзорно)",
+     "description": "Карта: Армения (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/am-overview_2026-11.pmtiles",
+     "size_mb": 16,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/am-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "AM",
+     "countries": [
+      "AM"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ge",
+     "version": "2026-11",
+     "title": "Грузия",
+     "description": "Карта: Грузия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ge_2026-11.pmtiles",
+     "size_mb": 128,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ge_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "GE",
+     "countries": [
+      "GE"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ge-overview",
+     "version": "2026-11",
+     "title": "Грузия (обзорно)",
+     "description": "Карта: Грузия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ge-overview_2026-11.pmtiles",
+     "size_mb": 32,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ge-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "GE",
+     "countries": [
+      "GE"
+     ],
+     "planned": true
+    }
+   ]
+  },
+  {
+   "name": "Европа",
+   "slug": "europe",
+   "description": "Карты стран Европы, крупные страны — по частям.",
+   "icon": "IconMap",
+   "language": "ru",
+   "resources": [
+    {
+     "id": "lv",
+     "version": "2026-11",
+     "title": "Латвия",
+     "description": "Карта: Латвия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/lv_2026-11.pmtiles",
+     "size_mb": 167,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/lv_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "LV",
+     "countries": [
+      "LV"
+     ],
+     "planned": true
+    },
+    {
+     "id": "lv-overview",
+     "version": "2026-11",
+     "title": "Латвия (обзорно)",
+     "description": "Карта: Латвия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/lv-overview_2026-11.pmtiles",
+     "size_mb": 42,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/lv-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "LV",
+     "countries": [
+      "LV"
+     ],
+     "planned": true
+    },
+    {
+     "id": "lt",
+     "version": "2026-11",
+     "title": "Литва",
+     "description": "Карта: Литва (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/lt_2026-11.pmtiles",
+     "size_mb": 254,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/lt_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "LT",
+     "countries": [
+      "LT"
+     ],
+     "planned": true
+    },
+    {
+     "id": "lt-overview",
+     "version": "2026-11",
+     "title": "Литва (обзорно)",
+     "description": "Карта: Литва (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/lt-overview_2026-11.pmtiles",
+     "size_mb": 64,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/lt-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "LT",
+     "countries": [
+      "LT"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ee",
+     "version": "2026-11",
+     "title": "Эстония",
+     "description": "Карта: Эстония (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ee_2026-11.pmtiles",
+     "size_mb": 143,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ee_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "EE",
+     "countries": [
+      "EE"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ee-overview",
+     "version": "2026-11",
+     "title": "Эстония (обзорно)",
+     "description": "Карта: Эстония (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ee-overview_2026-11.pmtiles",
+     "size_mb": 36,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ee-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "EE",
+     "countries": [
+      "EE"
+     ],
+     "planned": true
+    },
+    {
+     "id": "fi",
+     "version": "2026-11",
+     "title": "Финляндия",
+     "description": "Карта: Финляндия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/fi_2026-11.pmtiles",
+     "size_mb": 913,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/fi_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "FI",
+     "countries": [
+      "FI"
+     ],
+     "planned": true
+    },
+    {
+     "id": "fi-overview",
+     "version": "2026-11",
+     "title": "Финляндия (обзорно)",
+     "description": "Карта: Финляндия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/fi-overview_2026-11.pmtiles",
+     "size_mb": 228,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/fi-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "FI",
+     "countries": [
+      "FI"
+     ],
+     "planned": true
+    },
+    {
+     "id": "cz",
+     "version": "2026-11",
+     "title": "Чехия",
+     "description": "Карта: Чехия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/cz_2026-11.pmtiles",
+     "size_mb": 1021,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/cz_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CZ",
+     "countries": [
+      "CZ"
+     ],
+     "planned": true
+    },
+    {
+     "id": "cz-overview",
+     "version": "2026-11",
+     "title": "Чехия (обзорно)",
+     "description": "Карта: Чехия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/cz-overview_2026-11.pmtiles",
+     "size_mb": 255,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/cz-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CZ",
+     "countries": [
+      "CZ"
+     ],
+     "planned": true
+    },
+    {
+     "id": "rs",
+     "version": "2026-11",
+     "title": "Сербия",
+     "description": "Карта: Сербия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/rs_2026-11.pmtiles",
+     "size_mb": 279,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/rs_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "RS",
+     "countries": [
+      "RS"
+     ],
+     "planned": true
+    },
+    {
+     "id": "rs-overview",
+     "version": "2026-11",
+     "title": "Сербия (обзорно)",
+     "description": "Карта: Сербия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/rs-overview_2026-11.pmtiles",
+     "size_mb": 70,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/rs-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "RS",
+     "countries": [
+      "RS"
+     ],
+     "planned": true
+    },
+    {
+     "id": "me",
+     "version": "2026-11",
+     "title": "Черногория",
+     "description": "Карта: Черногория (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/me_2026-11.pmtiles",
+     "size_mb": 41,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/me_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "ME",
+     "countries": [
+      "ME"
+     ],
+     "planned": true
+    },
+    {
+     "id": "me-overview",
+     "version": "2026-11",
+     "title": "Черногория (обзорно)",
+     "description": "Карта: Черногория (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/me-overview_2026-11.pmtiles",
+     "size_mb": 10,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/me-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "ME",
+     "countries": [
+      "ME"
+     ],
+     "planned": true
+    },
+    {
+     "id": "cy",
+     "version": "2026-11",
+     "title": "Кипр",
+     "description": "Карта: Кипр (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/cy_2026-11.pmtiles",
+     "size_mb": 42,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/cy_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CY",
+     "countries": [
+      "CY"
+     ],
+     "planned": true
+    },
+    {
+     "id": "cy-overview",
+     "version": "2026-11",
+     "title": "Кипр (обзорно)",
+     "description": "Карта: Кипр (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/cy-overview_2026-11.pmtiles",
+     "size_mb": 11,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/cy-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CY",
+     "countries": [
+      "CY"
+     ],
+     "planned": true
+    },
+    {
+     "id": "de-north",
+     "version": "2026-11",
+     "title": "Германия: север",
+     "description": "Шлезвиг-Гольштейн, Гамбург, Нижняя Саксония, Бремен, Мекленбург — Передняя Померания (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-north_2026-11.pmtiles",
+     "size_mb": 938,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-north_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "DE",
+     "countries": [
+      "DE"
+     ],
+     "contents": "Шлезвиг-Гольштейн, Гамбург, Нижняя Саксония, Бремен, Мекленбург — Передняя Померания",
+     "planned": true
+    },
+    {
+     "id": "de-north-overview",
+     "version": "2026-11",
+     "title": "Германия: север (обзорно)",
+     "description": "Шлезвиг-Гольштейн, Гамбург, Нижняя Саксония, Бремен, Мекленбург — Передняя Померания (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-north-overview_2026-11.pmtiles",
+     "size_mb": 235,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-north-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "DE",
+     "countries": [
+      "DE"
+     ],
+     "contents": "Шлезвиг-Гольштейн, Гамбург, Нижняя Саксония, Бремен, Мекленбург — Передняя Померания",
+     "planned": true
+    },
+    {
+     "id": "de-west",
+     "version": "2026-11",
+     "title": "Германия: запад",
+     "description": "Северный Рейн — Вестфалия, Гессен, Рейнланд-Пфальц, Саар (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-west_2026-11.pmtiles",
+     "size_mb": 1693,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-west_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "DE",
+     "countries": [
+      "DE"
+     ],
+     "contents": "Северный Рейн — Вестфалия, Гессен, Рейнланд-Пфальц, Саар",
+     "planned": true
+    },
+    {
+     "id": "de-west-overview",
+     "version": "2026-11",
+     "title": "Германия: запад (обзорно)",
+     "description": "Северный Рейн — Вестфалия, Гессен, Рейнланд-Пфальц, Саар (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-west-overview_2026-11.pmtiles",
+     "size_mb": 423,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-west-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "DE",
+     "countries": [
+      "DE"
+     ],
+     "contents": "Северный Рейн — Вестфалия, Гессен, Рейнланд-Пфальц, Саар",
+     "planned": true
+    },
+    {
+     "id": "de-south",
+     "version": "2026-11",
+     "title": "Германия: юг",
+     "description": "Баден-Вюртемберг, Бавария (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-south_2026-11.pmtiles",
+     "size_mb": 1615,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-south_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "DE",
+     "countries": [
+      "DE"
+     ],
+     "contents": "Баден-Вюртемберг, Бавария",
+     "planned": true
+    },
+    {
+     "id": "de-south-overview",
+     "version": "2026-11",
+     "title": "Германия: юг (обзорно)",
+     "description": "Баден-Вюртемберг, Бавария (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-south-overview_2026-11.pmtiles",
+     "size_mb": 404,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-south-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "DE",
+     "countries": [
+      "DE"
+     ],
+     "contents": "Баден-Вюртемберг, Бавария",
+     "planned": true
+    },
+    {
+     "id": "de-east",
+     "version": "2026-11",
+     "title": "Германия: восток",
+     "description": "Берлин, Бранденбург, Саксония-Анхальт, Саксония, Тюрингия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-east_2026-11.pmtiles",
+     "size_mb": 1076,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-east_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "DE",
+     "countries": [
+      "DE"
+     ],
+     "contents": "Берлин, Бранденбург, Саксония-Анхальт, Саксония, Тюрингия",
+     "planned": true
+    },
+    {
+     "id": "de-east-overview",
+     "version": "2026-11",
+     "title": "Германия: восток (обзорно)",
+     "description": "Берлин, Бранденбург, Саксония-Анхальт, Саксония, Тюрингия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-east-overview_2026-11.pmtiles",
+     "size_mb": 269,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/de-east-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "DE",
+     "countries": [
+      "DE"
+     ],
+     "contents": "Берлин, Бранденбург, Саксония-Анхальт, Саксония, Тюрингия",
+     "planned": true
+    },
+    {
+     "id": "pl-west",
+     "version": "2026-11",
+     "title": "Польша: запад",
+     "description": "Западно-Поморское, Любушское, Великопольское, Нижнесилезское, Опольское, Поморское, Куявско-Поморское воеводства (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/pl-west_2026-11.pmtiles",
+     "size_mb": 1035,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/pl-west_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "PL",
+     "countries": [
+      "PL"
+     ],
+     "contents": "Западно-Поморское, Любушское, Великопольское, Нижнесилезское, Опольское, Поморское, Куявско-Поморское воеводства",
+     "planned": true
+    },
+    {
+     "id": "pl-west-overview",
+     "version": "2026-11",
+     "title": "Польша: запад (обзорно)",
+     "description": "Западно-Поморское, Любушское, Великопольское, Нижнесилезское, Опольское, Поморское, Куявско-Поморское воеводства (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/pl-west-overview_2026-11.pmtiles",
+     "size_mb": 259,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/pl-west-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "PL",
+     "countries": [
+      "PL"
+     ],
+     "contents": "Западно-Поморское, Любушское, Великопольское, Нижнесилезское, Опольское, Поморское, Куявско-Поморское воеводства",
+     "planned": true
+    },
+    {
+     "id": "pl-east",
+     "version": "2026-11",
+     "title": "Польша: восток",
+     "description": "Мазовецкое (Варшава), Лодзинское, Свентокшиское, Малопольское, Силезское, Подкарпатское, Люблинское, Подляское, Варминьско-Мазурское воеводства (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/pl-east_2026-11.pmtiles",
+     "size_mb": 1259,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/pl-east_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "PL",
+     "countries": [
+      "PL"
+     ],
+     "contents": "Мазовецкое (Варшава), Лодзинское, Свентокшиское, Малопольское, Силезское, Подкарпатское, Люблинское, Подляское, Варминьско-Мазурское воеводства",
+     "planned": true
+    },
+    {
+     "id": "pl-east-overview",
+     "version": "2026-11",
+     "title": "Польша: восток (обзорно)",
+     "description": "Мазовецкое (Варшава), Лодзинское, Свентокшиское, Малопольское, Силезское, Подкарпатское, Люблинское, Подляское, Варминьско-Мазурское воеводства (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/pl-east-overview_2026-11.pmtiles",
+     "size_mb": 315,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/pl-east-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "PL",
+     "countries": [
+      "PL"
+     ],
+     "contents": "Мазовецкое (Варшава), Лодзинское, Свентокшиское, Малопольское, Силезское, Подкарпатское, Люблинское, Подляское, Варминьско-Мазурское воеводства",
+     "planned": true
+    }
+   ]
+  },
+  {
+   "name": "Ближний Восток",
+   "slug": "middle-east",
+   "description": "Карты стран Ближнего Востока.",
+   "icon": "IconMap",
+   "language": "ru",
+   "resources": [
+    {
+     "id": "israel-palestine",
+     "version": "2026-11",
+     "title": "Израиль и Палестина",
+     "description": "Карта: Израиль и Палестина (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/israel-palestine_2026-11.pmtiles",
+     "size_mb": 135,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/israel-palestine_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "IL",
+     "countries": [
+      "IL",
+      "PS"
+     ],
+     "planned": true
+    },
+    {
+     "id": "israel-palestine-overview",
+     "version": "2026-11",
+     "title": "Израиль и Палестина (обзорно)",
+     "description": "Карта: Израиль и Палестина (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/israel-palestine-overview_2026-11.pmtiles",
+     "size_mb": 34,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/israel-palestine-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "IL",
+     "countries": [
+      "IL",
+      "PS"
+     ],
+     "planned": true
+    },
+    {
+     "id": "tr",
+     "version": "2026-11",
+     "title": "Турция",
+     "description": "Карта: Турция (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tr_2026-11.pmtiles",
+     "size_mb": 919,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tr_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "TR",
+     "countries": [
+      "TR"
+     ],
+     "planned": true
+    },
+    {
+     "id": "tr-overview",
+     "version": "2026-11",
+     "title": "Турция (обзорно)",
+     "description": "Карта: Турция (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tr-overview_2026-11.pmtiles",
+     "size_mb": 230,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/tr-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "TR",
+     "countries": [
+      "TR"
+     ],
+     "planned": true
+    }
+   ]
+  },
+  {
+   "name": "Северная Америка",
+   "slug": "north-america",
+   "description": "Карты США по штатам и Канады по провинциям.",
+   "icon": "IconMap",
+   "language": "ru",
+   "resources": [
+    {
+     "id": "us-id",
+     "version": "2026-11",
+     "title": "США: Айдахо",
+     "description": "Карта: США: Айдахо (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-id_2026-11.pmtiles",
+     "size_mb": 220,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-id_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-id-overview",
+     "version": "2026-11",
+     "title": "США: Айдахо (обзорно)",
+     "description": "Карта: США: Айдахо (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-id-overview_2026-11.pmtiles",
+     "size_mb": 55,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-id-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ia",
+     "version": "2026-11",
+     "title": "США: Айова",
+     "description": "Карта: США: Айова (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ia_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ia_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ia-overview",
+     "version": "2026-11",
+     "title": "США: Айова (обзорно)",
+     "description": "Карта: США: Айова (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ia-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ia-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-al",
+     "version": "2026-11",
+     "title": "США: Алабама",
+     "description": "Карта: США: Алабама (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-al_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-al_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-al-overview",
+     "version": "2026-11",
+     "title": "США: Алабама (обзорно)",
+     "description": "Карта: США: Алабама (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-al-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-al-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ak",
+     "version": "2026-11",
+     "title": "США: Аляска",
+     "description": "Карта: США: Аляска (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ak_2026-11.pmtiles",
+     "size_mb": 684,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ak_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ak-overview",
+     "version": "2026-11",
+     "title": "США: Аляска (обзорно)",
+     "description": "Карта: США: Аляска (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ak-overview_2026-11.pmtiles",
+     "size_mb": 171,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ak-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-az",
+     "version": "2026-11",
+     "title": "США: Аризона",
+     "description": "Карта: США: Аризона (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-az_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-az_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-az-overview",
+     "version": "2026-11",
+     "title": "США: Аризона (обзорно)",
+     "description": "Карта: США: Аризона (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-az-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-az-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ar",
+     "version": "2026-11",
+     "title": "США: Арканзас",
+     "description": "Карта: США: Арканзас (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ar_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ar_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ar-overview",
+     "version": "2026-11",
+     "title": "США: Арканзас (обзорно)",
+     "description": "Карта: США: Арканзас (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ar-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ar-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-wy",
+     "version": "2026-11",
+     "title": "США: Вайоминг",
+     "description": "Карта: США: Вайоминг (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wy_2026-11.pmtiles",
+     "size_mb": 210,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wy_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-wy-overview",
+     "version": "2026-11",
+     "title": "США: Вайоминг (обзорно)",
+     "description": "Карта: США: Вайоминг (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wy-overview_2026-11.pmtiles",
+     "size_mb": 53,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wy-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-wa",
+     "version": "2026-11",
+     "title": "США: Вашингтон",
+     "description": "Карта: США: Вашингтон (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wa_2026-11.pmtiles",
+     "size_mb": 466,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wa_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-wa-overview",
+     "version": "2026-11",
+     "title": "США: Вашингтон (обзорно)",
+     "description": "Карта: США: Вашингтон (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wa-overview_2026-11.pmtiles",
+     "size_mb": 117,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wa-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-vt",
+     "version": "2026-11",
+     "title": "США: Вермонт",
+     "description": "Карта: США: Вермонт (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-vt_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-vt_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-vt-overview",
+     "version": "2026-11",
+     "title": "США: Вермонт (обзорно)",
+     "description": "Карта: США: Вермонт (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-vt-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-vt-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-va",
+     "version": "2026-11",
+     "title": "США: Виргиния",
+     "description": "Карта: США: Виргиния (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-va_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-va_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-va-overview",
+     "version": "2026-11",
+     "title": "США: Виргиния (обзорно)",
+     "description": "Карта: США: Виргиния (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-va-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-va-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-wi",
+     "version": "2026-11",
+     "title": "США: Висконсин",
+     "description": "Карта: США: Висконсин (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wi_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wi_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-wi-overview",
+     "version": "2026-11",
+     "title": "США: Висконсин (обзорно)",
+     "description": "Карта: США: Висконсин (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wi-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wi-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-hi",
+     "version": "2026-11",
+     "title": "США: Гавайи",
+     "description": "Карта: США: Гавайи (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-hi_2026-11.pmtiles",
+     "size_mb": 28,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-hi_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-hi-overview",
+     "version": "2026-11",
+     "title": "США: Гавайи (обзорно)",
+     "description": "Карта: США: Гавайи (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-hi-overview_2026-11.pmtiles",
+     "size_mb": 7,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-hi-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-de",
+     "version": "2026-11",
+     "title": "США: Делавэр",
+     "description": "Карта: США: Делавэр (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-de_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-de_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-de-overview",
+     "version": "2026-11",
+     "title": "США: Делавэр (обзорно)",
+     "description": "Карта: США: Делавэр (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-de-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-de-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ga",
+     "version": "2026-11",
+     "title": "США: Джорджия",
+     "description": "Карта: США: Джорджия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ga_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ga_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ga-overview",
+     "version": "2026-11",
+     "title": "США: Джорджия (обзорно)",
+     "description": "Карта: США: Джорджия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ga-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ga-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-wv",
+     "version": "2026-11",
+     "title": "США: Западная Виргиния",
+     "description": "Карта: США: Западная Виргиния (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wv_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wv_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-wv-overview",
+     "version": "2026-11",
+     "title": "США: Западная Виргиния (обзорно)",
+     "description": "Карта: США: Западная Виргиния (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wv-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-wv-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-il",
+     "version": "2026-11",
+     "title": "США: Иллинойс",
+     "description": "Карта: США: Иллинойс (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-il_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-il_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-il-overview",
+     "version": "2026-11",
+     "title": "США: Иллинойс (обзорно)",
+     "description": "Карта: США: Иллинойс (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-il-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-il-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-in",
+     "version": "2026-11",
+     "title": "США: Индиана",
+     "description": "Карта: США: Индиана (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-in_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-in_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-in-overview",
+     "version": "2026-11",
+     "title": "США: Индиана (обзорно)",
+     "description": "Карта: США: Индиана (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-in-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-in-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ca",
+     "version": "2026-11",
+     "title": "США: Калифорния",
+     "description": "Карта: США: Калифорния (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ca_2026-11.pmtiles",
+     "size_mb": 1100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ca_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ca-overview",
+     "version": "2026-11",
+     "title": "США: Калифорния (обзорно)",
+     "description": "Карта: США: Калифорния (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ca-overview_2026-11.pmtiles",
+     "size_mb": 275,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ca-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ks",
+     "version": "2026-11",
+     "title": "США: Канзас",
+     "description": "Карта: США: Канзас (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ks_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ks_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ks-overview",
+     "version": "2026-11",
+     "title": "США: Канзас (обзорно)",
+     "description": "Карта: США: Канзас (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ks-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ks-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ky",
+     "version": "2026-11",
+     "title": "США: Кентукки",
+     "description": "Карта: США: Кентукки (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ky_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ky_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ky-overview",
+     "version": "2026-11",
+     "title": "США: Кентукки (обзорно)",
+     "description": "Карта: США: Кентукки (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ky-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ky-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-co",
+     "version": "2026-11",
+     "title": "США: Колорадо",
+     "description": "Карта: США: Колорадо (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-co_2026-11.pmtiles",
+     "size_mb": 450,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-co_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-co-overview",
+     "version": "2026-11",
+     "title": "США: Колорадо (обзорно)",
+     "description": "Карта: США: Колорадо (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-co-overview_2026-11.pmtiles",
+     "size_mb": 113,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-co-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ct",
+     "version": "2026-11",
+     "title": "США: Коннектикут",
+     "description": "Карта: США: Коннектикут (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ct_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ct_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ct-overview",
+     "version": "2026-11",
+     "title": "США: Коннектикут (обзорно)",
+     "description": "Карта: США: Коннектикут (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ct-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ct-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-la",
+     "version": "2026-11",
+     "title": "США: Луизиана",
+     "description": "Карта: США: Луизиана (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-la_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-la_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-la-overview",
+     "version": "2026-11",
+     "title": "США: Луизиана (обзорно)",
+     "description": "Карта: США: Луизиана (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-la-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-la-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ma",
+     "version": "2026-11",
+     "title": "США: Массачусетс",
+     "description": "Карта: США: Массачусетс (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ma_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ma_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ma-overview",
+     "version": "2026-11",
+     "title": "США: Массачусетс (обзорно)",
+     "description": "Карта: США: Массачусетс (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ma-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ma-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-mn",
+     "version": "2026-11",
+     "title": "США: Миннесота",
+     "description": "Карта: США: Миннесота (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mn_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mn_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-mn-overview",
+     "version": "2026-11",
+     "title": "США: Миннесота (обзорно)",
+     "description": "Карта: США: Миннесота (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mn-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mn-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ms",
+     "version": "2026-11",
+     "title": "США: Миссисипи",
+     "description": "Карта: США: Миссисипи (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ms_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ms_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ms-overview",
+     "version": "2026-11",
+     "title": "США: Миссисипи (обзорно)",
+     "description": "Карта: США: Миссисипи (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ms-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ms-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-mo",
+     "version": "2026-11",
+     "title": "США: Миссури",
+     "description": "Карта: США: Миссури (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mo_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mo_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-mo-overview",
+     "version": "2026-11",
+     "title": "США: Миссури (обзорно)",
+     "description": "Карта: США: Миссури (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mo-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mo-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-mi",
+     "version": "2026-11",
+     "title": "США: Мичиган",
+     "description": "Карта: США: Мичиган (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mi_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mi_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-mi-overview",
+     "version": "2026-11",
+     "title": "США: Мичиган (обзорно)",
+     "description": "Карта: США: Мичиган (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mi-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mi-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-mt",
+     "version": "2026-11",
+     "title": "США: Монтана",
+     "description": "Карта: США: Монтана (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mt_2026-11.pmtiles",
+     "size_mb": 270,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mt_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-mt-overview",
+     "version": "2026-11",
+     "title": "США: Монтана (обзорно)",
+     "description": "Карта: США: Монтана (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mt-overview_2026-11.pmtiles",
+     "size_mb": 68,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-mt-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-me",
+     "version": "2026-11",
+     "title": "США: Мэн",
+     "description": "Карта: США: Мэн (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-me_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-me_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-me-overview",
+     "version": "2026-11",
+     "title": "США: Мэн (обзорно)",
+     "description": "Карта: США: Мэн (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-me-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-me-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-md",
+     "version": "2026-11",
+     "title": "США: Мэриленд и Вашингтон (округ Колумбия)",
+     "description": "Карта: США: Мэриленд и Вашингтон (округ Колумбия) (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-md_2026-11.pmtiles",
+     "size_mb": 420,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-md_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-md-overview",
+     "version": "2026-11",
+     "title": "США: Мэриленд и Вашингтон (округ Колумбия) (обзорно)",
+     "description": "Карта: США: Мэриленд и Вашингтон (округ Колумбия) (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-md-overview_2026-11.pmtiles",
+     "size_mb": 105,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-md-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ne",
+     "version": "2026-11",
+     "title": "США: Небраска",
+     "description": "Карта: США: Небраска (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ne_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ne_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ne-overview",
+     "version": "2026-11",
+     "title": "США: Небраска (обзорно)",
+     "description": "Карта: США: Небраска (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ne-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ne-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nv",
+     "version": "2026-11",
+     "title": "США: Невада",
+     "description": "Карта: США: Невада (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nv_2026-11.pmtiles",
+     "size_mb": 200,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nv_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nv-overview",
+     "version": "2026-11",
+     "title": "США: Невада (обзорно)",
+     "description": "Карта: США: Невада (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nv-overview_2026-11.pmtiles",
+     "size_mb": 50,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nv-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nh",
+     "version": "2026-11",
+     "title": "США: Нью-Гэмпшир",
+     "description": "Карта: США: Нью-Гэмпшир (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nh_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nh_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nh-overview",
+     "version": "2026-11",
+     "title": "США: Нью-Гэмпшир (обзорно)",
+     "description": "Карта: США: Нью-Гэмпшир (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nh-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nh-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nj",
+     "version": "2026-11",
+     "title": "США: Нью-Джерси",
+     "description": "Карта: США: Нью-Джерси (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nj_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nj_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nj-overview",
+     "version": "2026-11",
+     "title": "США: Нью-Джерси (обзорно)",
+     "description": "Карта: США: Нью-Джерси (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nj-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nj-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ny",
+     "version": "2026-11",
+     "title": "США: Нью-Йорк",
+     "description": "Карта: США: Нью-Йорк (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ny_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ny_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ny-overview",
+     "version": "2026-11",
+     "title": "США: Нью-Йорк (обзорно)",
+     "description": "Карта: США: Нью-Йорк (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ny-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ny-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nm",
+     "version": "2026-11",
+     "title": "США: Нью-Мексико",
+     "description": "Карта: США: Нью-Мексико (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nm_2026-11.pmtiles",
+     "size_mb": 230,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nm_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nm-overview",
+     "version": "2026-11",
+     "title": "США: Нью-Мексико (обзорно)",
+     "description": "Карта: США: Нью-Мексико (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nm-overview_2026-11.pmtiles",
+     "size_mb": 58,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nm-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-oh",
+     "version": "2026-11",
+     "title": "США: Огайо",
+     "description": "Карта: США: Огайо (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-oh_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-oh_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-oh-overview",
+     "version": "2026-11",
+     "title": "США: Огайо (обзорно)",
+     "description": "Карта: США: Огайо (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-oh-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-oh-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ok",
+     "version": "2026-11",
+     "title": "США: Оклахома",
+     "description": "Карта: США: Оклахома (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ok_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ok_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ok-overview",
+     "version": "2026-11",
+     "title": "США: Оклахома (обзорно)",
+     "description": "Карта: США: Оклахома (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ok-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ok-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-or",
+     "version": "2026-11",
+     "title": "США: Орегон",
+     "description": "Карта: США: Орегон (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-or_2026-11.pmtiles",
+     "size_mb": 379,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-or_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-or-overview",
+     "version": "2026-11",
+     "title": "США: Орегон (обзорно)",
+     "description": "Карта: США: Орегон (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-or-overview_2026-11.pmtiles",
+     "size_mb": 95,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-or-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-pa",
+     "version": "2026-11",
+     "title": "США: Пенсильвания",
+     "description": "Карта: США: Пенсильвания (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-pa_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-pa_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-pa-overview",
+     "version": "2026-11",
+     "title": "США: Пенсильвания (обзорно)",
+     "description": "Карта: США: Пенсильвания (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-pa-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-pa-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ri",
+     "version": "2026-11",
+     "title": "США: Род-Айленд",
+     "description": "Карта: США: Род-Айленд (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ri_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ri_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ri-overview",
+     "version": "2026-11",
+     "title": "США: Род-Айленд (обзорно)",
+     "description": "Карта: США: Род-Айленд (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ri-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ri-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nd",
+     "version": "2026-11",
+     "title": "США: Северная Дакота",
+     "description": "Карта: США: Северная Дакота (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nd_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nd_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nd-overview",
+     "version": "2026-11",
+     "title": "США: Северная Дакота (обзорно)",
+     "description": "Карта: США: Северная Дакота (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nd-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nd-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nc",
+     "version": "2026-11",
+     "title": "США: Северная Каролина",
+     "description": "Карта: США: Северная Каролина (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nc_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nc_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-nc-overview",
+     "version": "2026-11",
+     "title": "США: Северная Каролина (обзорно)",
+     "description": "Карта: США: Северная Каролина (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nc-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-nc-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-tn",
+     "version": "2026-11",
+     "title": "США: Теннесси",
+     "description": "Карта: США: Теннесси (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-tn_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-tn_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-tn-overview",
+     "version": "2026-11",
+     "title": "США: Теннесси (обзорно)",
+     "description": "Карта: США: Теннесси (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-tn-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-tn-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-tx",
+     "version": "2026-11",
+     "title": "США: Техас",
+     "description": "Карта: США: Техас (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-tx_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-tx_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-tx-overview",
+     "version": "2026-11",
+     "title": "США: Техас (обзорно)",
+     "description": "Карта: США: Техас (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-tx-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-tx-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-fl",
+     "version": "2026-11",
+     "title": "США: Флорида",
+     "description": "Карта: США: Флорида (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-fl_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-fl_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-fl-overview",
+     "version": "2026-11",
+     "title": "США: Флорида (обзорно)",
+     "description": "Карта: США: Флорида (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-fl-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-fl-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-sd",
+     "version": "2026-11",
+     "title": "США: Южная Дакота",
+     "description": "Карта: США: Южная Дакота (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-sd_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-sd_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-sd-overview",
+     "version": "2026-11",
+     "title": "США: Южная Дакота (обзорно)",
+     "description": "Карта: США: Южная Дакота (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-sd-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-sd-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-sc",
+     "version": "2026-11",
+     "title": "США: Южная Каролина",
+     "description": "Карта: США: Южная Каролина (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-sc_2026-11.pmtiles",
+     "size_mb": 400,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-sc_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-sc-overview",
+     "version": "2026-11",
+     "title": "США: Южная Каролина (обзорно)",
+     "description": "Карта: США: Южная Каролина (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-sc-overview_2026-11.pmtiles",
+     "size_mb": 100,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-sc-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ut",
+     "version": "2026-11",
+     "title": "США: Юта",
+     "description": "Карта: США: Юта (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ut_2026-11.pmtiles",
+     "size_mb": 240,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ut_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "us-ut-overview",
+     "version": "2026-11",
+     "title": "США: Юта (обзорно)",
+     "description": "Карта: США: Юта (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ut-overview_2026-11.pmtiles",
+     "size_mb": 60,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/us-ut-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "US",
+     "countries": [
+      "US"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-ab",
+     "version": "2026-11",
+     "title": "Канада: Альберта",
+     "description": "Карта: Канада: Альберта (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-ab_2026-11.pmtiles",
+     "size_mb": 567,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-ab_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-ab-overview",
+     "version": "2026-11",
+     "title": "Канада: Альберта (обзорно)",
+     "description": "Карта: Канада: Альберта (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-ab-overview_2026-11.pmtiles",
+     "size_mb": 142,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-ab-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-bc",
+     "version": "2026-11",
+     "title": "Канада: Британская Колумбия",
+     "description": "Карта: Канада: Британская Колумбия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-bc_2026-11.pmtiles",
+     "size_mb": 1604,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-bc_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-bc-overview",
+     "version": "2026-11",
+     "title": "Канада: Британская Колумбия (обзорно)",
+     "description": "Карта: Канада: Британская Колумбия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-bc-overview_2026-11.pmtiles",
+     "size_mb": 401,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-bc-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-qc",
+     "version": "2026-11",
+     "title": "Канада: Квебек",
+     "description": "Карта: Канада: Квебек (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-qc_2026-11.pmtiles",
+     "size_mb": 1673,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-qc_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-qc-overview",
+     "version": "2026-11",
+     "title": "Канада: Квебек (обзорно)",
+     "description": "Карта: Канада: Квебек (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-qc-overview_2026-11.pmtiles",
+     "size_mb": 418,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-qc-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-mb",
+     "version": "2026-11",
+     "title": "Канада: Манитоба",
+     "description": "Карта: Канада: Манитоба (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-mb_2026-11.pmtiles",
+     "size_mb": 425,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-mb_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-mb-overview",
+     "version": "2026-11",
+     "title": "Канада: Манитоба (обзорно)",
+     "description": "Карта: Канада: Манитоба (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-mb-overview_2026-11.pmtiles",
+     "size_mb": 106,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-mb-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-ns",
+     "version": "2026-11",
+     "title": "Канада: Новая Шотландия",
+     "description": "Карта: Канада: Новая Шотландия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-ns_2026-11.pmtiles",
+     "size_mb": 120,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-ns_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-ns-overview",
+     "version": "2026-11",
+     "title": "Канада: Новая Шотландия (обзорно)",
+     "description": "Карта: Канада: Новая Шотландия (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-ns-overview_2026-11.pmtiles",
+     "size_mb": 30,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-ns-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-nu",
+     "version": "2026-11",
+     "title": "Канада: Нунавут",
+     "description": "Карта: Канада: Нунавут (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nu_2026-11.pmtiles",
+     "size_mb": 2168,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nu_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-nu-overview",
+     "version": "2026-11",
+     "title": "Канада: Нунавут (обзорно)",
+     "description": "Карта: Канада: Нунавут (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nu-overview_2026-11.pmtiles",
+     "size_mb": 542,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nu-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-nb",
+     "version": "2026-11",
+     "title": "Канада: Нью-Брансуик",
+     "description": "Карта: Канада: Нью-Брансуик (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nb_2026-11.pmtiles",
+     "size_mb": 91,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nb_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-nb-overview",
+     "version": "2026-11",
+     "title": "Канада: Нью-Брансуик (обзорно)",
+     "description": "Карта: Канада: Нью-Брансуик (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nb-overview_2026-11.pmtiles",
+     "size_mb": 23,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nb-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-nl",
+     "version": "2026-11",
+     "title": "Канада: Ньюфаундленд и Лабрадор",
+     "description": "Карта: Канада: Ньюфаундленд и Лабрадор (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nl_2026-11.pmtiles",
+     "size_mb": 393,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nl_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-nl-overview",
+     "version": "2026-11",
+     "title": "Канада: Ньюфаундленд и Лабрадор (обзорно)",
+     "description": "Карта: Канада: Ньюфаундленд и Лабрадор (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nl-overview_2026-11.pmtiles",
+     "size_mb": 98,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nl-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-on",
+     "version": "2026-11",
+     "title": "Канада: Онтарио",
+     "description": "Карта: Канада: Онтарио (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-on_2026-11.pmtiles",
+     "size_mb": 1399,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-on_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-on-overview",
+     "version": "2026-11",
+     "title": "Канада: Онтарио (обзорно)",
+     "description": "Карта: Канада: Онтарио (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-on-overview_2026-11.pmtiles",
+     "size_mb": 350,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-on-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-pe",
+     "version": "2026-11",
+     "title": "Канада: Остров Принца Эдуарда",
+     "description": "Карта: Канада: Остров Принца Эдуарда (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-pe_2026-11.pmtiles",
+     "size_mb": 14,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-pe_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-pe-overview",
+     "version": "2026-11",
+     "title": "Канада: Остров Принца Эдуарда (обзорно)",
+     "description": "Карта: Канада: Остров Принца Эдуарда (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-pe-overview_2026-11.pmtiles",
+     "size_mb": 5,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-pe-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-sk",
+     "version": "2026-11",
+     "title": "Канада: Саскачеван",
+     "description": "Карта: Канада: Саскачеван (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-sk_2026-11.pmtiles",
+     "size_mb": 319,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-sk_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-sk-overview",
+     "version": "2026-11",
+     "title": "Канада: Саскачеван (обзорно)",
+     "description": "Карта: Канада: Саскачеван (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-sk-overview_2026-11.pmtiles",
+     "size_mb": 80,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-sk-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-nt",
+     "version": "2026-11",
+     "title": "Канада: Северо-Западные территории",
+     "description": "Карта: Канада: Северо-Западные территории (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nt_2026-11.pmtiles",
+     "size_mb": 834,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nt_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-nt-overview",
+     "version": "2026-11",
+     "title": "Канада: Северо-Западные территории (обзорно)",
+     "description": "Карта: Канада: Северо-Западные территории (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nt-overview_2026-11.pmtiles",
+     "size_mb": 209,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-nt-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-yt",
+     "version": "2026-11",
+     "title": "Канада: Юкон",
+     "description": "Карта: Канада: Юкон (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-yt_2026-11.pmtiles",
+     "size_mb": 222,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-yt_2026-11.pmtiles.torrent",
+     "detail": "full",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    },
+    {
+     "id": "ca-yt-overview",
+     "version": "2026-11",
+     "title": "Канада: Юкон (обзорно)",
+     "description": "Карта: Канада: Юкон (файлы ещё не опубликованы, размер — оценка)",
+     "url": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-yt-overview_2026-11.pmtiles",
+     "size_mb": 56,
+     "torrent": "https://github.com/Leon-Kladez/kladez-maps/releases/download/maps-2026-11/ca-yt-overview_2026-11.pmtiles.torrent",
+     "detail": "overview",
+     "country": "CA",
+     "countries": [
+      "CA"
+     ],
+     "planned": true
+    }
+   ]
+  }
+ ]
+}

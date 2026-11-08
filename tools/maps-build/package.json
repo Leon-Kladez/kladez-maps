@@ -1,0 +1,15 @@
+{
+  "name": "kladez-maps-build",
+  "private": true,
+  "type": "module",
+  "description": "Сборщик карт Кладезя: вырезка регионов из сборки Protomaps, упаковка, maps.json",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@protomaps/basemaps": "5.7.2"
+  }
+}

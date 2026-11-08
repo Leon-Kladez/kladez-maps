@@ -59,7 +59,7 @@ jobs:
           GROUPS_INPUT: ${{ inputs.groups }}
         run: |
           g="${GROUPS_INPUT:-russia,cis,europe,middle-east,north-america}"
-          echo "json=$(echo "$g" | jq -R -c 'split(",") | map(gsub("^\s+|\s+$"; "")) | map(select(length > 0))')" >> "$GITHUB_OUTPUT"
+          echo "json=$(echo "$g" | jq -R -c 'split(",") | map(gsub("^[[:space:]]+|[[:space:]]+$"; "")) | map(select(length > 0))')" >> "$GITHUB_OUTPUT"
       - name: Создать выпуск
         if: env.DRY_RUN != 'true'
         env:

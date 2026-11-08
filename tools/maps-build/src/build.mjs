@@ -64,9 +64,15 @@ async function build(o) {
       const out = join(o.out, filename)
       const maxzoom = VARIANT_MAXZOOM[variant]
       console.log(`→ ${filename} (масштаб до ${maxzoom})`)
+      // Сначала оценка (секунды): файл больше 2 ГБ GitHub не примет — такой вариант
+      // пропускаем, регион остаётся в списке «скоро», остальные собираются дальше.
+      const estimate = parseDryRunBytes(await runPmtiles(extractArgs({ url: info.url, out, regionFile, maxzoom, dryRun: true })))
       if (o['dry-run']) {
-        const bytes = parseDryRunBytes(await runPmtiles(extractArgs({ url: info.url, out, regionFile, maxzoom, dryRun: true })))
-        sizes.push({ id: region.id, variant, bytes, over_limit: bytes > 2_000_000_000 })
+        sizes.push({ id: region.id, variant, bytes: estimate, over_limit: estimate > 2_000_000_000 })
+        continue
+      }
+      if (estimate > 2_000_000_000) {
+        console.log(`  пропуск: ${filename} — около ${(estimate / 1e9).toFixed(1)} ГБ, больше предела GitHub в 2 ГБ`)
         continue
       }
       await runPmtiles(extractArgs({ url: info.url, out, regionFile, maxzoom }))

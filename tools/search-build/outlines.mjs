@@ -5,7 +5,7 @@
 //   node outlines.mjs --group russia --out work [--only ru-central,ru-south]
 //     → work/<id>.geojson и work/extract.json (вывод в work/pbf/<id>.osm.pbf)
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parseArgs } from 'node:util'
 import { loadRegions } from '../maps-build/src/regions.mjs'
@@ -38,9 +38,10 @@ async function main() {
   for (const r of regions) {
     const file = join(o.out, `${r.id}.geojson`)
     writeFileSync(file, JSON.stringify(toSingleMultiPolygon(regionGeometry(r, ne0, ne1))))
-    extracts.push({ output: `${r.id}.osm.pbf`, polygon: { file_name: file, file_type: 'geojson' } })
+    // Пути — абсолютные: osmium считает относительные от папки файла настроек.
+    extracts.push({ output: `${r.id}.osm.pbf`, polygon: { file_name: resolve(file), file_type: 'geojson' } })
   }
-  writeFileSync(join(o.out, 'extract.json'), JSON.stringify({ directory: join(o.out, 'pbf'), extracts }, null, 1))
+  writeFileSync(join(o.out, 'extract.json'), JSON.stringify({ directory: resolve(o.out, 'pbf'), extracts }, null, 1))
   console.log(regions.map((r) => r.id).join(' '))
 }
 

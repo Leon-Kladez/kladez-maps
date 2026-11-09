@@ -3,8 +3,8 @@ import { spawn } from 'node:child_process'
 
 export const PROTOMAPS_BUILDS_URL = 'https://build-metadata.protomaps.dev/builds.json'
 export const PROTOMAPS_BUILD_BASE = 'https://build.protomaps.com/'
-/** Лимит GitHub на файл релиза — 2 ГиБ; берём с запасом. */
-export const PART_SIZE_LIMIT = 2_000_000_000
+/** Лимит GitHub на файл выпуска — меньше 2 ГиБ (2 147 483 648 байт); берём чуть ниже. */
+export const PART_SIZE_LIMIT = 2_140_000_000
 
 /** @param {{key: string, size?: number}[]} builds */
 export function latestBuild(builds) {

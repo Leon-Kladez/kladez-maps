@@ -23,7 +23,7 @@ import { parseArgs } from 'node:util'
 import { loadRegions, VARIANT_MAXZOOM } from './regions.mjs'
 import { fetchAdmin1, NE_ADMIN0_PATH } from './geodata.mjs'
 import { districtSchema, regionGeometry } from './geometry.mjs'
-import { assertPartSize, extractArgs, fetchLatestBuild, parseDryRunBytes, runPmtiles } from './extract.mjs'
+import { PART_SIZE_LIMIT, extractArgs, fetchLatestBuild, parseDryRunBytes, runPmtiles } from './extract.mjs'
 import { assetUrl, buildMapsManifest, mergeManifests, mktorrentArgs, overlayManifests, packageFilename, sha256File } from './package.mjs'
 import { KLADEZ_MAPS_REPO_PLACEHOLDER, draftResults } from './draft.mjs'
 
@@ -68,16 +68,21 @@ async function build(o) {
       // пропускаем, регион остаётся в списке «скоро», остальные собираются дальше.
       const estimate = parseDryRunBytes(await runPmtiles(extractArgs({ url: info.url, out, regionFile, maxzoom, dryRun: true })))
       if (o['dry-run']) {
-        sizes.push({ id: region.id, variant, bytes: estimate, over_limit: estimate > 2_000_000_000 })
+        sizes.push({ id: region.id, variant, bytes: estimate, over_limit: estimate > PART_SIZE_LIMIT })
         continue
       }
-      if (estimate > 2_000_000_000) {
-        console.log(`  пропуск: ${filename} — около ${(estimate / 1e9).toFixed(1)} ГБ, больше предела GitHub в 2 ГБ`)
+      if (estimate > PART_SIZE_LIMIT) {
+        console.log(`  пропуск: ${filename} — около ${(estimate / 1e9).toFixed(2)} ГБ, больше предела GitHub`)
         continue
       }
       await runPmtiles(extractArgs({ url: info.url, out, regionFile, maxzoom }))
       const bytes = statSync(out).size
-      assertPartSize(bytes, filename)
+      // Оценка бывает чуть меньше настоящего размера: лишний файл пропускаем, а не роняем группу.
+      if (bytes > PART_SIZE_LIMIT) {
+        console.log(`  пропуск: ${filename} — ${bytes} байт, больше предела GitHub`)
+        rmSync(out)
+        continue
+      }
       const sha256 = await sha256File(out)
       const webseeds = [assetUrl(o.repo || 'OWNER/REPO', tag, filename), ...(yandexBase ? [yandexBase + filename] : [])]
       await run('mktorrent', mktorrentArgs({ file: out, out: `${out}.torrent`, webseeds }))

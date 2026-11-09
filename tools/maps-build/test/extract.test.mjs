@@ -23,8 +23,9 @@ test('extractArgs', () => {
   assert.ok(extractArgs({ url: 'u', out: 'o', regionFile: 'r', maxzoom: 15, dryRun: true }).includes('--dry-run'))
 })
 
-test('assertPartSize: предел 2 000 000 000 байт', () => {
-  assert.equal(PART_SIZE_LIMIT, 2_000_000_000)
-  assert.throws(() => assertPartSize(2_000_000_001, 'de-south'), /de-south/)
-  assert.doesNotThrow(() => assertPartSize(2_000_000_000, 'de-south'))
+test('assertPartSize: предел чуть ниже 2 ГиБ', () => {
+  assert.equal(PART_SIZE_LIMIT, 2_140_000_000)
+  assert.ok(PART_SIZE_LIMIT < 2 ** 31)
+  assert.throws(() => assertPartSize(2_140_000_001, 'de-south'), /de-south/)
+  assert.doesNotThrow(() => assertPartSize(2_006_056_747, 'ru-central'))
 })

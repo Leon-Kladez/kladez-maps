@@ -305,9 +305,13 @@ def build(lines, out_path: str, region: str, version: str, log=sys.stderr) -> di
     # Населённые пункты; районы города — с городом рядом.
     place_ids = KeyedGrid()  # norm(name)
     for name, name_en, kind, lat, lon in places:
+        # Город бывает и точкой, и границей: второй раз рядом (до 15 км) не записываем.
+        if place_ids.nearest(f'{kind}|{norm(name)}', lat, lon, 15) is not None:
+            continue
         city = None if kind in SETTLEMENT_RADIUS_KM else finder.find(lat, lon)
         i = add_item('place', kind, name, name_en, city, None, None, lat, lon, PLACE_RANK[kind])
         place_ids.add(norm(name), i, lat, lon)
+        place_ids.add(f'{kind}|{norm(name)}', i, lat, lon)
 
     # Улицы: куски одной улицы в одном городе — одна запись.
     groups: dict[tuple, list] = defaultdict(list)

@@ -26,6 +26,9 @@ MOSCOW = (55.7558, 37.6173)
 FIXTURE = [
     feat({'place': 'city', 'name': 'Москва', 'name:en': 'Moscow', 'population': '13000000'}, pt(*MOSCOW)),
     feat({'place': 'village', 'name': 'Ивановка'}, pt(55.30, 37.00)),
+    # Тот же город ещё раз — границей (как в OpenStreetMap): в указателе один раз.
+    feat({'place': 'city', 'name': 'Москва', 'boundary': 'administrative'},
+         {'type': 'Polygon', 'coordinates': [[[37.4, 55.6], [37.8, 55.6], [37.8, 55.9], [37.4, 55.6]]]}),
     feat({'place': 'suburb', 'name': 'Замоскворечье'}, pt(55.735, 37.63)),
     # Улица из двух кусков — одна запись.
     feat({'highway': 'tertiary', 'name': 'Пятницкая улица', 'name:en': 'Pyatnitskaya Street'},
@@ -78,6 +81,7 @@ class BuildIndexTest(unittest.TestCase):
     def test_city_and_prefix(self):
         r = self.find('"моск"*')
         self.assertEqual(r[0][:3], ('place', 'city', 'Москва'))
+        self.assertEqual(sum(1 for x in r if x[2] == 'Москва'), 1)  # точка и граница — один раз
         self.assertTrue(self.find('moscow'))
 
     def test_street_pieces_merged_per_city(self):

@@ -110,7 +110,8 @@ export function overlayManifests(base, parts) {
       }
       for (const res of col.resources) {
         const i = target.resources.findIndex((r) => r.id === res.id)
-        if (i >= 0) target.resources[i] = res
+        // Указатель поиска собирается отдельно (build-search) — пересборка карты его не стирает.
+        if (i >= 0) target.resources[i] = !res.search && target.resources[i].search ? { ...res, search: target.resources[i].search } : res
         else target.resources.push(res)
       }
     }

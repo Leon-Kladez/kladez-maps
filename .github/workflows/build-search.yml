@@ -1,0 +1,169 @@
+# Указатели поиска Кладезя: города и сёла, улицы, адреса, места — для поиска на карте без интернета.
+# Каждый регион: файлы OpenStreetMap (Geofabrik) → контур региона, как у карты (osmium extract)
+# → нужные объекты (osmium tags-filter / export) → SQLite с полнотекстовым поиском (build_index.py).
+# Файлы search-<регион>_<версия>.sqlite выкладываются в текущий выпуск карт, а в maps.json
+# у пакета региона появляется поле search — по нему Кладезъ скачивает указатель вместе с картой.
+#
+# Токены не нужны: выкладывает в свой репозиторий своими правами (github.token).
+name: Сборка указателей поиска
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Только эти регионы (id через запятую), пусто — вся Россия'
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-search
+  cancel-in-progress: false
+
+env:
+  REPO: ${{ github.repository }}
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
+      version: ${{ steps.tag.outputs.version }}
+      regions: ${{ steps.regions.outputs.json }}
+    steps:
+      - id: tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Текущий выпуск карт — самый новый maps-ГГГГ-ММ.
+          tag=$(gh release list --repo "$REPO" --limit 50 --json tagName -q '.[].tagName' | grep '^maps-' | sort -r | head -1)
+          [ -n "$tag" ] || { echo "нет выпуска карт"; exit 1; }
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "version=${tag#maps-}" >> "$GITHUB_OUTPUT"
+      - id: regions
+        env:
+          ONLY_INPUT: ${{ inputs.only }}
+        run: |
+          all='ru-central,ru-northwest,ru-south,ru-north-caucasus,ru-volga,ru-urals,ru-siberia,ru-far-east-south,ru-far-east-north'
+          r="${ONLY_INPUT:-$all}"
+          echo "json=$(echo "$r" | jq -R -c 'split(",") | map(gsub("^[[:space:]]+|[[:space:]]+$"; "")) | map(select(length > 0))')" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      # Не больше трёх скачиваний с Geofabrik одновременно — по их просьбе беречь сервер.
+      max-parallel: 3
+      matrix:
+        region: ${{ fromJSON(needs.prepare.outputs.regions) }}
+    env:
+      REGION: ${{ matrix.region }}
+      TAG: ${{ needs.prepare.outputs.tag }}
+      VERSION: ${{ needs.prepare.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Освободить место и поставить osmium
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true
+          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+          osmium --version | head -1
+          df -h / | tail -1
+      - name: Тесты сборщика
+        run: |
+          python3 -m unittest discover -s tools/search-build -p 'test_*.py'
+          node --test tools/search-build/attach.test.mjs
+      - name: Скачать данные OpenStreetMap
+        run: |
+          # Округа Geofabrik; соседний берём, где границы округов менялись (Бурятия, Забайкалье).
+          case "$REGION" in
+            ru-central) src="central-fed-district" ;;
+            ru-northwest) src="northwestern-fed-district" ;;
+            ru-south) src="south-fed-district crimean-fed-district" ;;
+            ru-north-caucasus) src="north-caucasus-fed-district" ;;
+            ru-volga) src="volga-fed-district" ;;
+            ru-urals) src="ural-fed-district" ;;
+            ru-siberia) src="siberian-fed-district" ;;
+            ru-far-east-south) src="far-eastern-fed-district siberian-fed-district" ;;
+            ru-far-east-north) src="far-eastern-fed-district" ;;
+            *) echo "нет источника для $REGION"; exit 1 ;;
+          esac
+          mkdir -p work/src
+          files=()
+          for s in $src; do
+            url="https://download.geofabrik.de/russia/${s}-latest.osm.pbf"
+            if curl -fsSL --retry 3 -o "work/src/$s.osm.pbf" "$url"; then
+              curl -fsSL --retry 3 -o "work/src/$s.md5" "$url.md5"
+              (cd work/src && sed "s#[^ ]*\$#$s.osm.pbf#" "$s.md5" | md5sum -c -)
+              files+=("work/src/$s.osm.pbf")
+            else
+              echo "::warning::не удалось скачать $s — регион без него"
+            fi
+          done
+          [ ${#files[@]} -gt 0 ] || { echo "нечего обрабатывать"; exit 1; }
+          if [ ${#files[@]} -gt 1 ]; then
+            osmium merge "${files[@]}" -o work/source.osm.pbf --overwrite
+            rm -f "${files[@]}"
+          else
+            mv "${files[0]}" work/source.osm.pbf
+          fi
+          ls -la work/source.osm.pbf
+      - name: Вырезать регион по контуру карты
+        run: |
+          node tools/search-build/outlines.mjs --group russia --only "$REGION" --out work
+          osmium extract -c work/extract.json work/source.osm.pbf --overwrite
+          rm -f work/source.osm.pbf
+          ls -la work/pbf
+      - name: Собрать указатель
+        run: |
+          osmium tags-filter "work/pbf/$REGION.osm.pbf" \
+            nwr/name nwr/addr:housenumber nwr/place \
+            nwr/amenity=pharmacy,hospital,clinic,doctors,dentist,police,fire_station,fuel,atm,bank,toilets,drinking_water,shelter,post_office,charging_station,veterinary,water_point,ambulance_station,defibrillator,marketplace \
+            -o work/filtered.osm.pbf --overwrite
+          out="work/search-${REGION}_${VERSION}.sqlite"
+          osmium export work/filtered.osm.pbf -c tools/search-build/export-config.json -f geojsonseq \
+            -x print_record_separator=false -o - |
+            python3 tools/search-build/build_index.py --out "$out" --region "$REGION" --version "$VERSION"
+          ls -la "$out"
+          size=$(stat -c %s "$out")
+          [ "$size" -lt 2100000000 ] || { echo "указатель больше 2 ГБ — GitHub не примет"; exit 1; }
+      - name: Выложить в выпуск карт
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          out="work/search-${REGION}_${VERSION}.sqlite"
+          gh release upload "$TAG" "$out" --repo "$REPO" --clobber
+          mkdir -p parts
+          node tools/search-build/attach.mjs describe --file "$out" --repo "$REPO" --tag "$TAG" > "parts/search-$REGION.json"
+          cat "parts/search-$REGION.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: search-${{ matrix.region }}
+          path: parts/search-${{ matrix.region }}.json
+          if-no-files-found: error
+
+  publish:
+    needs: [prepare, build]
+    # Дописываем в список и то, что успело собраться, если часть регионов упала.
+    if: always() && needs.prepare.result == 'success'
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ needs.prepare.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/download-artifact@v4
+        with: { path: parts, pattern: 'search-*', merge-multiple: true }
+      - name: Дописать указатели в maps.json
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ls parts/*.json >/dev/null 2>&1 || { echo "ни один регион не собрался"; exit 1; }
+          gh release download "$TAG" --repo "$REPO" --pattern maps.json --dir base
+          node tools/search-build/attach.mjs --manifest base/maps.json --parts parts
+          gh release upload "$TAG" base/maps.json --repo "$REPO" --clobber

@@ -1,0 +1,11 @@
+{
+  "attributes": { "type": false, "id": false, "version": false, "changeset": false, "timestamp": false, "uid": false, "user": false, "way_nodes": false },
+  "linear_tags": true,
+  "area_tags": true,
+  "include_tags": [
+    "name", "name:ru", "name:en", "place", "population",
+    "highway", "railway", "station", "subway", "public_transport", "aeroway", "building",
+    "addr:housenumber", "addr:street", "addr:place", "addr:city",
+    "amenity", "shop", "healthcare", "tourism", "leisure", "office", "historic", "craft", "emergency"
+  ]
+}

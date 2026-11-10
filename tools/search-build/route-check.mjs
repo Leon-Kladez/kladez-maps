@@ -14,6 +14,8 @@ const POINTS = {
   'ru-siberia': { short: [[55.0302, 82.9204], [55.0415, 82.9346], 'Новосибирск: центр'], long: [[55.0302, 82.9204], [54.9885, 73.3242], 'Новосибирск → Омск'] },
   'ru-far-east-south': { short: [[43.1155, 131.8855], [43.1210, 131.8930], 'Владивосток: центр'], long: [[43.1155, 131.8855], [48.4802, 135.0719], 'Владивосток → Хабаровск'] },
   'ru-far-east-north': { short: [[62.0281, 129.7326], [62.0350, 129.7400], 'Якутск: центр'], long: [[62.0281, 129.7326], [61.9, 129.6], 'Якутск: окрестности'] },
+  // Через границу округов: Центр → Поволжье, Центр → Северо-Запад.
+  cross: { short: [[55.7558, 37.6173], [59.9343, 30.3351], 'Москва → Петербург'], long: [[55.7558, 37.6173], [55.7963, 49.1088], 'Москва → Казань'] },
 }
 
 async function route(from, to, costing) {
@@ -42,7 +44,10 @@ if (!p) {
   console.log(`для ${region} нет пробных точек — пропускаю`)
   process.exit(0)
 }
-for (const [costing, pts] of [['auto', p.long], ['pedestrian', p.short], ['bicycle', p.short]]) {
+const plan = region === 'cross'
+  ? [['auto', p.long], ['auto', p.short]]
+  : [['auto', p.long], ['pedestrian', p.short], ['bicycle', p.short]]
+for (const [costing, pts] of plan) {
   const r = await route(pts[0], pts[1], costing)
   console.log(`${pts[2]} (${costing}): ${r.km} км, ${r.min} мин, ${r.maneuvers} указаний, ответ ${r.ms} мс`)
   for (const s of r.steps) console.log(`   · ${s}`)

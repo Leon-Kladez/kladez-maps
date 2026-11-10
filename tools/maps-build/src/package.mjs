@@ -67,6 +67,7 @@ export function buildMapsManifest(results, opts) {
       // Все страны пакета: «Израиль и Палестина» находится и по IL, и по PS.
       countries: [...new Set([r.region.country, ...(r.region.source.countries ?? [])])],
       ...(r.region.contents ? { contents: r.region.contents } : {}),
+      ...(r.region.parent ? { parent: r.region.parent } : {}),
       ...(opts.planned ? { planned: true } : {}),
     }
     if (!byGroup.has(r.region.group)) byGroup.set(r.region.group, [])
@@ -99,8 +100,15 @@ export function mergeManifests(parts) {
  * @param {{ spec_version: string, collections: any[] }} base
  * @param {{ spec_version: string, collections: any[] }[]} parts
  */
-export function overlayManifests(base, parts) {
-  const collections = (base?.collections ?? []).map((c) => ({ ...c, resources: [...c.resources] }))
+export function overlayManifests(base, parts, opts = {}) {
+  // Указатель поиска и дороги целых округов — до того, как их записи уйдут из списка.
+  const parentData = new Map()
+  for (const c of base?.collections ?? []) {
+    for (const r of c.resources) if (r.search || r.routes) parentData.set(r.id, { search: r.search, routes: r.routes })
+  }
+  // opts.keep — id регионов с картой: записи остальных (целые округа, нарезанные на части) убираются.
+  const keepRes = (r) => !opts.keep || opts.keep.has(r.id.replace(/-overview$/, ''))
+  const collections = (base?.collections ?? []).map((c) => ({ ...c, resources: c.resources.filter(keepRes) }))
   for (const part of parts) {
     for (const col of part.collections) {
       let target = collections.find((c) => c.slug === col.slug)
@@ -122,6 +130,15 @@ export function overlayManifests(base, parts) {
         }
         else target.resources.push(res)
       }
+    }
+  }
+  // Части (parent) — подробный вариант получает указатель поиска и дороги своего округа.
+  for (const c of collections) {
+    for (const r of c.resources) {
+      if (!r.parent || r.id.endsWith('-overview')) continue
+      const p = parentData.get(r.parent)
+      if (p?.search && !r.search) r.search = p.search
+      if (p?.routes && !r.routes) r.routes = p.routes
     }
   }
   collections.sort((a, b) => GROUPS.indexOf(a.slug) - GROUPS.indexOf(b.slug))

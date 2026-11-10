@@ -11,8 +11,17 @@ const ISO2_RE = /^[A-Z]{2}$/
 
 /**
  * @typedef {{ id: string, title: string, group: string, country: string, contents?: string,
- *   source: { countries?: string[], admin1?: string[] }, variants: ('full'|'overview')[] }} Region
+ *   source: { countries?: string[], admin1?: string[] }, variants: ('full'|'overview')[],
+ *   maps?: boolean, parent?: string }} Region
+ *
+ * maps: false — регион без своей карты (слишком большой — карта частями), но с указателем поиска и
+ * дорогами; parent — часть такого региона: карта своя, указатель поиска и дороги — от родителя.
  */
+
+/** Регионы, у которых есть своя карта. */
+export function mapRegions(regions) {
+  return regions.filter((r) => r.maps !== false)
+}
 
 /** @returns {Region[]} */
 export function loadRegions(path) {
@@ -34,6 +43,9 @@ export function validateRegions(regions) {
     if (id.endsWith('-overview')) fail('id не может кончаться на -overview (это имя обзорного варианта)')
     if (seen.has(id)) fail('повторный id')
     seen.add(id)
+    if (r.maps !== undefined && typeof r.maps !== 'boolean') fail('maps — true или false')
+    if (r.parent !== undefined && !regions.some((x) => x.id === r.parent && x.maps === false))
+      fail(`parent ${r.parent}: нет такого региона с maps: false`)
     if (typeof r.title !== 'string' || !r.title.trim()) fail('нет title')
     if (!GROUPS.includes(r.group)) fail(`неизвестная группа ${r.group}`)
     if (typeof r.country !== 'string' || !ISO2_RE.test(r.country)) fail('country — двухбуквенный код ISO')

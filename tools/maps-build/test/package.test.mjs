@@ -120,3 +120,40 @@ test('overlayManifests: собранное заменяет «скоро», ос
   assert.equal(out.spec_version, '2026-11-04')
   assert.equal(base.collections[0].resources[0].planned, true, 'исходный список не меняется')
 })
+
+test('нарезка: целый округ уходит из списка, части наследуют поиск и дороги', async () => {
+  const { overlayManifests } = await import('../src/package.mjs')
+  const base = {
+    spec_version: '2026-11',
+    collections: [{ slug: 'russia', resources: [
+      { id: 'ru-volga', planned: true, search: { url: 's' }, routes: { url: 'r' } },
+      { id: 'ru-volga-overview', url: 'o' },
+      { id: 'ru-central', url: 'c' },
+    ] }],
+  }
+  const part = { spec_version: '2026-11', collections: [{ slug: 'russia', resources: [
+    { id: 'ru-volga-west', parent: 'ru-volga', url: 'w' },
+    { id: 'ru-volga-west-overview', parent: 'ru-volga', url: 'wo' },
+  ] }] }
+  const keep = new Set(['ru-central', 'ru-volga-west'])
+  const res = overlayManifests(base, [part], { keep }).collections[0].resources
+  const ids = res.map((r) => r.id)
+  assert.ok(!ids.includes('ru-volga') && !ids.includes('ru-volga-overview'))
+  assert.ok(ids.includes('ru-central'))
+  const w = res.find((r) => r.id === 'ru-volga-west')
+  assert.equal(w.search.url, 's')
+  assert.equal(w.routes.url, 'r')
+  assert.equal(res.find((r) => r.id === 'ru-volga-west-overview').search, undefined)
+})
+
+test('regions.json: части покрывают целые округа без дыр, у каждой — родитель без карты', async () => {
+  const { loadRegions, mapRegions } = await import('../src/regions.mjs')
+  const { fileURLToPath } = await import('node:url')
+  const regions = loadRegions(fileURLToPath(new URL('../regions.json', import.meta.url)))
+  for (const parent of regions.filter((r) => r.maps === false)) {
+    const parts = regions.filter((r) => r.parent === parent.id)
+    assert.ok(parts.length >= 2, parent.id)
+    assert.deepEqual(parts.flatMap((p) => p.source.admin1).sort(), [...parent.source.admin1].sort())
+  }
+  assert.ok(!mapRegions(regions).some((r) => r.id === 'ru-volga'))
+})

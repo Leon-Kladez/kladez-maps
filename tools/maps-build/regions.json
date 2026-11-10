@@ -58,6 +58,50 @@
    "variants": [
     "full",
     "overview"
+   ],
+   "maps": false
+  },
+  {
+   "id": "ru-northwest-west",
+   "title": "Северо-Западный федеральный округ: Петербург и запад",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Санкт-Петербург и Ленинградская область, Новгородская, Псковская, Вологодская, Калининградская области",
+   "parent": "ru-northwest",
+   "source": {
+    "admin1": [
+     "RU-SPE",
+     "RU-LEN",
+     "RU-NGR",
+     "RU-PSK",
+     "RU-VLG",
+     "RU-KGD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-northwest-north",
+   "title": "Северо-Западный федеральный округ: север",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Карелия, Коми, Архангельская и Мурманская области, Ненецкий АО",
+   "parent": "ru-northwest",
+   "source": {
+    "admin1": [
+     "RU-KR",
+     "RU-KO",
+     "RU-ARK",
+     "RU-MUR",
+     "RU-NEN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
    ]
   },
   {
@@ -127,6 +171,69 @@
      "RU-SAM",
      "RU-SAR",
      "RU-ULY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ],
+   "maps": false
+  },
+  {
+   "id": "ru-volga-west",
+   "title": "Приволжский федеральный округ: запад",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Нижегородская, Пензенская, Ульяновская области, Чувашия, Марий Эл, Мордовия",
+   "parent": "ru-volga",
+   "source": {
+    "admin1": [
+     "RU-NIZ",
+     "RU-PNZ",
+     "RU-ULY",
+     "RU-CU",
+     "RU-ME",
+     "RU-MO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-volga-center",
+   "title": "Приволжский федеральный округ: центр",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Татарстан, Удмуртия, Самарская, Саратовская, Кировская области",
+   "parent": "ru-volga",
+   "source": {
+    "admin1": [
+     "RU-TA",
+     "RU-UD",
+     "RU-SAM",
+     "RU-SAR",
+     "RU-KIR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ru-volga-east",
+   "title": "Приволжский федеральный округ: восток",
+   "group": "russia",
+   "country": "RU",
+   "contents": "Башкортостан, Пермский край, Оренбургская область",
+   "parent": "ru-volga",
+   "source": {
+    "admin1": [
+     "RU-BA",
+     "RU-PER",
+     "RU-ORE"
     ]
    },
    "variants": [

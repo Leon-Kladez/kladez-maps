@@ -20,7 +20,7 @@ import { mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync }
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parseArgs } from 'node:util'
-import { loadRegions, VARIANT_MAXZOOM } from './regions.mjs'
+import { loadRegions, mapRegions, VARIANT_MAXZOOM } from './regions.mjs'
 import { fetchAdmin1, NE_ADMIN0_PATH } from './geodata.mjs'
 import { districtSchema, regionGeometry } from './geometry.mjs'
 import { PART_SIZE_LIMIT, extractArgs, fetchLatestBuild, parseDryRunBytes, runPmtiles } from './extract.mjs'
@@ -41,7 +41,7 @@ async function build(o) {
   if (!o.group) throw new Error('нужен --group')
   mkdirSync(o.out, { recursive: true })
   const only = o.only ? new Set(o.only.split(',')) : null
-  const regions = loadRegions(REGIONS_PATH).filter((r) => r.group === o.group && (!only || only.has(r.id)))
+  const regions = mapRegions(loadRegions(REGIONS_PATH)).filter((r) => r.group === o.group && (!only || only.has(r.id)))
   if (regions.length === 0) throw new Error(`в группе ${o.group} нет выбранных регионов`)
 
   const info = await fetchLatestBuild()
@@ -109,7 +109,7 @@ async function build(o) {
 async function districts(o) {
   const ne0 = JSON.parse(readFileSync(NE_ADMIN0_PATH, 'utf8'))
   const ne1 = JSON.parse(readFileSync(await fetchAdmin1(o['ne-dir'] ?? 'out/geodata'), 'utf8'))
-  writeFileSync(o.out, JSON.stringify(districtSchema(loadRegions(REGIONS_PATH), ne0, ne1)) + '\n')
+  writeFileSync(o.out, JSON.stringify(districtSchema(mapRegions(loadRegions(REGIONS_PATH)), ne0, ne1)) + '\n')
 }
 
 function draft(o) {
@@ -127,7 +127,9 @@ function merge(o) {
     .map((f) => JSON.parse(readFileSync(join(o.out, f), 'utf8')))
   if (parts.length === 0) throw new Error(`в ${o.out} нет manifest-*.json`)
   // --base: прежний maps.json (или черновик) — собранное кладём поверх него.
-  const merged = o.base ? overlayManifests(JSON.parse(readFileSync(o.base, 'utf8')), parts) : mergeManifests(parts)
+  // Записи регионов без своей карты (целые округа, нарезанные на части) из списка убираются.
+  const keep = new Set(mapRegions(loadRegions(REGIONS_PATH)).map((r) => r.id))
+  const merged = o.base ? overlayManifests(JSON.parse(readFileSync(o.base, 'utf8')), parts, { keep }) : mergeManifests(parts)
   writeFileSync(join(o.out, 'maps.json'), JSON.stringify(merged, null, 1) + '\n')
 }
 

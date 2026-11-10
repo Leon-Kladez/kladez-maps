@@ -71,3 +71,13 @@ test('файлы дорог: имя и поле routes рядом с search', ()
   assert.equal(out.routes.url, 'r')
   assert.equal(out.search.url, 's')
 })
+
+test('части нарезанного региона получают его указатель и дороги', () => {
+  const m = { collections: [{ slug: 'russia', resources: [
+    { id: 'ru-volga-west', parent: 'ru-volga' },
+    { id: 'ru-volga-west-overview', parent: 'ru-volga' },
+  ] }] }
+  attachData(m, [{ kind: 'routes', region: 'ru-volga', version: '2026-11', url: 'r', size: 1e9, sha256: 'x' }])
+  assert.equal(m.collections[0].resources[0].routes.url, 'r')
+  assert.equal(m.collections[0].resources[1].routes, undefined)
+})

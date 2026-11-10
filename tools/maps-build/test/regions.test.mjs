@@ -34,10 +34,15 @@ test('regions.json проходит проверку, id уникальны и �
   }
 })
 
-test('Россия — 8 федеральных округов (9, если ДФО разделён)', () => {
+test('Россия — все 85 субъектов ровно в одной карте; у каждой карты есть «что входит»', () => {
   const ru = loadRegions(REGIONS).filter((r) => r.group === 'russia')
-  assert.ok(ru.length === 8 || ru.length === 9, `округов: ${ru.length}`)
-  for (const r of ru) assert.ok(r.contents && r.contents.length > 0, r.id)
+  // Целые округа (maps: false) — для поиска и дорог; карты — части и обычные округа.
+  const maps = ru.filter((r) => r.maps !== false)
+  const admin1 = maps.flatMap((r) => r.source.admin1 ?? [])
+  assert.equal(new Set(admin1).size, admin1.length, 'субъект в двух картах')
+  const all = ru.filter((r) => !r.parent).flatMap((r) => r.source.admin1 ?? [])
+  assert.deepEqual([...admin1].sort(), [...all].sort())
+  for (const r of maps) assert.ok(r.contents && r.contents.length > 0, r.id)
 })
 
 test('повторный id — ошибка с этим id', () => {

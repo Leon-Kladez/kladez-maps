@@ -38,7 +38,9 @@ export function attachData(manifest, files) {
   for (const col of manifest.collections ?? []) {
     for (const res of col.resources ?? []) {
       for (const f of files) {
-        if (f.region !== res.id) continue
+        // Сам регион или подробная часть нарезанного региона (у частей указатель и дороги — от родителя).
+        const isPart = res.parent === f.region && !String(res.id).endsWith('-overview')
+        if (f.region !== res.id && !isPart) continue
         res[f.kind ?? 'search'] = {
           url: f.url,
           size_mb: Math.max(1, Math.round(f.size / 1e6)),

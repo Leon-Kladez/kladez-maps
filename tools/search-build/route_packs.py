@@ -64,6 +64,13 @@ def point_in_poly(x, y, poly):
     return in_ring(poly[0]) and not any(in_ring(h) for h in poly[1:])
 
 
+try:  # Быстрая геометрия (на сборке ставится pip install shapely); без неё — медленный запасной путь.
+    from shapely.geometry import box as _box, shape as _shape
+    from shapely.prepared import prep as _prep
+except ImportError:  # pragma: no cover
+    _shape = None
+
+
 class Region:
     def __init__(self, rid: str, geom: dict):
         self.id = rid
@@ -73,12 +80,15 @@ class Region:
         self.bbox = (min(xs), min(ys), max(xs), max(ys))
         # Точки контура — для кусочков крупнее самого региона (уровень 0).
         self.vertices = [(p[0], p[1]) for poly in self.polys for p in poly[0]]
+        self.prepared = _prep(_shape(geom).buffer(0)) if _shape else None
 
     def touches(self, bb, margin: float) -> bool:
         w, s, e, n = bb[0] - margin, bb[1] - margin, bb[2] + margin, bb[3] + margin
         rw, rs, re_, rn = self.bbox
         if e < rw or w > re_ or n < rs or s > rn:
             return False
+        if self.prepared is not None:
+            return self.prepared.intersects(_box(w, s, e, n))
         # Сетка точек по квадрату (с запасом): хоть одна внутри региона?
         steps = 4
         for i in range(steps + 1):

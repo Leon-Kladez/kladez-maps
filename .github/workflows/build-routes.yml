@@ -88,6 +88,8 @@ jobs:
           du -sh work/tiles; df -h / | tail -1
       - name: Нарезать по округам
         run: |
+          pip3 install -q --user shapely==2.1.1 || pip3 install -q --user --break-system-packages shapely==2.1.1
+          python3 -c "import shapely; print('shapely', shapely.__version__)"
           python3 -m unittest discover -s tools/search-build -p 'test_route_packs.py'
           extras=()
           for f in work/tiles/admins.sqlite work/tiles/timezones.sqlite; do [ -f "$f" ] && extras+=("$f"); done

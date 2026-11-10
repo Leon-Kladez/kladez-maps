@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { attachSearch, SEARCH_FILE_RE } from './attach.mjs'
+import { attachData, attachSearch, parseDataFilename, SEARCH_FILE_RE } from './attach.mjs'
 import { toSingleMultiPolygon } from './outlines.mjs'
 import { overlayManifests } from '../maps-build/src/package.mjs'
 
@@ -50,4 +50,24 @@ test('контур региона — один MultiPolygon', () => {
   })
   assert.equal(f.geometry.type, 'MultiPolygon')
   assert.equal(f.geometry.coordinates.length, 3)
+})
+
+test('файлы дорог: имя и поле routes рядом с search', () => {
+  assert.deepEqual(parseDataFilename('routes-ru-central_2026-11.tar'), { kind: 'routes', region: 'ru-central', version: '2026-11' })
+  assert.deepEqual(parseDataFilename('search-ru-central_2026-11.sqlite'), { kind: 'search', region: 'ru-central', version: '2026-11' })
+  assert.equal(parseDataFilename('routes-ru-central_2026-11.sqlite'), null)
+  assert.equal(parseDataFilename('ru-central_2026-11.pmtiles'), null)
+  const m = manifest()
+  attachData(m, [
+    { kind: 'search', region: 'ru-central', version: '2026-11', url: 's', size: 1e6, sha256: 'a' },
+    { kind: 'routes', region: 'ru-central', version: '2026-11', url: 'r', size: 900e6, sha256: 'b' },
+  ])
+  const res = m.collections[0].resources[0]
+  assert.equal(res.search.url, 's')
+  assert.deepEqual(res.routes, { url: 'r', size_mb: 900, sha256: 'b', version: '2026-11' })
+  // Пересборка карты сохраняет и то и другое.
+  const part = { spec_version: '2026-11', collections: [{ slug: 'russia', resources: [{ id: 'ru-central', version: '2026-11', url: 'new' }] }] }
+  const out = overlayManifests(m, [part]).collections[0].resources.find((r) => r.id === 'ru-central')
+  assert.equal(out.routes.url, 'r')
+  assert.equal(out.search.url, 's')
 })

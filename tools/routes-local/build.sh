@@ -27,12 +27,16 @@ data() {
   [ -s "$D/source.osm.pbf" ] && { log "данные уже готовы"; return; }
   # Европа у Geofabrik уже включает Украину, Беларусь, Молдову, Грузию и Турцию; остальное СНГ и
   # Израиль — из Азии. Всё одной сборкой: эти страны граничат и с Россией, и с Европой.
-  for s in russia russia/crimean-fed-district europe asia/kazakhstan asia/uzbekistan asia/kyrgyzstan            asia/tajikistan asia/turkmenistan asia/azerbaijan asia/armenia asia/israel-and-palestine; do
+  for s in russia russia/crimean-fed-district europe asia/kazakhstan asia/uzbekistan asia/kyrgyzstan            asia/tajikistan asia/turkmenistan asia/azerbaijan asia/armenia asia/israel-and-palestine            asia/lebanon asia/syria asia/jordan asia/iraq asia/iran asia/gcc-states asia/yemen africa/egypt; do
     b=$(basename "$s")
     [ -s "$D/src/$b.roads.osm.pbf" ] && continue
     url="https://download.geofabrik.de/${s}-latest.osm.pbf"
     log "скачиваю $s"
-    curl -fsSL --retry 5 -C - -o "$D/src/$b.osm.pbf" "$url"
+    for try in 1 2 3 4 5 6 7 8 9 10; do
+      curl -fsSL --retry 5 --retry-all-errors -C - -o "$D/src/$b.osm.pbf" "$url" && break
+      log "не скачалось ($try), жду 2 минуты и докачиваю"; sleep 120
+      [ "$try" = 10 ] && { log "не удалось скачать $s"; exit 1; }
+    done
     if curl -fsSL --retry 3 -o "$D/src/$b.md5" "$url.md5"; then
       (cd "$D/src" && sed "s#[^ ]*\$#$b.osm.pbf#" "$b.md5" | md5sum -c -)
     else

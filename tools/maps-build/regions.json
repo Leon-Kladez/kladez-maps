@@ -2763,6 +2763,201 @@
    ]
   },
   {
+   "id": "lb",
+   "title": "Ливан",
+   "group": "middle-east",
+   "country": "LB",
+   "source": {
+    "countries": [
+     "LB"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sy",
+   "title": "Сирия",
+   "group": "middle-east",
+   "country": "SY",
+   "source": {
+    "countries": [
+     "SY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "jo",
+   "title": "Иордания",
+   "group": "middle-east",
+   "country": "JO",
+   "source": {
+    "countries": [
+     "JO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "iq",
+   "title": "Ирак",
+   "group": "middle-east",
+   "country": "IQ",
+   "source": {
+    "countries": [
+     "IQ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ir",
+   "title": "Иран",
+   "group": "middle-east",
+   "country": "IR",
+   "source": {
+    "countries": [
+     "IR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sa",
+   "title": "Саудовская Аравия",
+   "group": "middle-east",
+   "country": "SA",
+   "source": {
+    "countries": [
+     "SA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ae",
+   "title": "ОАЭ",
+   "group": "middle-east",
+   "country": "AE",
+   "source": {
+    "countries": [
+     "AE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "qa",
+   "title": "Катар",
+   "group": "middle-east",
+   "country": "QA",
+   "source": {
+    "countries": [
+     "QA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bh",
+   "title": "Бахрейн",
+   "group": "middle-east",
+   "country": "BH",
+   "source": {
+    "countries": [
+     "BH"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "kw",
+   "title": "Кувейт",
+   "group": "middle-east",
+   "country": "KW",
+   "source": {
+    "countries": [
+     "KW"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "om",
+   "title": "Оман",
+   "group": "middle-east",
+   "country": "OM",
+   "source": {
+    "countries": [
+     "OM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ye",
+   "title": "Йемен",
+   "group": "middle-east",
+   "country": "YE",
+   "source": {
+    "countries": [
+     "YE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "eg",
+   "title": "Египет",
+   "group": "middle-east",
+   "country": "EG",
+   "source": {
+    "countries": [
+     "EG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
    "id": "us-id",
    "title": "США: Айдахо",
    "group": "north-america",

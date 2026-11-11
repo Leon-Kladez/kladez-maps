@@ -75,6 +75,20 @@ export const GEOFABRIK = {
   // Ближний Восток.
   IL: ['asia/israel-and-palestine'],
   TR: ['europe/turkey'],
+  LB: ['asia/lebanon'],
+  SY: ['asia/syria'],
+  JO: ['asia/jordan'],
+  IQ: ['asia/iraq'],
+  IR: ['asia/iran'],
+  // Страны Персидского залива у Geofabrik — одним файлом.
+  SA: ['asia/gcc-states'],
+  AE: ['asia/gcc-states'],
+  QA: ['asia/gcc-states'],
+  BH: ['asia/gcc-states'],
+  KW: ['asia/gcc-states'],
+  OM: ['asia/gcc-states'],
+  YE: ['asia/yemen'],
+  EG: ['africa/egypt'],
 }
 
 /**

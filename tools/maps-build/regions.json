@@ -1105,9 +1105,98 @@
    "title": "Норвегия",
    "group": "europe",
    "country": "NO",
+   "contents": "Вся Норвегия со Шпицбергеном",
+   "maps": false,
    "source": {
-    "countries": [
-     "NO"
+    "admin1": [
+     "NO-01",
+     "NO-02",
+     "NO-03",
+     "NO-04",
+     "NO-05",
+     "NO-06",
+     "NO-07",
+     "NO-08",
+     "NO-09",
+     "NO-10",
+     "NO-11",
+     "NO-12",
+     "NO-14",
+     "NO-15",
+     "NO-16",
+     "NO-17",
+     "NO-18",
+     "NO-19",
+     "NO-20",
+     "NO-21"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "no-southeast",
+   "title": "Норвегия: Осло и юго-восток",
+   "group": "europe",
+   "country": "NO",
+   "contents": "Осло, Акерсхус, Эстфолл, Вестфолл, Бускеруд, Телемарк, Хедмарк, Оппланн",
+   "parent": "no",
+   "source": {
+    "admin1": [
+     "NO-01",
+     "NO-02",
+     "NO-03",
+     "NO-04",
+     "NO-05",
+     "NO-06",
+     "NO-07",
+     "NO-08"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "no-west",
+   "title": "Норвегия: запад и фьорды",
+   "group": "europe",
+   "country": "NO",
+   "contents": "Берген, Ставангер, Агдер, Согн-ог-Фьюране, Мёре-ог-Ромсдал",
+   "parent": "no",
+   "source": {
+    "admin1": [
+     "NO-09",
+     "NO-10",
+     "NO-11",
+     "NO-12",
+     "NO-14",
+     "NO-15"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "no-north",
+   "title": "Норвегия: Тронхейм и север",
+   "group": "europe",
+   "country": "NO",
+   "contents": "Трёнделаг (Тронхейм), Нурланн, Тромс, Финнмарк, Шпицберген",
+   "parent": "no",
+   "source": {
+    "admin1": [
+     "NO-16",
+     "NO-17",
+     "NO-18",
+     "NO-19",
+     "NO-20",
+     "NO-21"
     ]
    },
    "variants": [
@@ -1150,9 +1239,100 @@
    "title": "Швеция",
    "group": "europe",
    "country": "SE",
+   "contents": "Вся Швеция с Готландом",
+   "maps": false,
    "source": {
-    "countries": [
-     "SE"
+    "admin1": [
+     "SE-O",
+     "SE-M",
+     "SE-N",
+     "SE-K",
+     "SE-G",
+     "SE-H",
+     "SE-F",
+     "SE-E",
+     "SE-I",
+     "SE-AB",
+     "SE-C",
+     "SE-D",
+     "SE-U",
+     "SE-T",
+     "SE-S",
+     "SE-W",
+     "SE-X",
+     "SE-Y",
+     "SE-Z",
+     "SE-AC",
+     "SE-BD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "se-south",
+   "title": "Швеция: юг",
+   "group": "europe",
+   "country": "SE",
+   "contents": "Гётеборг, Мальмё, Сконе, Халланд, Смоланд, Эстергётланд, Готланд",
+   "parent": "se",
+   "source": {
+    "admin1": [
+     "SE-O",
+     "SE-M",
+     "SE-N",
+     "SE-K",
+     "SE-G",
+     "SE-H",
+     "SE-F",
+     "SE-E",
+     "SE-I"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "se-center",
+   "title": "Швеция: Стокгольм и центр",
+   "group": "europe",
+   "country": "SE",
+   "contents": "Стокгольм, Уппсала, Сёдерманланд, Вестманланд, Эребру, Вермланд, Даларна",
+   "parent": "se",
+   "source": {
+    "admin1": [
+     "SE-AB",
+     "SE-C",
+     "SE-D",
+     "SE-U",
+     "SE-T",
+     "SE-S",
+     "SE-W"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "se-north",
+   "title": "Швеция: север",
+   "group": "europe",
+   "country": "SE",
+   "contents": "Евлеборг, Вестерноррланд, Емтланд, Вестерботтен, Норрботтен",
+   "parent": "se",
+   "source": {
+    "admin1": [
+     "SE-X",
+     "SE-Y",
+     "SE-Z",
+     "SE-AC",
+     "SE-BD"
     ]
    },
    "variants": [

@@ -2,8 +2,12 @@
 # Одна сборка графа дорог Valhalla на всю Россию (данные OpenStreetMap, Geofabrik), затем нарезка
 # по округам — как у карт (route_packs.py). Кусочки на границах одинаковые в соседних наборах,
 # поэтому у пользователя наборы складываются в одну папку и маршрут идёт через границу округов.
-# После сборки — пробные маршруты прямо на GitHub; затем файлы routes-<регион>_<версия>.tar
-# выкладываются в текущий выпуск карт, а в maps.json у пакета региона появляется поле routes.
+# area=russia-europe — одна сборка на Россию и всю Европу сразу: наборы по каждой карте Европы
+# (страна или часть страны) и по округам России, маршрут идёт и через границы стран.
+# Перед выкладкой — пробные маршруты по всему графу и по наборам (скачана только Испания;
+# Испания и Франция) — так, как будет у пользователя.
+# Затем файлы routes-<регион>_<версия>.tar выкладываются в текущий выпуск карт, а в maps.json
+# у пакета региона появляется поле routes.
 #
 # Токены не нужны: выкладывает в свой репозиторий своими правами (github.token).
 name: Сборка дорог для маршрутов
@@ -11,6 +15,11 @@ name: Сборка дорог для маршрутов
 on:
   workflow_dispatch:
     inputs:
+      area:
+        description: 'Что собирать'
+        type: choice
+        options: [russia, russia-europe]
+        default: russia
       upload:
         description: 'Выложить файлы в выпуск карт'
         type: boolean
@@ -25,13 +34,14 @@ concurrency:
 
 env:
   REPO: ${{ github.repository }}
+  AREA: ${{ inputs.area || 'russia' }}
   VALHALLA_IMAGE: ghcr.io/valhalla/valhalla:3.9.1
-  REGIONS: ru-central,ru-northwest,ru-south,ru-north-caucasus,ru-volga,ru-urals,ru-siberia,ru-far-east-south,ru-far-east-north
+  RU_REGIONS: ru-central,ru-northwest,ru-south,ru-north-caucasus,ru-volga,ru-urals,ru-siberia,ru-far-east-south,ru-far-east-north
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -39,7 +49,7 @@ jobs:
       # Python со своими пакетами: у системного (3.14) ещё нет готовой сборки shapely.
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - name: Выпуск карт
+      - name: Выпуск карт и список регионов
         id: tag
         env:
           GH_TOKEN: ${{ github.token }}
@@ -48,33 +58,71 @@ jobs:
           [ -n "$tag" ] || { echo "нет выпуска карт"; exit 1; }
           echo "TAG=$tag" >> "$GITHUB_ENV"
           echo "VERSION=${tag#maps-}" >> "$GITHUB_ENV"
+          regions=$RU_REGIONS
+          if [ "$AREA" = russia-europe ]; then
+            # Каждая карта Европы (страна или часть большой страны) — свой набор дорог.
+            eu=$(node -e "
+              import('./tools/maps-build/src/regions.mjs').then(({ loadRegions }) => {
+                const r = loadRegions('tools/maps-build/regions.json')
+                console.log(r.filter((x) => x.group === 'europe' && x.maps !== false).map((x) => x.id).join(','))
+              })")
+            regions="$regions,$eu"
+          fi
+          echo "REGIONS=$regions" >> "$GITHUB_ENV"
+          echo "регионов: $(echo "$regions" | tr ',' '\n' | wc -l)"
       - name: Освободить место, поставить osmium, скачать Valhalla
         run: |
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true
           sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
           docker pull -q "$VALHALLA_IMAGE"
-          df -h / | tail -1; free -g | head -2; nproc
+          if [ "$AREA" = russia-europe ]; then
+            # Европа большая — работаем на втором диске сервера (/mnt), там места больше.
+            sudo mkdir -p /mnt/work && sudo chown "$(id -u)" /mnt/work && ln -s /mnt/work work
+          else
+            mkdir -p work
+          fi
+          echo "WORK=$(readlink -f work)" >> "$GITHUB_ENV"
+          df -h / /mnt | tail -2; free -g | head -2; nproc
           # Память во время сборки — чтобы знать запас.
           ( while true; do free -m | awk '/Mem/{print $3}' >> "$RUNNER_TEMP/mem.txt"; sleep 15; done ) &
-      - name: Скачать данные OpenStreetMap (Россия и Крым)
+      - name: Скачать данные OpenStreetMap
         run: |
           mkdir -p work/src
-          for s in russia russia/crimean-fed-district; do
+          if [ "$AREA" = russia-europe ]; then sources="russia russia/crimean-fed-district europe"; else sources="russia russia/crimean-fed-district"; fi
+          start=$(date +%s)
+          for s in $sources; do
             f="work/src/$(basename "$s").osm.pbf"
             url="https://download.geofabrik.de/${s}-latest.osm.pbf"
             curl -fsSL --retry 3 -o "$f" "$url"
-            curl -fsSL --retry 3 -o "$f.md5" "$url.md5"
+            curl -fsSL --retry 3 -o "$f.md5" "$url.md5" || { sleep 60; curl -fsSL --retry 3 -o "$f.md5" "$url.md5"; }
             (cd work/src && sed "s#[^ ]*\$#$(basename "$f")#" "$(basename "$f").md5" | md5sum -c -)
+            if [ "$AREA" = russia-europe ]; then
+              # Для дорог нужны только дороги, паромы, запреты поворотов и границы (для стран и
+              # часовых поясов) — остальное (дома, леса, точки) отбрасываем: в разы меньше и быстрее.
+              osmium tags-filter "$f" w/highway w/route=ferry w/railway=platform w/public_transport=platform \
+                w/man_made=pier r/type=restriction r/boundary=administrative \
+                -o "${f%.osm.pbf}.roads.osm.pbf" --overwrite
+              rm -f "$f"
+              ls -la "${f%.osm.pbf}.roads.osm.pbf"
+            fi
+            df -h "$WORK" | tail -1
           done
-          osmium merge work/src/russia.osm.pbf work/src/crimean-fed-district.osm.pbf -o work/source.osm.pbf --overwrite
+          if [ "$AREA" = russia-europe ]; then
+            osmium merge work/src/*.roads.osm.pbf -o work/source.osm.pbf --overwrite
+          else
+            osmium merge work/src/russia.osm.pbf work/src/crimean-fed-district.osm.pbf -o work/source.osm.pbf --overwrite
+          fi
           rm -rf work/src
-          ls -la work/source.osm.pbf; df -h / | tail -1
-      - name: Контуры округов
-        run: node tools/search-build/outlines.mjs --group russia --out work
-      - name: Граф дорог Valhalla (вся Россия)
+          echo "скачать и подготовить: $(( ($(date +%s) - start) / 60 )) мин"
+          ls -la work/source.osm.pbf; df -h "$WORK" | tail -1
+      - name: Контуры регионов
+        run: |
+          node tools/search-build/outlines.mjs --group russia --out work
+          if [ "$AREA" = russia-europe ]; then node tools/search-build/outlines.mjs --group europe --out work; fi
+      - name: Граф дорог Valhalla
         run: |
           start=$(date +%s)
-          docker run --rm -v "$PWD/work:/data" "$VALHALLA_IMAGE" bash -c '
+          docker run --rm -v "$WORK:/data" "$VALHALLA_IMAGE" bash -c '
             set -e
             cd /data
             mkdir -p /data/tiles
@@ -86,10 +134,10 @@ jobs:
             valhalla_build_tiles -c /data/valhalla.json /data/source.osm.pbf
           '
           echo "сборка графа: $(( ($(date +%s) - start) / 60 )) мин; память до $(sort -n "$RUNNER_TEMP/mem.txt" | tail -1) МБ"
-          sudo chown -R "$(id -u)" work
-          rm -f work/source.osm.pbf
-          du -sh work/tiles; df -h / | tail -1
-      - name: Нарезать по округам
+          sudo chown -R "$(id -u)" "$WORK"
+          rm -f work/source.osm.pbf work/*.bin
+          du -sh work/tiles; ls -la work/tiles/*.sqlite || true; df -h "$WORK" | tail -1
+      - name: Нарезать по регионам
         run: |
           python -m pip install -q shapely==2.1.1
           python -c "import shapely, sys; print('shapely', shapely.__version__, 'python', sys.version.split()[0])"
@@ -98,16 +146,43 @@ jobs:
           for f in work/tiles/admins.sqlite work/tiles/timezones.sqlite; do [ -f "$f" ] && extras+=("$f"); done
           python tools/search-build/route_packs.py --tiles work/tiles --outlines work --out work/packs \
             --version "$VERSION" --regions "$REGIONS" --extra "${extras[@]}" | tee work/packs.json
-          ls -la work/packs
+          ls -la work/packs; du -sh work/packs
           for f in work/packs/*.tar; do
             [ "$(stat -c %s "$f")" -lt 2100000000 ] || { echo "$f больше 2 ГБ — GitHub не примет, нужно делить"; exit 1; }
           done
-      - name: Пробные маршруты (и через границу округов)
+      - name: Пробные маршруты по всему графу (и через границы)
         run: |
-          docker run -d --name vh -p 8002:8002 -v "$PWD/work:/data" "$VALHALLA_IMAGE" valhalla_service /data/valhalla.json 2
+          docker run -d --name vh -p 8002:8002 -v "$WORK:/data" "$VALHALLA_IMAGE" valhalla_service /data/valhalla.json 2
           for i in $(seq 1 90); do curl -sf localhost:8002/status >/dev/null && break; sleep 2; done
-          for r in ${REGIONS//,/ } cross; do node tools/search-build/route-check.mjs "$r" || { docker logs --tail 50 vh; exit 1; }; done
+          checks="${REGIONS//,/ } cross"
+          [ "$AREA" = russia-europe ] && checks="$checks eu-cross ru-eu"
+          for r in $checks; do node tools/search-build/route-check.mjs "$r" || { docker logs --tail 50 vh; exit 1; }; done
           docker rm -f vh >/dev/null
+      # Как у пользователя: в папке только скачанные наборы. Сначала одна Испания (маршруты по
+      # Испании есть, во Францию — нет), потом Испания и Франция (Мадрид → Париж строится).
+      - name: Пробные маршруты по наборам (как у пользователя)
+        if: env.AREA == 'russia-europe'
+        run: |
+          try() {  # $1 — наборы через пробел, $2 — проверки, которые должны пройти, $3 — которые не должны
+            rm -rf work/user && mkdir -p work/user/tiles
+            for p in $1; do tar -xf "work/packs/routes-${p}_$VERSION.tar" -C work/user/tiles; done
+            sed 's#/data/tiles#/data/user/tiles#g' work/valhalla.json > work/user/valhalla.json
+            echo "== наборы: $1 ($(du -sh work/user/tiles | cut -f1))"
+            docker run -d --name vhu -p 8002:8002 -v "$WORK:/data" "$VALHALLA_IMAGE" valhalla_service /data/user/valhalla.json 2
+            for i in $(seq 1 90); do curl -sf localhost:8002/status >/dev/null && break; sleep 2; done
+            ok=true
+            for r in $2; do node tools/search-build/route-check.mjs "$r" || ok=false; done
+            for r in $3; do
+              if node tools/search-build/route-check.mjs "$r"; then echo "$r построился без нужных наборов?"; ok=false
+              else echo "$r без наборов не строится — так и должно быть"; fi
+            done
+            curl -sf localhost:8002/status >/dev/null || { echo "Valhalla упала"; ok=false; }
+            docker logs --tail 20 vhu
+            docker rm -f vhu >/dev/null
+            $ok
+          }
+          try "es-north es-center es-south" "es-center" "eu-cross"
+          try "es-north es-center es-south fr-north fr-east fr-west fr-southwest fr-south fr-southeast" "es-center fr-north eu-cross" ""
       - name: Выложить в выпуск карт
         if: inputs.upload
         env:

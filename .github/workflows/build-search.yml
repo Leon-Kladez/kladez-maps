@@ -4,14 +4,21 @@
 # Файлы search-<регион>_<версия>.sqlite выкладываются в текущий выпуск карт, а в maps.json
 # у пакета региона появляется поле search — по нему Кладезъ скачивает указатель вместе с картой.
 #
+# Россия — задание на федеральный округ. Другие группы (europe) — задание на файл Geofabrik
+# (tools/search-build/plan.mjs): страна скачивается один раз, указатель — на каждую её карту
+# (у Франции, Германии и других нарезанных стран — на каждую часть, чтобы был меньше 2 ГБ).
+#
 # Токены не нужны: выкладывает в свой репозиторий своими правами (github.token).
 name: Сборка указателей поиска
 
 on:
   workflow_dispatch:
     inputs:
+      group:
+        description: 'Группа: russia или europe'
+        default: 'russia'
       only:
-        description: 'Только эти регионы (id через запятую), пусто — вся Россия'
+        description: 'Только эти регионы (Россия: id; другие группы: коды стран или id), пусто — вся группа'
         default: ''
 
 permissions:
@@ -30,8 +37,11 @@ jobs:
     outputs:
       tag: ${{ steps.tag.outputs.tag }}
       version: ${{ steps.tag.outputs.version }}
-      regions: ${{ steps.regions.outputs.json }}
+      jobs: ${{ steps.jobs.outputs.json }}
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
       - id: tag
         env:
           GH_TOKEN: ${{ github.token }}
@@ -41,26 +51,41 @@ jobs:
           [ -n "$tag" ] || { echo "нет выпуска карт"; exit 1; }
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
           echo "version=${tag#maps-}" >> "$GITHUB_OUTPUT"
-      - id: regions
+      - id: jobs
         env:
+          GROUP_INPUT: ${{ inputs.group }}
           ONLY_INPUT: ${{ inputs.only }}
         run: |
-          all='ru-central,ru-northwest,ru-south,ru-north-caucasus,ru-volga,ru-urals,ru-siberia,ru-far-east-south,ru-far-east-north'
-          r="${ONLY_INPUT:-$all}"
-          echo "json=$(echo "$r" | jq -R -c 'split(",") | map(gsub("^[[:space:]]+|[[:space:]]+$"; "")) | map(select(length > 0))')" >> "$GITHUB_OUTPUT"
+          group="${GROUP_INPUT:-russia}"
+          if [ "$group" = "russia" ]; then
+            all='ru-central,ru-northwest,ru-south,ru-north-caucasus,ru-volga,ru-urals,ru-siberia,ru-far-east-south,ru-far-east-north'
+            r="${ONLY_INPUT:-$all}"
+            json=$(echo "$r" | jq -R -c --arg g "$group" 'split(",") | map(gsub("^[[:space:]]+|[[:space:]]+$"; "")) | map(select(length > 0))
+              | map({key: ., regions: ., sources: "", group: $g})')
+          else
+            only=()
+            [ -n "$ONLY_INPUT" ] && only=(--only "$ONLY_INPUT")
+            json=$(node tools/search-build/plan.mjs --group "$group" "${only[@]}" | jq -c --arg g "$group" 'map(. + {group: $g})')
+          fi
+          echo "$json" | jq -r '.[] | "\(.key): \(.regions)"'
+          echo "json=$json" >> "$GITHUB_OUTPUT"
 
   build:
     needs: prepare
+    name: ${{ matrix.job.key }}
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 340
     strategy:
       fail-fast: false
       # Не больше трёх скачиваний с Geofabrik одновременно — по их просьбе беречь сервер.
       max-parallel: 3
       matrix:
-        region: ${{ fromJSON(needs.prepare.outputs.regions) }}
+        job: ${{ fromJSON(needs.prepare.outputs.jobs) }}
     env:
-      REGION: ${{ matrix.region }}
+      KEY: ${{ matrix.job.key }}
+      REGIONS: ${{ matrix.job.regions }}
+      SOURCES: ${{ matrix.job.sources }}
+      GROUP: ${{ matrix.job.group }}
       TAG: ${{ needs.prepare.outputs.tag }}
       VERSION: ${{ needs.prepare.outputs.version }}
     steps:
@@ -76,42 +101,57 @@ jobs:
       - name: Тесты сборщика
         run: |
           python3 -m unittest discover -s tools/search-build -p 'test_*.py'
-          node --test tools/search-build/attach.test.mjs
+          node --test tools/search-build/attach.test.mjs tools/search-build/plan.test.mjs
       - name: Скачать данные OpenStreetMap
-        run: tools/search-build/fetch-region.sh "$REGION" work
-      - name: Вырезать регион по контуру карты
         run: |
-          node tools/search-build/outlines.mjs --group russia --only "$REGION" --out work
+          if [ -z "$SOURCES" ]; then
+            tools/search-build/fetch-region.sh "$KEY" work
+          else
+            tools/search-build/fetch-sources.sh work $SOURCES
+          fi
+      - name: Вырезать регионы по контуру карты
+        run: |
+          node tools/search-build/outlines.mjs --group "$GROUP" --only "$REGIONS" --out work
           osmium extract -c work/extract.json work/source.osm.pbf --overwrite
           rm -f work/source.osm.pbf
           ls -la work/pbf
-      - name: Собрать указатель
-        run: |
-          osmium tags-filter "work/pbf/$REGION.osm.pbf" \
-            nwr/name nwr/addr:housenumber nwr/place \
-            nwr/amenity=pharmacy,hospital,clinic,doctors,dentist,police,fire_station,fuel,atm,bank,toilets,drinking_water,shelter,post_office,charging_station,veterinary,water_point,ambulance_station,defibrillator,marketplace \
-            -o work/filtered.osm.pbf --overwrite
-          out="work/search-${REGION}_${VERSION}.sqlite"
-          osmium export work/filtered.osm.pbf -c tools/search-build/export-config.json -f geojsonseq \
-            -x print_record_separator=false -o - |
-            python3 tools/search-build/build_index.py --out "$out" --region "$REGION" --version "$VERSION"
-          ls -la "$out"
-          size=$(stat -c %s "$out")
-          [ "$size" -lt 2100000000 ] || { echo "указатель больше 2 ГБ — GitHub не примет"; exit 1; }
-      - name: Выложить в выпуск карт
+      - name: Собрать и выложить указатели
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          out="work/search-${REGION}_${VERSION}.sqlite"
-          gh release upload "$TAG" "$out" --repo "$REPO" --clobber
           mkdir -p parts
-          node tools/search-build/attach.mjs describe --file "$out" --repo "$REPO" --tag "$TAG" > "parts/search-$REGION.json"
-          cat "parts/search-$REGION.json"
+          for REGION in ${REGIONS//,/ }; do
+            echo "::group::$REGION"
+            osmium tags-filter "work/pbf/$REGION.osm.pbf" \
+              nwr/name nwr/addr:housenumber nwr/place \
+              nwr/amenity=pharmacy,hospital,clinic,doctors,dentist,police,fire_station,fuel,atm,bank,toilets,drinking_water,shelter,post_office,charging_station,veterinary,water_point,ambulance_station,defibrillator,marketplace \
+              -o work/filtered.osm.pbf --overwrite
+            rm -f "work/pbf/$REGION.osm.pbf"
+            out="work/search-${REGION}_${VERSION}.sqlite"
+            osmium export work/filtered.osm.pbf -c tools/search-build/export-config.json -f geojsonseq \
+              -x print_record_separator=false -o - |
+              python3 tools/search-build/build_index.py --out "$out" --region "$REGION" --version "$VERSION"
+            ls -la "$out"
+            size=$(stat -c %s "$out")
+            if [ "$size" -ge 2100000000 ]; then
+              echo "::error::$REGION: указатель больше 2 ГБ — GitHub не примет"
+              rm -f "$out"
+              echo "::endgroup::"
+              continue
+            fi
+            gh release upload "$TAG" "$out" --repo "$REPO" --clobber
+            node tools/search-build/attach.mjs describe --file "$out" --repo "$REPO" --tag "$TAG" > "parts/search-$REGION.json"
+            cat "parts/search-$REGION.json"
+            rm -f "$out" work/filtered.osm.pbf
+            echo "::endgroup::"
+          done
+          ls parts/*.json >/dev/null 2>&1 || { echo "ни один указатель не собрался"; exit 1; }
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: search-${{ matrix.region }}
-          path: parts/search-${{ matrix.region }}.json
-          if-no-files-found: error
+          name: search-${{ matrix.job.key }}
+          path: parts/search-*.json
+          if-no-files-found: ignore
 
   publish:
     needs: [prepare, build]

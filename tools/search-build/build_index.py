@@ -256,9 +256,13 @@ def build(lines, out_path: str, region: str, version: str, log=sys.stderr) -> di
         lat, lon = pt
         name = (p.get('name:ru') or p.get('name') or '').strip()
         name_en = (p.get('name:en') or '').strip() or None
+        # Местное название, если показываем русское («Brīvības iela» у «улицы Бривибас»):
+        # по нему дома находят свою улицу (addr:street — местное) и его тоже можно искать.
+        local = (p.get('name') or '').strip()
+        local = local if local and local != name else None
         place = p.get('place')
         if place in PLACE_RANK and name:
-            places.append((name, name_en, place, lat, lon))
+            places.append((name, name_en, place, lat, lon, local))
             if place in SETTLEMENT_RADIUS_KM:
                 finder.add(name, place, lat, lon, p.get('population'))
             continue
@@ -268,10 +272,10 @@ def build(lines, out_path: str, region: str, version: str, log=sys.stderr) -> di
         addr_city = (p.get('addr:city') or '').strip() or None
         kind = poi_kind(p)
         if p.get('highway') in STREET_HIGHWAYS and name and kind is None:
-            streets_raw.append((name, name_en, lat, lon))
+            streets_raw.append((name, name_en, lat, lon, local))
             continue
         if kind and (name or kind in POI_UNNAMED):
-            pois.append((name, name_en, kind, lat, lon, street or addr_place or None, house or None, addr_city))
+            pois.append((name, name_en, kind, lat, lon, street or addr_place or None, house or None, addr_city, local))
         if house and (street or addr_place):
             addrs.append((street or addr_place, not street, house, lat, lon, addr_city))
     print(f'{region}: прочитано за {time.time() - t0:.0f} с — мест {len(places)}, улиц (кусков) {len(streets_raw)}, '
@@ -293,30 +297,32 @@ def build(lines, out_path: str, region: str, version: str, log=sys.stderr) -> di
     )
     next_id = [1]
 
-    def add_item(cls, kind, name, name_en, city, street, house, lat, lon, rank):
+    def add_item(cls, kind, name, name_en, city, street, house, lat, lon, rank, local=None):
         i = next_id[0]
         next_id[0] += 1
         db.execute('INSERT INTO items VALUES (?,?,?,?,?,?,?,?,?,?,?)',
                    (i, cls, kind, name, name_en, city, street, house, round(lat, 6), round(lon, 6), rank))
         db.execute('INSERT INTO items_fts(rowid, name, name_en, words, city) VALUES (?,?,?,?,?)',
-                   (i, name, name_en or '', KIND_WORDS.get(kind or '', ''), city or ''))
+                   (i, name, name_en or '', ' '.join(w for w in (KIND_WORDS.get(kind or '', ''), local) if w), city or ''))
         return i
 
     # Населённые пункты; районы города — с городом рядом.
     place_ids = KeyedGrid()  # norm(name)
-    for name, name_en, kind, lat, lon in places:
+    for name, name_en, kind, lat, lon, local in places:
         # Город бывает и точкой, и границей: второй раз рядом (до 15 км) не записываем.
         if place_ids.nearest(f'{kind}|{norm(name)}', lat, lon, 15) is not None:
             continue
         city = None if kind in SETTLEMENT_RADIUS_KM else finder.find(lat, lon)
-        i = add_item('place', kind, name, name_en, city, None, None, lat, lon, PLACE_RANK[kind])
+        i = add_item('place', kind, name, name_en, city, None, None, lat, lon, PLACE_RANK[kind], local)
         place_ids.add(norm(name), i, lat, lon)
+        if local:
+            place_ids.add(norm(local), i, lat, lon)
         place_ids.add(f'{kind}|{norm(name)}', i, lat, lon)
 
     # Улицы: куски одной улицы в одном городе — одна запись.
     groups: dict[tuple, list] = defaultdict(list)
-    for name, name_en, lat, lon in streets_raw:
-        groups[(street_key(name), finder.find(lat, lon))].append((name, name_en, lat, lon))
+    for name, name_en, lat, lon, local in streets_raw:
+        groups[(street_key(name), finder.find(lat, lon))].append((name, name_en, lat, lon, local))
     street_ids = KeyedGrid()  # street_key
     for (key, city), parts in groups.items():
         name = max((p[0] for p in parts), key=lambda n: sum(1 for q in parts if q[0] == n))
@@ -325,8 +331,11 @@ def build(lines, out_path: str, region: str, version: str, log=sys.stderr) -> di
         lon = sum(p[3] for p in parts) / len(parts)
         # Точка — кусок улицы, ближайший к середине (у изогнутой улицы середина бывает в стороне).
         near = min(parts, key=lambda p: km(lat, lon, p[2], p[3]))
-        i = add_item('street', 'street', name, name_en, city, None, None, near[2], near[3], STREET_RANK)
+        local = next((p[4] for p in parts if p[4]), None)
+        i = add_item('street', 'street', name, name_en, city, None, None, near[2], near[3], STREET_RANK, local)
         street_ids.add(key, i, near[2], near[3])
+        if local and street_key(local) != key:
+            street_ids.add(street_key(local), i, near[2], near[3])
 
     # Адреса → дома улиц.
     created_streets = 0
@@ -347,10 +356,10 @@ def build(lines, out_path: str, region: str, version: str, log=sys.stderr) -> di
         houses += 1
 
     # Места.
-    for name, name_en, kind, lat, lon, street, house, addr_city in pois:
+    for name, name_en, kind, lat, lon, street, house, addr_city, local in pois:
         city = addr_city or finder.find(lat, lon)
         rank = POI_RANK.get(kind, POI_RANK_DEFAULT) if name else POI_RANK_UNNAMED
-        add_item('poi', kind, name or '', name_en, city, street, house, lat, lon, rank)
+        add_item('poi', kind, name or '', name_en, city, street, house, lat, lon, rank, local)
 
     db.executescript(
         """

@@ -51,6 +51,10 @@ FIXTURE = [
     feat({'amenity': 'bench', 'name': 'Скамейка'}, pt(55.74, 37.62)),  # скучное — нет
     feat({'railway': 'station', 'station': 'subway', 'name': 'Третьяковская'}, pt(55.7408, 37.6262)),
     '\x1e' + feat({'shop': 'bakery', 'name': 'Хлеб'}, pt(55.743, 37.627)),
+    # Улица с русским и местным названием (Рига): дома ссылаются на местное — та же улица.
+    feat({'highway': 'primary', 'name': 'Brīvības iela', 'name:ru': 'улица Бривибас'},
+         line((56.955, 24.120), (56.957, 24.125))),
+    feat({'addr:street': 'Brīvības iela', 'addr:housenumber': '21'}, pt(56.9561, 24.1221)),
     '{битая строка',
 ]
 
@@ -124,6 +128,14 @@ class BuildIndexTest(unittest.TestCase):
         r = self.find('пятницкая москва')
         self.assertTrue(any(x[0] == 'street' and x[3] == 'Москва' for x in r))
         self.assertFalse(any(x[3] == 'Ивановка' for x in r))
+
+    def test_local_name_links_houses_and_is_searchable(self):
+        r = [x for x in self.find('бривибас') if x[0] == 'street']
+        self.assertEqual(len(r), 1)  # дома не завели вторую улицу по местному названию
+        self.assertEqual(r[0][2], 'улица Бривибас')
+        h = self.db.execute('SELECT house FROM houses WHERE street_id=?', (r[0][4],)).fetchall()
+        self.assertEqual(h, [('21',)])
+        self.assertTrue([x for x in self.find('"brivibas"*') if x[4] == r[0][4]])  # и по-местному
 
     def test_street_key(self):
         self.assertEqual(bi.street_key('улица Ленина'), bi.street_key('Ленина улица'))

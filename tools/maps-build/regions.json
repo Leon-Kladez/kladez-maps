@@ -741,6 +741,1817 @@
    ]
   },
   {
+   "id": "al",
+   "title": "Албания",
+   "group": "europe",
+   "country": "AL",
+   "source": {
+    "countries": [
+     "AL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ad",
+   "title": "Андорра",
+   "group": "europe",
+   "country": "AD",
+   "source": {
+    "countries": [
+     "AD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "at",
+   "title": "Австрия",
+   "group": "europe",
+   "country": "AT",
+   "source": {
+    "countries": [
+     "AT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ax",
+   "title": "Аландские острова",
+   "group": "europe",
+   "country": "AX",
+   "source": {
+    "countries": [
+     "AX"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ba",
+   "title": "Босния и Герцеговина",
+   "group": "europe",
+   "country": "BA",
+   "source": {
+    "countries": [
+     "BA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "be",
+   "title": "Бельгия",
+   "group": "europe",
+   "country": "BE",
+   "source": {
+    "countries": [
+     "BE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bg",
+   "title": "Болгария",
+   "group": "europe",
+   "country": "BG",
+   "source": {
+    "countries": [
+     "BG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ch",
+   "title": "Швейцария",
+   "group": "europe",
+   "country": "CH",
+   "source": {
+    "countries": [
+     "CH"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "dk",
+   "title": "Дания",
+   "group": "europe",
+   "country": "DK",
+   "source": {
+    "countries": [
+     "DK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fo",
+   "title": "Фарерские острова",
+   "group": "europe",
+   "country": "FO",
+   "source": {
+    "countries": [
+     "FO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gg",
+   "title": "Гернси",
+   "group": "europe",
+   "country": "GG",
+   "source": {
+    "countries": [
+     "GG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gr",
+   "title": "Греция",
+   "group": "europe",
+   "country": "GR",
+   "source": {
+    "countries": [
+     "GR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "hr",
+   "title": "Хорватия",
+   "group": "europe",
+   "country": "HR",
+   "source": {
+    "countries": [
+     "HR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "hu",
+   "title": "Венгрия",
+   "group": "europe",
+   "country": "HU",
+   "source": {
+    "countries": [
+     "HU"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ie",
+   "title": "Ирландия",
+   "group": "europe",
+   "country": "IE",
+   "source": {
+    "countries": [
+     "IE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "im",
+   "title": "Остров Мэн",
+   "group": "europe",
+   "country": "IM",
+   "source": {
+    "countries": [
+     "IM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "is",
+   "title": "Исландия",
+   "group": "europe",
+   "country": "IS",
+   "source": {
+    "countries": [
+     "IS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "je",
+   "title": "Джерси",
+   "group": "europe",
+   "country": "JE",
+   "source": {
+    "countries": [
+     "JE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "li",
+   "title": "Лихтенштейн",
+   "group": "europe",
+   "country": "LI",
+   "source": {
+    "countries": [
+     "LI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "lu",
+   "title": "Люксембург",
+   "group": "europe",
+   "country": "LU",
+   "source": {
+    "countries": [
+     "LU"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mc",
+   "title": "Монако",
+   "group": "europe",
+   "country": "MC",
+   "source": {
+    "countries": [
+     "MC"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mk",
+   "title": "Северная Македония",
+   "group": "europe",
+   "country": "MK",
+   "source": {
+    "countries": [
+     "MK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mt",
+   "title": "Мальта",
+   "group": "europe",
+   "country": "MT",
+   "source": {
+    "countries": [
+     "MT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "nl",
+   "title": "Нидерланды",
+   "group": "europe",
+   "country": "NL",
+   "source": {
+    "countries": [
+     "NL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "no",
+   "title": "Норвегия",
+   "group": "europe",
+   "country": "NO",
+   "source": {
+    "countries": [
+     "NO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "pt",
+   "title": "Португалия",
+   "group": "europe",
+   "country": "PT",
+   "source": {
+    "countries": [
+     "PT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ro",
+   "title": "Румыния",
+   "group": "europe",
+   "country": "RO",
+   "source": {
+    "countries": [
+     "RO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "se",
+   "title": "Швеция",
+   "group": "europe",
+   "country": "SE",
+   "source": {
+    "countries": [
+     "SE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "si",
+   "title": "Словения",
+   "group": "europe",
+   "country": "SI",
+   "source": {
+    "countries": [
+     "SI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sk",
+   "title": "Словакия",
+   "group": "europe",
+   "country": "SK",
+   "source": {
+    "countries": [
+     "SK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sm",
+   "title": "Сан-Марино",
+   "group": "europe",
+   "country": "SM",
+   "source": {
+    "countries": [
+     "SM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "va",
+   "title": "Ватикан",
+   "group": "europe",
+   "country": "VA",
+   "source": {
+    "countries": [
+     "VA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "xk",
+   "title": "Косово",
+   "group": "europe",
+   "country": "XK",
+   "source": {
+    "countries": [
+     "XK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fr",
+   "title": "Франция",
+   "group": "europe",
+   "country": "FR",
+   "contents": "Вся материковая Франция и Корсика",
+   "maps": false,
+   "source": {
+    "admin1": [
+     "FR-59",
+     "FR-02",
+     "FR-50",
+     "FR-14",
+     "FR-27",
+     "FR-76",
+     "FR-80",
+     "FR-62",
+     "FR-75",
+     "FR-92",
+     "FR-93",
+     "FR-95",
+     "FR-78",
+     "FR-60",
+     "FR-61",
+     "FR-91",
+     "FR-77",
+     "FR-94",
+     "FR-08",
+     "FR-55",
+     "FR-54",
+     "FR-57",
+     "FR-67",
+     "FR-68",
+     "FR-90",
+     "FR-25",
+     "FR-39",
+     "FR-52",
+     "FR-51",
+     "FR-88",
+     "FR-10",
+     "FR-58",
+     "FR-21",
+     "FR-70",
+     "FR-71",
+     "FR-89",
+     "FR-85",
+     "FR-44",
+     "FR-56",
+     "FR-29",
+     "FR-22",
+     "FR-35",
+     "FR-37",
+     "FR-36",
+     "FR-41",
+     "FR-53",
+     "FR-72",
+     "FR-45",
+     "FR-49",
+     "FR-18",
+     "FR-28",
+     "FR-64",
+     "FR-40",
+     "FR-33",
+     "FR-17",
+     "FR-87",
+     "FR-19",
+     "FR-23",
+     "FR-24",
+     "FR-16",
+     "FR-47",
+     "FR-79",
+     "FR-86",
+     "FR-06",
+     "FR-04",
+     "FR-05",
+     "FR-31",
+     "FR-65",
+     "FR-09",
+     "FR-66",
+     "FR-83",
+     "FR-13",
+     "FR-30",
+     "FR-34",
+     "FR-11",
+     "FR-2B",
+     "FR-2A",
+     "FR-32",
+     "FR-82",
+     "FR-81",
+     "FR-12",
+     "FR-46",
+     "FR-84",
+     "FR-48",
+     "FR-73",
+     "FR-74",
+     "FR-01",
+     "FR-38",
+     "FR-26",
+     "FR-69",
+     "FR-07",
+     "FR-42",
+     "FR-63",
+     "FR-03",
+     "FR-43",
+     "FR-15"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fr-north",
+   "title": "Франция: Париж и север",
+   "group": "europe",
+   "country": "FR",
+   "contents": "Иль-де-Франс (Париж), О-де-Франс, Нормандия",
+   "parent": "fr",
+   "source": {
+    "admin1": [
+     "FR-59",
+     "FR-02",
+     "FR-50",
+     "FR-14",
+     "FR-27",
+     "FR-76",
+     "FR-80",
+     "FR-62",
+     "FR-75",
+     "FR-92",
+     "FR-93",
+     "FR-95",
+     "FR-78",
+     "FR-60",
+     "FR-61",
+     "FR-91",
+     "FR-77",
+     "FR-94"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fr-east",
+   "title": "Франция: восток",
+   "group": "europe",
+   "country": "FR",
+   "contents": "Гранд-Эст (Страсбург), Бургундия — Франш-Конте",
+   "parent": "fr",
+   "source": {
+    "admin1": [
+     "FR-08",
+     "FR-55",
+     "FR-54",
+     "FR-57",
+     "FR-67",
+     "FR-68",
+     "FR-90",
+     "FR-25",
+     "FR-39",
+     "FR-52",
+     "FR-51",
+     "FR-88",
+     "FR-10",
+     "FR-58",
+     "FR-21",
+     "FR-70",
+     "FR-71",
+     "FR-89"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fr-west",
+   "title": "Франция: запад",
+   "group": "europe",
+   "country": "FR",
+   "contents": "Бретань, Земли Луары (Нант), Центр — Долина Луары",
+   "parent": "fr",
+   "source": {
+    "admin1": [
+     "FR-85",
+     "FR-44",
+     "FR-56",
+     "FR-29",
+     "FR-22",
+     "FR-35",
+     "FR-37",
+     "FR-36",
+     "FR-41",
+     "FR-53",
+     "FR-72",
+     "FR-45",
+     "FR-49",
+     "FR-18",
+     "FR-28"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fr-southwest",
+   "title": "Франция: юго-запад",
+   "group": "europe",
+   "country": "FR",
+   "contents": "Новая Аквитания (Бордо)",
+   "parent": "fr",
+   "source": {
+    "admin1": [
+     "FR-64",
+     "FR-40",
+     "FR-33",
+     "FR-17",
+     "FR-87",
+     "FR-19",
+     "FR-23",
+     "FR-24",
+     "FR-16",
+     "FR-47",
+     "FR-79",
+     "FR-86"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fr-south",
+   "title": "Франция: юг и Корсика",
+   "group": "europe",
+   "country": "FR",
+   "contents": "Окситания (Тулуза, Монпелье), Прованс — Лазурный Берег (Марсель, Ницца), Корсика",
+   "parent": "fr",
+   "source": {
+    "admin1": [
+     "FR-06",
+     "FR-04",
+     "FR-05",
+     "FR-31",
+     "FR-65",
+     "FR-09",
+     "FR-66",
+     "FR-83",
+     "FR-13",
+     "FR-30",
+     "FR-34",
+     "FR-11",
+     "FR-2B",
+     "FR-2A",
+     "FR-32",
+     "FR-82",
+     "FR-81",
+     "FR-12",
+     "FR-46",
+     "FR-84",
+     "FR-48"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fr-southeast",
+   "title": "Франция: Лион и Альпы",
+   "group": "europe",
+   "country": "FR",
+   "contents": "Овернь — Рона — Альпы (Лион, Гренобль)",
+   "parent": "fr",
+   "source": {
+    "admin1": [
+     "FR-73",
+     "FR-74",
+     "FR-01",
+     "FR-38",
+     "FR-26",
+     "FR-69",
+     "FR-07",
+     "FR-42",
+     "FR-63",
+     "FR-03",
+     "FR-43",
+     "FR-15"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "it",
+   "title": "Италия",
+   "group": "europe",
+   "country": "IT",
+   "contents": "Вся Италия с Сицилией и Сардинией",
+   "maps": false,
+   "source": {
+    "admin1": [
+     "IT-AO",
+     "IT-VB",
+     "IT-VA",
+     "IT-CO",
+     "IT-SO",
+     "IT-IM",
+     "IT-CN",
+     "IT-TO",
+     "IT-SP",
+     "IT-GE",
+     "IT-SV",
+     "IT-AT",
+     "IT-BG",
+     "IT-BS",
+     "IT-CR",
+     "IT-MN",
+     "IT-MI",
+     "IT-LC",
+     "IT-MB",
+     "IT-LO",
+     "IT-VC",
+     "IT-PV",
+     "IT-NO",
+     "IT-AL",
+     "IT-BI",
+     "IT-BZ",
+     "IT-RN",
+     "IT-BL",
+     "IT-UD",
+     "IT-GO",
+     "IT-TS",
+     "IT-VE",
+     "IT-PD",
+     "IT-RO",
+     "IT-FE",
+     "IT-RA",
+     "IT-FC",
+     "IT-TN",
+     "IT-VI",
+     "IT-VR",
+     "IT-TV",
+     "IT-PC",
+     "IT-PR",
+     "IT-RE",
+     "IT-MO",
+     "IT-BO",
+     "IT-PN",
+     "IT-PU",
+     "IT-AN",
+     "IT-MC",
+     "IT-FM",
+     "IT-AP",
+     "IT-TE",
+     "IT-PE",
+     "IT-CH",
+     "IT-CB",
+     "IT-LT",
+     "IT-RM",
+     "IT-VT",
+     "IT-GR",
+     "IT-LI",
+     "IT-PI",
+     "IT-LU",
+     "IT-MS",
+     "IT-CI",
+     "IT-SS",
+     "IT-NU",
+     "IT-OT",
+     "IT-OR",
+     "IT-VS",
+     "IT-CA",
+     "IT-OG",
+     "IT-SI",
+     "IT-AR",
+     "IT-FI",
+     "IT-RI",
+     "IT-PT",
+     "IT-TR",
+     "IT-PG",
+     "IT-FR",
+     "IT-AQ",
+     "IT-IS",
+     "IT-PO",
+     "IT-FG",
+     "IT-BT",
+     "IT-BA",
+     "IT-BR",
+     "IT-LE",
+     "IT-TA",
+     "IT-MT",
+     "IT-CS",
+     "IT-KR",
+     "IT-CZ",
+     "IT-RC",
+     "IT-VV",
+     "IT-PZ",
+     "IT-SA",
+     "IT-NA",
+     "IT-CE",
+     "IT-TP",
+     "IT-ME",
+     "IT-PA",
+     "IT-AG",
+     "IT-CL",
+     "IT-RG",
+     "IT-SR",
+     "IT-CT",
+     "IT-EN",
+     "IT-BN",
+     "IT-AV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "it-northwest",
+   "title": "Италия: северо-запад",
+   "group": "europe",
+   "country": "IT",
+   "contents": "Ломбардия (Милан), Пьемонт (Турин), Лигурия (Генуя), Валле-д’Аоста",
+   "parent": "it",
+   "source": {
+    "admin1": [
+     "IT-AO",
+     "IT-VB",
+     "IT-VA",
+     "IT-CO",
+     "IT-SO",
+     "IT-IM",
+     "IT-CN",
+     "IT-TO",
+     "IT-SP",
+     "IT-GE",
+     "IT-SV",
+     "IT-AT",
+     "IT-BG",
+     "IT-BS",
+     "IT-CR",
+     "IT-MN",
+     "IT-MI",
+     "IT-LC",
+     "IT-MB",
+     "IT-LO",
+     "IT-VC",
+     "IT-PV",
+     "IT-NO",
+     "IT-AL",
+     "IT-BI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "it-northeast",
+   "title": "Италия: северо-восток",
+   "group": "europe",
+   "country": "IT",
+   "contents": "Венеция, Эмилия-Романья (Болонья), Трентино — Альто-Адидже, Фриули — Венеция-Джулия",
+   "parent": "it",
+   "source": {
+    "admin1": [
+     "IT-BZ",
+     "IT-RN",
+     "IT-BL",
+     "IT-UD",
+     "IT-GO",
+     "IT-TS",
+     "IT-VE",
+     "IT-PD",
+     "IT-RO",
+     "IT-FE",
+     "IT-RA",
+     "IT-FC",
+     "IT-TN",
+     "IT-VI",
+     "IT-VR",
+     "IT-TV",
+     "IT-PC",
+     "IT-PR",
+     "IT-RE",
+     "IT-MO",
+     "IT-BO",
+     "IT-PN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "it-center",
+   "title": "Италия: центр и Сардиния",
+   "group": "europe",
+   "country": "IT",
+   "contents": "Лацио (Рим), Тоскана (Флоренция), Умбрия, Марке, Абруццо, Молизе, Сардиния",
+   "parent": "it",
+   "source": {
+    "admin1": [
+     "IT-PU",
+     "IT-AN",
+     "IT-MC",
+     "IT-FM",
+     "IT-AP",
+     "IT-TE",
+     "IT-PE",
+     "IT-CH",
+     "IT-CB",
+     "IT-LT",
+     "IT-RM",
+     "IT-VT",
+     "IT-GR",
+     "IT-LI",
+     "IT-PI",
+     "IT-LU",
+     "IT-MS",
+     "IT-CI",
+     "IT-SS",
+     "IT-NU",
+     "IT-OT",
+     "IT-OR",
+     "IT-VS",
+     "IT-CA",
+     "IT-OG",
+     "IT-SI",
+     "IT-AR",
+     "IT-FI",
+     "IT-RI",
+     "IT-PT",
+     "IT-TR",
+     "IT-PG",
+     "IT-FR",
+     "IT-AQ",
+     "IT-IS",
+     "IT-PO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "it-south",
+   "title": "Италия: юг и Сицилия",
+   "group": "europe",
+   "country": "IT",
+   "contents": "Кампания (Неаполь), Апулия, Базиликата, Калабрия, Сицилия",
+   "parent": "it",
+   "source": {
+    "admin1": [
+     "IT-FG",
+     "IT-BT",
+     "IT-BA",
+     "IT-BR",
+     "IT-LE",
+     "IT-TA",
+     "IT-MT",
+     "IT-CS",
+     "IT-KR",
+     "IT-CZ",
+     "IT-RC",
+     "IT-VV",
+     "IT-PZ",
+     "IT-SA",
+     "IT-NA",
+     "IT-CE",
+     "IT-TP",
+     "IT-ME",
+     "IT-PA",
+     "IT-AG",
+     "IT-CL",
+     "IT-RG",
+     "IT-SR",
+     "IT-CT",
+     "IT-EN",
+     "IT-BN",
+     "IT-AV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "es",
+   "title": "Испания",
+   "group": "europe",
+   "country": "ES",
+   "contents": "Вся Испания с Балеарскими и Канарскими островами",
+   "maps": false,
+   "source": {
+    "admin1": [
+     "ES-NA",
+     "ES-SS",
+     "ES-HU",
+     "ES-L",
+     "ES-GI",
+     "ES-OR",
+     "ES-SA",
+     "ES-ZA",
+     "ES-PO",
+     "ES-B",
+     "ES-T",
+     "ES-C",
+     "ES-LU",
+     "ES-O",
+     "ES-S",
+     "ES-BI",
+     "ES-Z",
+     "ES-LO",
+     "ES-VI",
+     "ES-TE",
+     "ES-LE",
+     "ES-SO",
+     "ES-BU",
+     "ES-AV",
+     "ES-P",
+     "ES-SG",
+     "ES-VA",
+     "ES-BA",
+     "ES-CC",
+     "ES-CS",
+     "ES-V",
+     "ES-A",
+     "ES-MU",
+     "ES-PM",
+     "ES-AB",
+     "ES-CU",
+     "ES-TO",
+     "ES-CR",
+     "ES-GU",
+     "ES-M",
+     "ES-CE",
+     "ES-ML",
+     "ES-CA",
+     "ES-H",
+     "ES-AL",
+     "ES-GR",
+     "ES-MA",
+     "ES-SE",
+     "ES-TF",
+     "ES-GC",
+     "ES-CO",
+     "ES-J"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "es-north",
+   "title": "Испания: север",
+   "group": "europe",
+   "country": "ES",
+   "contents": "Каталония (Барселона), Галисия, Астурия, Кантабрия, Страна Басков, Наварра, Риоха, Арагон, Кастилия и Леон",
+   "parent": "es",
+   "source": {
+    "admin1": [
+     "ES-NA",
+     "ES-SS",
+     "ES-HU",
+     "ES-L",
+     "ES-GI",
+     "ES-OR",
+     "ES-SA",
+     "ES-ZA",
+     "ES-PO",
+     "ES-B",
+     "ES-T",
+     "ES-C",
+     "ES-LU",
+     "ES-O",
+     "ES-S",
+     "ES-BI",
+     "ES-Z",
+     "ES-LO",
+     "ES-VI",
+     "ES-TE",
+     "ES-LE",
+     "ES-SO",
+     "ES-BU",
+     "ES-AV",
+     "ES-P",
+     "ES-SG",
+     "ES-VA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "es-center",
+   "title": "Испания: центр и восток",
+   "group": "europe",
+   "country": "ES",
+   "contents": "Мадрид, Валенсия, Мурсия, Кастилия — Ла-Манча, Эстремадура, Балеарские острова (Майорка)",
+   "parent": "es",
+   "source": {
+    "admin1": [
+     "ES-BA",
+     "ES-CC",
+     "ES-CS",
+     "ES-V",
+     "ES-A",
+     "ES-MU",
+     "ES-PM",
+     "ES-AB",
+     "ES-CU",
+     "ES-TO",
+     "ES-CR",
+     "ES-GU",
+     "ES-M"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "es-south",
+   "title": "Испания: юг и Канары",
+   "group": "europe",
+   "country": "ES",
+   "contents": "Андалусия (Севилья, Малага), Канарские острова, Сеута, Мелилья",
+   "parent": "es",
+   "source": {
+    "admin1": [
+     "ES-CE",
+     "ES-ML",
+     "ES-CA",
+     "ES-H",
+     "ES-AL",
+     "ES-GR",
+     "ES-MA",
+     "ES-SE",
+     "ES-TF",
+     "ES-GC",
+     "ES-CO",
+     "ES-J"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gb",
+   "title": "Великобритания",
+   "group": "europe",
+   "country": "GB",
+   "contents": "Англия, Шотландия, Уэльс и Северная Ирландия",
+   "maps": false,
+   "source": {
+    "admin1": [
+     "GB-NFK",
+     "GB-SFK",
+     "GB-ESS",
+     "GB-SOS",
+     "GB-THR",
+     "GB-KEN",
+     "GB-MDW",
+     "GB-ESX",
+     "GB-BNH",
+     "GB-WSX",
+     "GB-HAM",
+     "GB-POR",
+     "GB-STH",
+     "GB-IOW",
+     "GB-WND",
+     "GB-MRT",
+     "GB-WSM",
+     "GB-KEC",
+     "GB-HNS",
+     "GB-EAL",
+     "GB-HMF",
+     "GB-RIC",
+     "GB-LND",
+     "GB-TWH",
+     "GB-ENF",
+     "GB-HRT",
+     "GB-BNE",
+     "GB-WFT",
+     "GB-RDB",
+     "GB-HAV",
+     "GB-CAM",
+     "GB-BEX",
+     "GB-STN",
+     "GB-MIK",
+     "GB-BKM",
+     "GB-HIL",
+     "GB-BEN",
+     "GB-LUT",
+     "GB-HRW",
+     "GB-CBF",
+     "GB-BDF",
+     "GB-CMD",
+     "GB-ISL",
+     "GB-PTE",
+     "GB-LBH",
+     "GB-SWK",
+     "GB-CRY",
+     "GB-LEW",
+     "GB-HRY",
+     "GB-KTT",
+     "GB-NWM",
+     "GB-GRE",
+     "GB-HCK",
+     "GB-BDG",
+     "GB-BRY",
+     "GB-OXF",
+     "GB-WBK",
+     "GB-WOK",
+     "GB-BRC",
+     "GB-WNM",
+     "GB-SLG",
+     "GB-RDG",
+     "GB-SRY",
+     "GB-FLN",
+     "GB-WRX",
+     "GB-POW",
+     "GB-MON",
+     "GB-GLS",
+     "GB-DOR",
+     "GB-BMH",
+     "GB-POL",
+     "GB-DEV",
+     "GB-TOB",
+     "GB-PLY",
+     "GB-CON",
+     "GB-SOM",
+     "GB-NSM",
+     "GB-BST",
+     "GB-SGC",
+     "GB-NWP",
+     "GB-CRF",
+     "GB-VGL",
+     "GB-BGE",
+     "GB-NTL",
+     "GB-SWA",
+     "GB-CMN",
+     "GB-PEM",
+     "GB-CGN",
+     "GB-GWN",
+     "GB-CWY",
+     "GB-DEN",
+     "GB-AGY",
+     "GB-IOS",
+     "GB-CAY",
+     "GB-RCT",
+     "GB-BGW",
+     "GB-TOF",
+     "GB-MTY",
+     "GB-SWD",
+     "GB-BAS",
+     "GB-WIL",
+     "GB-CHW",
+     "GB-SHR",
+     "GB-HEF",
+     "GB-NBL",
+     "GB-CMA",
+     "GB-NTY",
+     "GB-STY",
+     "GB-SND",
+     "GB-DUR",
+     "GB-HPL",
+     "GB-RCC",
+     "GB-NYK",
+     "GB-ERY",
+     "GB-KHL",
+     "GB-NLN",
+     "GB-NEL",
+     "GB-LIN",
+     "GB-WRL",
+     "GB-HAL",
+     "GB-KWL",
+     "GB-LIV",
+     "GB-SFT",
+     "GB-LAN",
+     "GB-BPL",
+     "GB-STT",
+     "GB-DAL",
+     "GB-MDB",
+     "GB-GAT",
+     "GB-NET",
+     "GB-YOR",
+     "GB-SHN",
+     "GB-RUT",
+     "GB-NTT",
+     "GB-NTH",
+     "GB-DNC",
+     "GB-LEC",
+     "GB-CHE",
+     "GB-DBY",
+     "GB-ROT",
+     "GB-SHF",
+     "GB-STE",
+     "GB-TFW",
+     "GB-STS",
+     "GB-WOR",
+     "GB-WAR",
+     "GB-WGN",
+     "GB-SKP",
+     "GB-WRT",
+     "GB-BBD",
+     "GB-CLD",
+     "GB-KIR",
+     "GB-NGM",
+     "GB-LCE",
+     "GB-DER",
+     "GB-LDS",
+     "GB-BRD",
+     "GB-WKF",
+     "GB-BNS",
+     "GB-SLF",
+     "GB-BOL",
+     "GB-TRF",
+     "GB-MAN",
+     "GB-OLD",
+     "GB-RCH",
+     "GB-TAM",
+     "GB-BUR",
+     "GB-SOL",
+     "GB-COV",
+     "GB-BIR",
+     "GB-SAW",
+     "GB-DUD",
+     "GB-WLL",
+     "GB-WLV",
+     "GB-DRY",
+     "GB-STB",
+     "GB-FER",
+     "GB-DGN",
+     "GB-ARM",
+     "GB-NYM",
+     "GB-SCB",
+     "GB-DGY",
+     "GB-LMV",
+     "GB-CLR",
+     "GB-MYL",
+     "GB-LRN",
+     "GB-CKF",
+     "GB-NTA",
+     "GB-BFS",
+     "GB-NDN",
+     "GB-ARD",
+     "GB-DOW",
+     "GB-CLK",
+     "GB-STG",
+     "GB-FAL",
+     "GB-WLN",
+     "GB-EDH",
+     "GB-MLN",
+     "GB-ELN",
+     "GB-SAY",
+     "GB-NAY",
+     "GB-IVC",
+     "GB-RFW",
+     "GB-WDU",
+     "GB-AGB",
+     "GB-HLD",
+     "GB-MRY",
+     "GB-ABD",
+     "GB-ABE",
+     "GB-ANS",
+     "GB-DND",
+     "GB-PKN",
+     "GB-FIF",
+     "GB-ELS",
+     "GB-ORK",
+     "GB-ZET",
+     "GB-NLK",
+     "GB-EDU",
+     "GB-GLG",
+     "GB-ERW",
+     "GB-EAY",
+     "GB-SLK",
+     "GB-MFT",
+     "GB-OMH",
+     "GB-CKT",
+     "GB-CGV",
+     "GB-BNB",
+     "GB-ANT",
+     "GB-LSB",
+     "GB-BLY",
+     "GB-BLA",
+     "GB-CSR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gb-london",
+   "title": "Великобритания: Лондон и юго-восток",
+   "group": "europe",
+   "country": "GB",
+   "contents": "Большой Лондон, Юго-Восток, Восток Англии",
+   "parent": "gb",
+   "source": {
+    "admin1": [
+     "GB-NFK",
+     "GB-SFK",
+     "GB-ESS",
+     "GB-SOS",
+     "GB-THR",
+     "GB-KEN",
+     "GB-MDW",
+     "GB-ESX",
+     "GB-BNH",
+     "GB-WSX",
+     "GB-HAM",
+     "GB-POR",
+     "GB-STH",
+     "GB-IOW",
+     "GB-WND",
+     "GB-MRT",
+     "GB-WSM",
+     "GB-KEC",
+     "GB-HNS",
+     "GB-EAL",
+     "GB-HMF",
+     "GB-RIC",
+     "GB-LND",
+     "GB-TWH",
+     "GB-ENF",
+     "GB-HRT",
+     "GB-BNE",
+     "GB-WFT",
+     "GB-RDB",
+     "GB-HAV",
+     "GB-CAM",
+     "GB-BEX",
+     "GB-STN",
+     "GB-MIK",
+     "GB-BKM",
+     "GB-HIL",
+     "GB-BEN",
+     "GB-LUT",
+     "GB-HRW",
+     "GB-CBF",
+     "GB-BDF",
+     "GB-CMD",
+     "GB-ISL",
+     "GB-PTE",
+     "GB-LBH",
+     "GB-SWK",
+     "GB-CRY",
+     "GB-LEW",
+     "GB-HRY",
+     "GB-KTT",
+     "GB-NWM",
+     "GB-GRE",
+     "GB-HCK",
+     "GB-BDG",
+     "GB-BRY",
+     "GB-OXF",
+     "GB-WBK",
+     "GB-WOK",
+     "GB-BRC",
+     "GB-WNM",
+     "GB-SLG",
+     "GB-RDG",
+     "GB-SRY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gb-southwest",
+   "title": "Великобритания: юго-запад и Уэльс",
+   "group": "europe",
+   "country": "GB",
+   "contents": "Юго-Запад Англии (Бристоль), Уэльс",
+   "parent": "gb",
+   "source": {
+    "admin1": [
+     "GB-FLN",
+     "GB-WRX",
+     "GB-POW",
+     "GB-MON",
+     "GB-GLS",
+     "GB-DOR",
+     "GB-BMH",
+     "GB-POL",
+     "GB-DEV",
+     "GB-TOB",
+     "GB-PLY",
+     "GB-CON",
+     "GB-SOM",
+     "GB-NSM",
+     "GB-BST",
+     "GB-SGC",
+     "GB-NWP",
+     "GB-CRF",
+     "GB-VGL",
+     "GB-BGE",
+     "GB-NTL",
+     "GB-SWA",
+     "GB-CMN",
+     "GB-PEM",
+     "GB-CGN",
+     "GB-GWN",
+     "GB-CWY",
+     "GB-DEN",
+     "GB-AGY",
+     "GB-IOS",
+     "GB-CAY",
+     "GB-RCT",
+     "GB-BGW",
+     "GB-TOF",
+     "GB-MTY",
+     "GB-SWD",
+     "GB-BAS",
+     "GB-WIL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gb-north",
+   "title": "Великобритания: центр и север Англии",
+   "group": "europe",
+   "country": "GB",
+   "contents": "Мидлендс (Бирмингем), Северо-Запад (Манчестер, Ливерпуль), Йоркшир, Северо-Восток",
+   "parent": "gb",
+   "source": {
+    "admin1": [
+     "GB-CHW",
+     "GB-SHR",
+     "GB-HEF",
+     "GB-NBL",
+     "GB-CMA",
+     "GB-NTY",
+     "GB-STY",
+     "GB-SND",
+     "GB-DUR",
+     "GB-HPL",
+     "GB-RCC",
+     "GB-NYK",
+     "GB-ERY",
+     "GB-KHL",
+     "GB-NLN",
+     "GB-NEL",
+     "GB-LIN",
+     "GB-WRL",
+     "GB-HAL",
+     "GB-KWL",
+     "GB-LIV",
+     "GB-SFT",
+     "GB-LAN",
+     "GB-BPL",
+     "GB-STT",
+     "GB-DAL",
+     "GB-MDB",
+     "GB-GAT",
+     "GB-NET",
+     "GB-YOR",
+     "GB-SHN",
+     "GB-RUT",
+     "GB-NTT",
+     "GB-NTH",
+     "GB-DNC",
+     "GB-LEC",
+     "GB-CHE",
+     "GB-DBY",
+     "GB-ROT",
+     "GB-SHF",
+     "GB-STE",
+     "GB-TFW",
+     "GB-STS",
+     "GB-WOR",
+     "GB-WAR",
+     "GB-WGN",
+     "GB-SKP",
+     "GB-WRT",
+     "GB-BBD",
+     "GB-CLD",
+     "GB-KIR",
+     "GB-NGM",
+     "GB-LCE",
+     "GB-DER",
+     "GB-LDS",
+     "GB-BRD",
+     "GB-WKF",
+     "GB-BNS",
+     "GB-SLF",
+     "GB-BOL",
+     "GB-TRF",
+     "GB-MAN",
+     "GB-OLD",
+     "GB-RCH",
+     "GB-TAM",
+     "GB-BUR",
+     "GB-SOL",
+     "GB-COV",
+     "GB-BIR",
+     "GB-SAW",
+     "GB-DUD",
+     "GB-WLL",
+     "GB-WLV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gb-scotland",
+   "title": "Великобритания: Шотландия и Северная Ирландия",
+   "group": "europe",
+   "country": "GB",
+   "contents": "Шотландия (Эдинбург, Глазго), Северная Ирландия (Белфаст)",
+   "parent": "gb",
+   "source": {
+    "admin1": [
+     "GB-DRY",
+     "GB-STB",
+     "GB-FER",
+     "GB-DGN",
+     "GB-ARM",
+     "GB-NYM",
+     "GB-SCB",
+     "GB-DGY",
+     "GB-LMV",
+     "GB-CLR",
+     "GB-MYL",
+     "GB-LRN",
+     "GB-CKF",
+     "GB-NTA",
+     "GB-BFS",
+     "GB-NDN",
+     "GB-ARD",
+     "GB-DOW",
+     "GB-CLK",
+     "GB-STG",
+     "GB-FAL",
+     "GB-WLN",
+     "GB-EDH",
+     "GB-MLN",
+     "GB-ELN",
+     "GB-SAY",
+     "GB-NAY",
+     "GB-IVC",
+     "GB-RFW",
+     "GB-WDU",
+     "GB-AGB",
+     "GB-HLD",
+     "GB-MRY",
+     "GB-ABD",
+     "GB-ABE",
+     "GB-ANS",
+     "GB-DND",
+     "GB-PKN",
+     "GB-FIF",
+     "GB-ELS",
+     "GB-ORK",
+     "GB-ZET",
+     "GB-NLK",
+     "GB-EDU",
+     "GB-GLG",
+     "GB-ERW",
+     "GB-EAY",
+     "GB-SLK",
+     "GB-MFT",
+     "GB-OMH",
+     "GB-CKT",
+     "GB-CGV",
+     "GB-BNB",
+     "GB-ANT",
+     "GB-LSB",
+     "GB-BLY",
+     "GB-BLA",
+     "GB-CSR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
    "id": "israel-palestine",
    "title": "Израиль и Палестина",
    "group": "middle-east",

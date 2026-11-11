@@ -112,7 +112,12 @@ jobs:
       - name: Вырезать регионы по контуру карты
         run: |
           node tools/search-build/outlines.mjs --group "$GROUP" --only "$REGIONS" --out work
-          osmium extract -c work/extract.json work/source.osm.pbf --overwrite
+          # По две части за проход: шесть сразу (Франция, Италия) не помещаются в память сервера.
+          n=$(jq '.extracts | length' work/extract.json)
+          for ((i = 0; i < n; i += 2)); do
+            jq ".extracts |= .[$i:$((i + 2))]" work/extract.json > work/batch.json
+            osmium extract -c work/batch.json work/source.osm.pbf --overwrite
+          done
           rm -f work/source.osm.pbf
           ls -la work/pbf
       - name: Собрать и выложить указатели

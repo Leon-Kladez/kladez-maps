@@ -87,7 +87,12 @@ jobs:
           curl -sSL -o pmtiles.tar.gz "https://github.com/protomaps/go-pmtiles/releases/download/v${PMTILES_VERSION}/go-pmtiles_${PMTILES_VERSION}_Linux_x86_64.tar.gz"
           echo "${PMTILES_SHA256}  pmtiles.tar.gz" | sha256sum -c -
           tar -xzf pmtiles.tar.gz pmtiles && sudo mv pmtiles /usr/local/bin/
-          sudo apt-get update -qq && sudo apt-get install -y -qq mktorrent
+          # Зеркала Ubuntu у GitHub иногда не отвечают — несколько попыток.
+          for i in 1 2 3 4 5; do
+            sudo apt-get update -qq && sudo apt-get install -y -qq mktorrent && break
+            [ "$i" = 5 ] && exit 1
+            echo "apt не ответил ($i), повтор через минуту"; sleep 60
+          done
       - name: Нарезать
         working-directory: tools/maps-build
         env:

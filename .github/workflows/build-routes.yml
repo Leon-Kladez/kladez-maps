@@ -73,7 +73,12 @@ jobs:
       - name: Освободить место, поставить osmium, скачать Valhalla
         run: |
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true
-          sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+          # Зеркала Ubuntu у GitHub иногда не отвечают — несколько попыток.
+          for i in 1 2 3 4 5; do
+            sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool && break
+            [ "$i" = 5 ] && exit 1
+            echo "apt не ответил ($i), повтор через минуту"; sleep 60
+          done
           docker pull -q "$VALHALLA_IMAGE"
           if [ "$AREA" = russia-europe ]; then
             # Европа большая — работаем на втором диске сервера (/mnt), там места больше.

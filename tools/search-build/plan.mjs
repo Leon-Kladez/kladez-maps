@@ -60,6 +60,21 @@ export const GEOFABRIK = {
   SM: ['europe/italy'],
   VA: ['europe/italy'],
   XK: ['europe/kosovo'],
+  // СНГ и соседи: Украина, Беларусь, Молдова, Грузия — в Европе Geofabrik, остальные — в Азии.
+  AM: ['asia/armenia'],
+  AZ: ['asia/azerbaijan'],
+  BY: ['europe/belarus'],
+  GE: ['europe/georgia'],
+  KG: ['asia/kyrgyzstan'],
+  KZ: ['asia/kazakhstan'],
+  MD: ['europe/moldova'],
+  TJ: ['asia/tajikistan'],
+  TM: ['asia/turkmenistan'],
+  UA: ['europe/ukraine'],
+  UZ: ['asia/uzbekistan'],
+  // Ближний Восток.
+  IL: ['asia/israel-and-palestine'],
+  TR: ['europe/turkey'],
 }
 
 /**

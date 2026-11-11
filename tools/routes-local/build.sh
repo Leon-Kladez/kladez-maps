@@ -32,16 +32,21 @@ data() {
     [ -s "$D/src/$b.roads.osm.pbf" ] && continue
     url="https://download.geofabrik.de/${s}-latest.osm.pbf"
     log "скачиваю $s"
+    # Скачать и сверить с md5; при несовпадении (файл обновился на зеркале посреди скачивания) —
+    # скачать заново. Geofabrik бывает недоступен — тогда ждём и докачиваем.
+    ok=false
     for try in 1 2 3 4 5 6 7 8 9 10; do
-      curl -fsSL --retry 5 --retry-all-errors -C - -o "$D/src/$b.osm.pbf" "$url" && break
-      log "не скачалось ($try), жду 2 минуты и докачиваю"; sleep 120
-      [ "$try" = 10 ] && { log "не удалось скачать $s"; exit 1; }
+      if ! curl -fsSL --retry 5 --retry-all-errors -C - -o "$D/src/$b.osm.pbf" "$url"; then
+        log "не скачалось ($try), жду 2 минуты и докачиваю"; sleep 120; continue
+      fi
+      if curl -fsSL --retry 3 -o "$D/src/$b.md5" "$url.md5"; then
+        if (cd "$D/src" && sed "s#[^ ]*\$#$b.osm.pbf#" "$b.md5" | md5sum -c -); then ok=true; break; fi
+        log "контрольная сумма не сошлась ($try) — качаю заново"; rm -f "$D/src/$b.osm.pbf"; sleep 60
+      else
+        log "нет контрольной суммы для $s — без проверки md5"; ok=true; break
+      fi
     done
-    if curl -fsSL --retry 3 -o "$D/src/$b.md5" "$url.md5"; then
-      (cd "$D/src" && sed "s#[^ ]*\$#$b.osm.pbf#" "$b.md5" | md5sum -c -)
-    else
-      log "нет контрольной суммы для $s — без проверки md5"
-    fi
+    $ok || { log "не удалось скачать $s"; exit 1; }
     log "оставляю только дороги: $s"
     # Дороги, паромы, платформы и причалы, запреты поворотов, границы (для стран и часовых поясов).
     osmium tags-filter "$D/src/$b.osm.pbf" w/highway w/route=ferry w/railway=platform \

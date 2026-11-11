@@ -94,8 +94,12 @@ jobs:
             f="work/src/$(basename "$s").osm.pbf"
             url="https://download.geofabrik.de/${s}-latest.osm.pbf"
             curl -fsSL --retry 3 -o "$f" "$url"
-            curl -fsSL --retry 3 -o "$f.md5" "$url.md5" || { sleep 60; curl -fsSL --retry 3 -o "$f.md5" "$url.md5"; }
-            (cd work/src && sed "s#[^ ]*\$#$(basename "$f")#" "$(basename "$f").md5" | md5sum -c -)
+            # Контрольная сумма у Geofabrik иногда появляется позже файла — тогда без неё (curl -f уже проверил скачивание).
+            if curl -fsSL --retry 3 -o "$f.md5" "$url.md5" || { sleep 60; curl -fsSL --retry 3 -o "$f.md5" "$url.md5"; }; then
+              (cd work/src && sed "s#[^ ]*\$#$(basename "$f")#" "$(basename "$f").md5" | md5sum -c -)
+            else
+              echo "::warning::нет контрольной суммы для $s — без проверки md5"
+            fi
             if [ "$AREA" = russia-europe ]; then
               # Для дорог нужны только дороги, паромы, запреты поворотов и границы (для стран и
               # часовых поясов) — остальное (дома, леса, точки) отбрасываем: в разы меньше и быстрее.

@@ -11,8 +11,14 @@ for path in "$@"; do
   s=$(basename "$path")
   url="https://download.geofabrik.de/${path}-latest.osm.pbf"
   if curl -fsSL --retry 3 -o "$DIR/src/$s.osm.pbf" "$url"; then
-    curl -fsSL --retry 3 -o "$DIR/src/$s.md5" "$url.md5"
-    (cd "$DIR/src" && sed "s#[^ ]*\$#$s.osm.pbf#" "$s.md5" | md5sum -c -)
+    # Контрольная сумма: у зеркал Geofabrik она иногда появляется позже файла (404) — тогда
+    # пробуем ещё раз через минуту, а без неё — с предупреждением (файл уже проверен curl -f).
+    if curl -fsSL --retry 3 -o "$DIR/src/$s.md5" "$url.md5" ||
+       { sleep 60; curl -fsSL --retry 3 -o "$DIR/src/$s.md5" "$url.md5"; }; then
+      (cd "$DIR/src" && sed "s#[^ ]*\$#$s.osm.pbf#" "$s.md5" | md5sum -c -)
+    else
+      echo "::warning::нет контрольной суммы для $path — без проверки md5"
+    fi
     files+=("$DIR/src/$s.osm.pbf")
   else
     echo "::warning::не удалось скачать $path — без него"

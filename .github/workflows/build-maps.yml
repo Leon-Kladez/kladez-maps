@@ -22,9 +22,15 @@ on:
         description: 'Только оценить размеры, ничего не выкладывать'
         type: boolean
         default: true
+      search_after:
+        description: 'После выкладки запустить сборку указателей поиска для этих групп (кроме russia)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
+  # Запуск «Сборки указателей поиска» после карт (workflow_dispatch своими правами).
+  actions: write
 
 concurrency:
   group: build-maps
@@ -153,6 +159,13 @@ jobs:
           gh release upload "$TAG" parts/maps.json tools/maps-build/LICENSE-ODbL.md --repo "$REPO" --clobber
           gh release edit "$TAG" --repo "$REPO" --latest
           # Храним две последние версии карт.
+          # Поиск — следом, по группам этой сборки (Россия собирается отдельно, по округам).
+          if [ "${{ inputs.search_after }}" = "true" ]; then
+            for g in $(echo '${{ needs.prepare.outputs.groups }}' | jq -r '.[]'); do
+              [ "$g" = russia ] && continue
+              gh workflow run build-search.yml --repo "$REPO" --ref "${{ github.ref_name }}" -f group="$g" && echo "поиск: запущен для $g"
+            done
+          fi
           for p in maps asia; do
             gh release list --repo "$REPO" --limit 100 --json tagName -q '.[].tagName' | grep "^$p-" | sort -r | tail -n +3 |
               while read -r old; do gh release delete "$old" --repo "$REPO" --yes --cleanup-tag; done

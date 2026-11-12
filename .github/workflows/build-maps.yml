@@ -13,8 +13,8 @@ on:
   workflow_dispatch:
     inputs:
       groups:
-        description: 'Группы через запятую (russia,cis,europe,middle-east,north-america)'
-        default: 'russia,cis,europe,middle-east,north-america'
+        description: 'Группы через запятую (russia,cis,europe,middle-east,asia,north-america)'
+        default: 'russia,cis,europe,middle-east,asia,north-america'
       only:
         description: 'Только эти регионы (id через запятую), пусто — все из выбранных групп'
         default: ''
@@ -58,7 +58,7 @@ jobs:
         env:
           GROUPS_INPUT: ${{ inputs.groups }}
         run: |
-          g="${GROUPS_INPUT:-russia,cis,europe,middle-east,north-america}"
+          g="${GROUPS_INPUT:-russia,cis,europe,middle-east,asia,north-america}"
           echo "json=$(echo "$g" | jq -R -c 'split(",") | map(gsub("^[[:space:]]+|[[:space:]]+$"; "")) | map(select(length > 0))')" >> "$GITHUB_OUTPUT"
       - name: Создать выпуск
         if: env.DRY_RUN != 'true'
@@ -100,7 +100,17 @@ jobs:
           ONLY_INPUT: ${{ inputs.only }}
           GROUP: ${{ matrix.group }}
           TAG: ${{ needs.prepare.outputs.tag }}
+          VERSION: ${{ needs.prepare.outputs.version }}
         run: |
+          # Азия — в своём выпуске asia-ГГГГ-ММ: в выпуске GitHub не больше 1000 файлов, а в maps-…
+          # их уже около 900. Список maps.json остаётся в maps-…, ссылки ведут в оба выпуска.
+          if [ "$GROUP" = "asia" ]; then
+            TAG="asia-$VERSION"
+            if [ "$DRY_RUN" != "true" ]; then
+              gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1 ||
+                gh release create "$TAG" --repo "$REPO" --title "Карты Азии $VERSION" --latest=false                   --notes "Карты Азии для Кладезя (список — в выпуске maps-$VERSION). Данные © участники OpenStreetMap (ODbL), © Protomaps."
+            fi
+          fi
           args=(build --group "$GROUP" --out out --tag "$TAG" --repo "$REPO")
           [ -n "$ONLY_INPUT" ] && args+=(--only "$ONLY_INPUT")
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); else args+=(--upload); fi
@@ -143,5 +153,7 @@ jobs:
           gh release upload "$TAG" parts/maps.json tools/maps-build/LICENSE-ODbL.md --repo "$REPO" --clobber
           gh release edit "$TAG" --repo "$REPO" --latest
           # Храним две последние версии карт.
-          gh release list --repo "$REPO" --limit 100 --json tagName -q '.[].tagName' | grep '^maps-' | sort -r | tail -n +3 |
-            while read -r old; do gh release delete "$old" --repo "$REPO" --yes --cleanup-tag; done
+          for p in maps asia; do
+            gh release list --repo "$REPO" --limit 100 --json tagName -q '.[].tagName' | grep "^$p-" | sort -r | tail -n +3 |
+              while read -r old; do gh release delete "$old" --repo "$REPO" --yes --cleanup-tag; done
+          done

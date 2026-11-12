@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
     inputs:
       group:
-        description: 'Группа: russia или europe'
+        description: 'Группа: russia, europe, cis, middle-east или asia'
         default: 'russia'
       only:
         description: 'Только эти регионы (Россия: id; другие группы: коды стран или id), пусто — вся группа'
@@ -130,6 +130,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p parts
+          # Азия лежит в своём выпуске asia-ГГГГ-ММ (лимит 1000 файлов на выпуск); список — в maps-….
+          [ "$GROUP" = "asia" ] && TAG="asia-$VERSION"
           for REGION in ${REGIONS//,/ }; do
             echo "::group::$REGION"
             osmium tags-filter "work/pbf/$REGION.osm.pbf" \

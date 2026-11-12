@@ -8,6 +8,7 @@ export const GROUP_NAMES = {
   'cis': 'СНГ и соседи',
   'europe': 'Европа',
   'middle-east': 'Ближний Восток',
+  'asia': 'Азия',
   'north-america': 'Северная Америка',
 }
 export const GROUP_DESCRIPTIONS = {
@@ -15,6 +16,7 @@ export const GROUP_DESCRIPTIONS = {
   'cis': 'Карты стран СНГ и соседних стран.',
   'europe': 'Карты стран Европы, крупные страны — по частям.',
   'middle-east': 'Карты стран Ближнего Востока.',
+  'asia': 'Карты стран Восточной, Южной и Юго-Восточной Азии, крупные страны — по частям.',
   'north-america': 'Карты США по штатам и Канады по провинциям.',
 }
 export const TRACKERS = ['udp://tracker.opentrackr.org:1337/announce', 'udp://open.demonii.com:1337/announce']

@@ -1,7 +1,7 @@
 // Список пакетов карт Кладезя (tools/maps-build/regions.json) и его проверка.
 import { readFileSync } from 'node:fs'
 
-export const GROUPS = ['russia', 'cis', 'europe', 'middle-east', 'north-america']
+export const GROUPS = ['russia', 'cis', 'europe', 'middle-east', 'asia', 'north-america']
 export const VARIANTS = ['full', 'overview']
 /** Подробность варианта → наибольший масштаб вырезки. */
 export const VARIANT_MAXZOOM = { full: 15, overview: 13 }

@@ -3902,6 +3902,708 @@
     "full",
     "overview"
    ]
+  },
+  {
+   "id": "cn-north",
+   "title": "Китай: север и северо-восток",
+   "group": "asia",
+   "country": "CN",
+   "contents": "Хэйлунцзян (Харбин), Цзилинь, Ляонин, Внутренняя Монголия, Пекин, Тяньцзинь, Хэбэй, Шаньси, Шаньдун",
+   "source": {
+    "admin1": [
+     "CN-HL",
+     "CN-JL",
+     "CN-LN",
+     "CN-NM",
+     "CN-BJ",
+     "CN-TJ",
+     "CN-HE",
+     "CN-SX",
+     "CN-SD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cn-east",
+   "title": "Китай: восток и центр",
+   "group": "asia",
+   "country": "CN",
+   "contents": "Шанхай, Цзянсу, Чжэцзян, Аньхой, Фуцзянь, Цзянси, Хэнань, Хубэй (Ухань), Хунань",
+   "source": {
+    "admin1": [
+     "CN-SH",
+     "CN-JS",
+     "CN-ZJ",
+     "CN-AH",
+     "CN-FJ",
+     "CN-JX",
+     "CN-HA",
+     "CN-HB",
+     "CN-HN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cn-south",
+   "title": "Китай: юг и Сычуань",
+   "group": "asia",
+   "country": "CN",
+   "contents": "Гуандун (Гуанчжоу, Шэньчжэнь), Гуанси, Хайнань, Юньнань, Гуйчжоу, Сычуань (Чэнду), Чунцин",
+   "source": {
+    "admin1": [
+     "CN-GD",
+     "CN-GX",
+     "CN-HI",
+     "CN-YN",
+     "CN-GZ",
+     "CN-SC",
+     "CN-CQ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cn-west",
+   "title": "Китай: запад",
+   "group": "asia",
+   "country": "CN",
+   "contents": "Шэньси (Сиань), Ганьсу, Нинся, Цинхай, Синьцзян, Тибет",
+   "source": {
+    "admin1": [
+     "CN-SN",
+     "CN-GS",
+     "CN-NX",
+     "CN-QH",
+     "CN-XJ",
+     "CN-XZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "hk",
+   "title": "Гонконг",
+   "group": "asia",
+   "country": "HK",
+   "source": {
+    "countries": [
+     "HK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mo",
+   "title": "Макао",
+   "group": "asia",
+   "country": "MO",
+   "source": {
+    "countries": [
+     "MO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "tw",
+   "title": "Тайвань",
+   "group": "asia",
+   "country": "TW",
+   "source": {
+    "countries": [
+     "TW"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mn",
+   "title": "Монголия",
+   "group": "asia",
+   "country": "MN",
+   "source": {
+    "countries": [
+     "MN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "kr",
+   "title": "Южная Корея",
+   "group": "asia",
+   "country": "KR",
+   "source": {
+    "countries": [
+     "KR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "kp",
+   "title": "Северная Корея",
+   "group": "asia",
+   "country": "KP",
+   "source": {
+    "countries": [
+     "KP"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "jp-north",
+   "title": "Япония: Хоккайдо и Тохоку",
+   "group": "asia",
+   "country": "JP",
+   "contents": "Хоккайдо (Саппоро), Аомори, Иватэ, Мияги (Сендай), Акита, Ямагата, Фукусима",
+   "source": {
+    "admin1": [
+     "JP-01",
+     "JP-02",
+     "JP-03",
+     "JP-04",
+     "JP-05",
+     "JP-06",
+     "JP-07"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "jp-kanto",
+   "title": "Япония: Канто",
+   "group": "asia",
+   "country": "JP",
+   "contents": "Токио, Канагава (Иокогама), Сайтама, Тиба, Ибараки, Тотиги, Гумма",
+   "source": {
+    "admin1": [
+     "JP-08",
+     "JP-09",
+     "JP-10",
+     "JP-11",
+     "JP-12",
+     "JP-13",
+     "JP-14"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "jp-center",
+   "title": "Япония: Тюбу и Кансай",
+   "group": "asia",
+   "country": "JP",
+   "contents": "Ниигата, Нагано, Сидзуока, Айти (Нагоя), Киото, Осака, Хёго (Кобе), Нара и соседние префектуры",
+   "source": {
+    "admin1": [
+     "JP-15",
+     "JP-16",
+     "JP-17",
+     "JP-18",
+     "JP-19",
+     "JP-20",
+     "JP-21",
+     "JP-22",
+     "JP-23",
+     "JP-24",
+     "JP-25",
+     "JP-26",
+     "JP-27",
+     "JP-28",
+     "JP-29",
+     "JP-30"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "jp-west",
+   "title": "Япония: запад, Сикоку и Кюсю",
+   "group": "asia",
+   "country": "JP",
+   "contents": "Хиросима, Окаяма, Ямагути, Сикоку, Кюсю (Фукуока), Окинава",
+   "source": {
+    "admin1": [
+     "JP-31",
+     "JP-32",
+     "JP-33",
+     "JP-34",
+     "JP-35",
+     "JP-36",
+     "JP-37",
+     "JP-38",
+     "JP-39",
+     "JP-40",
+     "JP-41",
+     "JP-42",
+     "JP-43",
+     "JP-44",
+     "JP-45",
+     "JP-46",
+     "JP-47"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "in-north",
+   "title": "Индия: север",
+   "group": "asia",
+   "country": "IN",
+   "contents": "Дели, Пенджаб, Харьяна, Уттар-Прадеш (Агра, Варанаси), Раджастхан, Химачал-Прадеш, Уттаракханд, Джамму и Кашмир, Ладакх",
+   "source": {
+    "admin1": [
+     "IN-JK",
+     "IN-LA",
+     "IN-HP",
+     "IN-PB",
+     "IN-CH",
+     "IN-HR",
+     "IN-DL",
+     "IN-UT",
+     "IN-UP",
+     "IN-RJ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "in-east",
+   "title": "Индия: восток и северо-восток",
+   "group": "asia",
+   "country": "IN",
+   "contents": "Западная Бенгалия (Калькутта), Бихар, Джаркханд, Одиша, Чхаттисгарх, Ассам и северо-восточные штаты, Андаманские острова",
+   "source": {
+    "admin1": [
+     "IN-BR",
+     "IN-JH",
+     "IN-WB",
+     "IN-OR",
+     "IN-CT",
+     "IN-AS",
+     "IN-AR",
+     "IN-NL",
+     "IN-MN",
+     "IN-MZ",
+     "IN-TR",
+     "IN-ML",
+     "IN-SK",
+     "IN-AN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "in-south",
+   "title": "Индия: юг и запад",
+   "group": "asia",
+   "country": "IN",
+   "contents": "Махараштра (Мумбаи), Гуджарат, Гоа, Мадхья-Прадеш, Карнатака (Бангалор), Керала, Тамилнад (Ченнаи), Андхра-Прадеш, Телангана (Хайдарабад)",
+   "source": {
+    "admin1": [
+     "IN-GJ",
+     "IN-DH",
+     "IN-MH",
+     "IN-GA",
+     "IN-MP",
+     "IN-KA",
+     "IN-KL",
+     "IN-TN",
+     "IN-AP",
+     "IN-TG",
+     "IN-PY",
+     "IN-LD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "pk",
+   "title": "Пакистан",
+   "group": "asia",
+   "country": "PK",
+   "source": {
+    "countries": [
+     "PK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "af",
+   "title": "Афганистан",
+   "group": "asia",
+   "country": "AF",
+   "source": {
+    "countries": [
+     "AF"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bd",
+   "title": "Бангладеш",
+   "group": "asia",
+   "country": "BD",
+   "source": {
+    "countries": [
+     "BD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "np",
+   "title": "Непал",
+   "group": "asia",
+   "country": "NP",
+   "source": {
+    "countries": [
+     "NP"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bt",
+   "title": "Бутан",
+   "group": "asia",
+   "country": "BT",
+   "source": {
+    "countries": [
+     "BT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "lk",
+   "title": "Шри-Ланка",
+   "group": "asia",
+   "country": "LK",
+   "source": {
+    "countries": [
+     "LK"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mv",
+   "title": "Мальдивы",
+   "group": "asia",
+   "country": "MV",
+   "source": {
+    "countries": [
+     "MV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mm",
+   "title": "Мьянма",
+   "group": "asia",
+   "country": "MM",
+   "source": {
+    "countries": [
+     "MM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "th",
+   "title": "Таиланд",
+   "group": "asia",
+   "country": "TH",
+   "source": {
+    "countries": [
+     "TH"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "la",
+   "title": "Лаос",
+   "group": "asia",
+   "country": "LA",
+   "source": {
+    "countries": [
+     "LA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "kh",
+   "title": "Камбоджа",
+   "group": "asia",
+   "country": "KH",
+   "source": {
+    "countries": [
+     "KH"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "vn",
+   "title": "Вьетнам",
+   "group": "asia",
+   "country": "VN",
+   "source": {
+    "countries": [
+     "VN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "my",
+   "title": "Малайзия",
+   "group": "asia",
+   "country": "MY",
+   "source": {
+    "countries": [
+     "MY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sg",
+   "title": "Сингапур",
+   "group": "asia",
+   "country": "SG",
+   "source": {
+    "countries": [
+     "SG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bn",
+   "title": "Бруней",
+   "group": "asia",
+   "country": "BN",
+   "source": {
+    "countries": [
+     "BN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ph",
+   "title": "Филиппины",
+   "group": "asia",
+   "country": "PH",
+   "source": {
+    "countries": [
+     "PH"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "id-sumatra",
+   "title": "Индонезия: Суматра",
+   "group": "asia",
+   "country": "ID",
+   "contents": "Ачех, Северная Суматра (Медан), Западная Суматра, Риау, Острова Риау, Джамби, Бенкулу, Южная Суматра, Бангка-Белитунг, Лампунг",
+   "source": {
+    "admin1": [
+     "ID-AC",
+     "ID-SU",
+     "ID-SB",
+     "ID-RI",
+     "ID-KR",
+     "ID-JA",
+     "ID-BE",
+     "ID-SS",
+     "ID-BB",
+     "ID-LA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "id-java",
+   "title": "Индонезия: Ява, Бали и Нуса-Тенгара",
+   "group": "asia",
+   "country": "ID",
+   "contents": "Джакарта, Бантен, Западная, Центральная и Восточная Ява (Сурабая), Джокьякарта, Бали, Нуса-Тенгара",
+   "source": {
+    "admin1": [
+     "ID-BT",
+     "ID-JK",
+     "ID-JB",
+     "ID-JT",
+     "ID-YO",
+     "ID-JI",
+     "ID-BA",
+     "ID-NB",
+     "ID-NT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "id-east",
+   "title": "Индонезия: Калимантан, Сулавеси и восток",
+   "group": "asia",
+   "country": "ID",
+   "contents": "Калимантан, Сулавеси (Макасар), Молуккские острова, Папуа",
+   "source": {
+    "admin1": [
+     "ID-KB",
+     "ID-KT",
+     "ID-KS",
+     "ID-KI",
+     "ID-SA",
+     "ID-GO",
+     "ID-ST",
+     "ID-SR",
+     "ID-SN",
+     "ID-SG",
+     "ID-MA",
+     "ID-MU",
+     "ID-PA",
+     "ID-PB"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "tl",
+   "title": "Восточный Тимор",
+   "group": "asia",
+   "country": "TL",
+   "source": {
+    "countries": [
+     "TL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
   }
  ]
 }

@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
-# Сборка дорог Кладезя для России и всей Европы на своём компьютере (бесплатный сервер GitHub
-# не вмещает Европу по диску). Запускается ВНУТРИ временной WSL-среды из образа Valhalla:
-#   wsl -d KladezRoutes -u root -- bash /mnt/d/…/maps-repo/tools/routes-local/build.sh <этап>
-# Этапы: setup | data | graph | packs | serve <папка tiles> | all (= setup data graph packs)
-# Данные — в /data (своя файловая система среды, быстро); готовые наборы — в $OUT на диске D:.
+# Сборка дорог Кладезя одним графом: Россия, вся Европа, СНГ и Ближний Восток (бесплатный сервер
+# GitHub не вмещает это по диску). Запускается ВНУТРИ образа Valhalla (ghcr.io/valhalla/valhalla:3.9.1).
+# Нужно от 64 ГБ памяти и ~300 ГБ диска: на 24 ГБ граф собирается сутки (упирается в диск), на
+# арендованном сервере 16 ядер / 64 ГБ (Hetzner CCX43) — около 3 часов вместе со скачиванием:
+#   docker run -d --name build -u root --entrypoint bash -v /work:/work -v /data:/data \
+#     ghcr.io/valhalla/valhalla:3.9.1 -c "bash /work/maps-repo/tools/routes-local/build.sh all"
+#   (в /work — maps-repo/tools и routes-build/outlines; на компьютере — WSL-среда из того же образа)
+# Этапы: setup | data | graph | packs | serve <папка tiles> | user <регионы…> | all (= setup data graph packs)
+# Данные — в /data; готовые наборы — в $OUT (routes-build/packs рядом с maps-repo).
 # Повторный запуск этапа продолжает с того, что уже есть (скачанное не качается заново).
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
@@ -17,9 +21,9 @@ log() { echo "[$(date '+%F %T')] $*"; }
 
 setup() {
   export DEBIAN_FRONTEND=noninteractive
-  command -v osmium >/dev/null && python3 -c 'import shapely' 2>/dev/null && return
+  command -v osmium >/dev/null && command -v pigz >/dev/null && python3 -c 'import shapely' 2>/dev/null && return
   apt-get update -qq
-  apt-get install -y -qq osmium-tool python3-shapely curl ca-certificates
+  apt-get install -y -qq osmium-tool python3-shapely curl ca-certificates pigz
 }
 
 data() {
@@ -64,19 +68,28 @@ data() {
 graph() {
   [ -f "$D/tiles/.done" ] && { log "граф уже собран"; return; }
   cd "$D"
-  rm -rf "$D/tiles" && mkdir -p "$D/tiles"
-  valhalla_build_config --mjolnir-tile-dir "$D/tiles" --mjolnir-tile-extract "$D/no-extract.tar" \
-    --mjolnir-admin "$D/tiles/admins.sqlite" --mjolnir-timezone "$D/tiles/timezones.sqlite" \
-    --mjolnir-concurrency "$(nproc)" > "$D/valhalla.json"
-  log "часовые пояса"
-  valhalla_build_timezones > "$D/tiles/timezones.sqlite" || { log "часовые пояса не скачались — без них"; rm -f "$D/tiles/timezones.sqlite"; }
-  log "границы стран"
-  valhalla_build_admins -c "$D/valhalla.json" "$D/source.osm.pbf"
-  log "граф дорог"
+  if [ ! -s "$D/tiles/admins.sqlite" ] || [ ! -f "$D/valhalla.json" ]; then
+    rm -rf "$D/tiles" && mkdir -p "$D/tiles"
+    valhalla_build_config --mjolnir-tile-dir "$D/tiles" --mjolnir-tile-extract "$D/no-extract.tar"       --mjolnir-admin "$D/tiles/admins.sqlite" --mjolnir-timezone "$D/tiles/timezones.sqlite"       --mjolnir-concurrency "$(nproc)" > "$D/valhalla.json"
+    log "часовые пояса"
+    valhalla_build_timezones > "$D/tiles/timezones.sqlite" || { log "часовые пояса не скачались — без них"; rm -f "$D/tiles/timezones.sqlite"; }
+    log "границы стран"
+    valhalla_build_admins -c "$D/valhalla.json" "$D/source.osm.pbf"
+  fi
   start=$(date +%s)
-  valhalla_build_tiles -c "$D/valhalla.json" "$D/source.osm.pbf"
+  # В два приёма: разбор OSM сохраняется на диск (osmdata_*.bin), и при сбое или перезапуске
+  # среды сборка продолжается со связывания дорог, а не с начала. Одним приёмом эти данные
+  # живут только в памяти — продолжить с середины нельзя.
+  if [ ! -f "$D/tiles/.parsed" ]; then
+    log "граф дорог: разбор"
+    valhalla_build_tiles -c "$D/valhalla.json" -e parsenodes "$D/source.osm.pbf"
+    touch "$D/tiles/.parsed"
+    log "разбор готов за $(( ($(date +%s) - start) / 60 )) мин"
+  fi
+  log "граф дорог: связывание и нарезка"
+  valhalla_build_tiles -c "$D/valhalla.json" -s constructedges "$D/source.osm.pbf"
   log "граф собран за $(( ($(date +%s) - start) / 60 )) мин"
-  rm -f "$D"/*.bin
+  rm -f "$D"/*.bin "$D"/tiles/*.bin
   touch "$D/tiles/.done"
   du -sh "$D/tiles"; df -h "$D" | tail -1
 }
@@ -87,6 +100,12 @@ packs() {
   for f in "$D/tiles/admins.sqlite" "$D/tiles/timezones.sqlite"; do [ -f "$f" ] && extras+=("$f"); done
   python3 "$REPO/tools/search-build/route_packs.py" --tiles "$D/tiles" --outlines "$OUTLINES" --out "$OUT" \
     --version "$VERSION" --regions "$(cat "$OUTLINES/regions.txt")" --extra "${extras[@]}" | tee "$BUILD/packs.json"
+  # Наборы сжимаются gzip, имя остаётся .tar: Кладезъ (библиотека tar) и GNU tar распознают сжатие
+  # сами. Кусочки графа жмутся в 2,5 раза — без этого Германия, Австрия и соседи больше 2 ГБ.
+  for f in "$OUT"/*.tar; do
+    [ "$(head -c2 "$f" | od -An -tx1 | tr -d ' \n')" = "1f8b" ] && continue
+    pigz -6 -c "$f" > "$f.gz" && mv "$f.gz" "$f"
+  done
   for f in "$OUT"/*.tar; do
     [ "$(stat -c %s "$f")" -lt 2100000000 ] || { echo "$f больше 2 ГБ — GitHub не примет, нужно делить"; exit 1; }
   done

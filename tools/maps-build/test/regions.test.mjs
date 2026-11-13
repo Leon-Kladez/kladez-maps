@@ -74,3 +74,9 @@ test('коды субъектов есть в Natural Earth, каждый суб
     assert.equal(n, 1, `${code} входит в ${n} округов`)
   }
 })
+
+test('у частей страны в названии есть страна («Китай: юг», «США: Айова»), кроме округов России (Кладезъ дописывает «Россия: …» сам)', () => {
+  const regions = loadRegions(new URL('../regions.json', import.meta.url))
+  const bad = regions.filter((r) => r.id.includes('-') && r.source?.admin1?.length && r.country !== 'RU' && !/^[^:]+: /.test(r.title))
+  assert.deepEqual(bad.map((r) => `${r.id}: ${r.title}`), [])
+})

@@ -32,8 +32,25 @@ export function extractArgs({ url, out, regionFile, maxzoom, dryRun = false }) {
   return args
 }
 
-/** Запускает pmtiles; возвращает stdout+stderr. При ненулевом коде — ошибка с хвостом вывода. */
-export function runPmtiles(args, bin = process.env.PMTILES_BIN || 'pmtiles') {
+/**
+ * Запускает pmtiles; при обрыве связи с сервером Protomaps («connection reset», таймаут) — ещё
+ * попытки с паузой (2026-11-13 сборка Азии упала посреди работы из-за одного такого обрыва).
+ */
+export async function runPmtiles(args, bin = process.env.PMTILES_BIN || 'pmtiles', attempts = 4, pauseMs = 30_000) {
+  for (let i = 1; ; i++) {
+    try {
+      return await runPmtilesOnce(args, bin)
+    } catch (err) {
+      const transient = /connection reset|timeout|EOF|TLS handshake|no such host|503|502|504|429/i.test(String(err?.message))
+      if (!transient || i >= attempts) throw err
+      console.log(`  pmtiles: обрыв связи (попытка ${i} из ${attempts}), повтор через ${(pauseMs * i) / 1000} с`)
+      await new Promise((r) => setTimeout(r, pauseMs * i))
+    }
+  }
+}
+
+/** Один запуск pmtiles; возвращает stdout+stderr. При ненулевом коде — ошибка с хвостом вывода. */
+function runPmtilesOnce(args, bin) {
   return new Promise((resolve, reject) => {
     const p = spawn(bin, args, { stdio: ['ignore', 'pipe', 'pipe'] })
     let out = ''

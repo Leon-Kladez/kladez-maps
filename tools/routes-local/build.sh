@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Сборка дорог Кладезя одним графом: Россия, вся Европа, СНГ и Ближний Восток (бесплатный сервер
-# GitHub не вмещает это по диску). Запускается ВНУТРИ образа Valhalla (ghcr.io/valhalla/valhalla:3.9.1).
+# Сборка дорог Кладезя двумя графами на весь мир: Старый Свет (с Африкой и Океанией) и Америка
+# (бесплатный сервер GitHub не вмещает это по диску). Запускается ВНУТРИ образа Valhalla
+# (ghcr.io/valhalla/valhalla:3.9.1).
 # Нужно от 64 ГБ памяти и ~300 ГБ диска: на 24 ГБ граф собирается сутки (упирается в диск), на
 # арендованном сервере 16 ядер / 64 ГБ (Hetzner CCX43) — около 3 часов вместе со скачиванием:
 #   docker run -d --name build -u root --entrypoint bash -v /work:/work -v /data:/data \
@@ -17,6 +18,9 @@ OUT=${OUT:-$BUILD/packs}
 OUTLINES=${OUTLINES:-$BUILD/outlines}
 VERSION=${VERSION:-2026-11}
 D=/data
+# Источники графа Америки (см. data()).
+AMERICAS_SOURCES="north-america/us north-america/canada north-america/greenland north-america/mexico central-america
+  south-america europe/france/guyane europe/france/guadeloupe europe/france/martinique"
 log() { echo "[$(date '+%F %T')] $*"; }
 
 setup() {
@@ -29,16 +33,21 @@ setup() {
 data() {
   mkdir -p "$D/src"
   [ -s "$D/source.osm.pbf" ] && { log "данные уже готовы"; return; }
-  # Европа у Geofabrik уже включает Украину, Беларусь, Молдову, Грузию и Турцию; остальное СНГ и
-  # Израиль — из Азии; Восточная, Южная и Юго-Восточная Азия — тоже из Азии (с ноября 2026). Всё одной
-  # сборкой: соседние страны стыкуются на границах (Владивосток → Харбин, Алматы → Урумчи).
+  # Два графа на весь мир. Наборы соседних стран должны быть из ОДНОГО графа: кусочки графа на
+  # границе есть в наборах обеих стран, и кусочки из разных сборок не стыкуются.
+  # 1) Старый Свет (по умолчанию): Россия, Европа (у Geofabrik в ней Украина, Беларусь, Молдова,
+  #    Грузия, Турция), СНГ и Ближний Восток, Азия, вся Африка (с Египтом), Австралия и Океания
+  #    (Папуа — Новая Гвинея граничит с Индонезией).
+  # 2) Америка: ROAD_SOURCES=americas — США, Канада, Гренландия, Мексика, Центральная и Южная
+  #    Америка, Карибы.
+  [ "${ROAD_SOURCES:-}" = americas ] && ROAD_SOURCES=$AMERICAS_SOURCES
   SOURCES=${ROAD_SOURCES:-"russia russia/crimean-fed-district europe
     asia/kazakhstan asia/uzbekistan asia/kyrgyzstan asia/tajikistan asia/turkmenistan asia/azerbaijan asia/armenia
-    asia/israel-and-palestine asia/lebanon asia/syria asia/jordan asia/iraq asia/iran asia/gcc-states asia/yemen africa/egypt
+    asia/israel-and-palestine asia/lebanon asia/syria asia/jordan asia/iraq asia/iran asia/gcc-states asia/yemen
     asia/china asia/taiwan asia/mongolia asia/south-korea asia/north-korea asia/japan
     asia/india asia/pakistan asia/afghanistan asia/bangladesh asia/nepal asia/bhutan asia/sri-lanka asia/maldives
     asia/myanmar asia/thailand asia/laos asia/cambodia asia/vietnam asia/malaysia-singapore-brunei asia/philippines
-    asia/indonesia asia/east-timor"}
+    asia/indonesia asia/east-timor africa europe/france/reunion europe/france/mayotte australia-oceania"}
   for s in $SOURCES; do
     b=$(basename "$s")
     [ -s "$D/src/$b.roads.osm.pbf" ] && continue

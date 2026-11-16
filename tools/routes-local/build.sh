@@ -30,8 +30,16 @@ data() {
   mkdir -p "$D/src"
   [ -s "$D/source.osm.pbf" ] && { log "данные уже готовы"; return; }
   # Европа у Geofabrik уже включает Украину, Беларусь, Молдову, Грузию и Турцию; остальное СНГ и
-  # Израиль — из Азии. Всё одной сборкой: эти страны граничат и с Россией, и с Европой.
-  for s in russia russia/crimean-fed-district europe asia/kazakhstan asia/uzbekistan asia/kyrgyzstan            asia/tajikistan asia/turkmenistan asia/azerbaijan asia/armenia asia/israel-and-palestine            asia/lebanon asia/syria asia/jordan asia/iraq asia/iran asia/gcc-states asia/yemen africa/egypt; do
+  # Израиль — из Азии; Восточная, Южная и Юго-Восточная Азия — тоже из Азии (с ноября 2026). Всё одной
+  # сборкой: соседние страны стыкуются на границах (Владивосток → Харбин, Алматы → Урумчи).
+  SOURCES="russia russia/crimean-fed-district europe
+    asia/kazakhstan asia/uzbekistan asia/kyrgyzstan asia/tajikistan asia/turkmenistan asia/azerbaijan asia/armenia
+    asia/israel-and-palestine asia/lebanon asia/syria asia/jordan asia/iraq asia/iran asia/gcc-states asia/yemen africa/egypt
+    asia/china asia/taiwan asia/mongolia asia/south-korea asia/north-korea asia/japan
+    asia/india asia/pakistan asia/afghanistan asia/bangladesh asia/nepal asia/bhutan asia/sri-lanka asia/maldives
+    asia/myanmar asia/thailand asia/laos asia/cambodia asia/vietnam asia/malaysia-singapore-brunei asia/philippines
+    asia/indonesia asia/east-timor"
+  for s in $SOURCES; do
     b=$(basename "$s")
     [ -s "$D/src/$b.roads.osm.pbf" ] && continue
     url="https://download.geofabrik.de/${s}-latest.osm.pbf"

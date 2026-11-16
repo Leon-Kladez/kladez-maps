@@ -166,7 +166,7 @@ jobs:
               gh workflow run build-search.yml --repo "$REPO" --ref "${{ github.ref_name }}" -f group="$g" && echo "поиск: запущен для $g"
             done
           fi
-          for p in maps asia; do
+          for p in maps asia america; do
             gh release list --repo "$REPO" --limit 100 --json tagName -q '.[].tagName' | grep "^$p-" | sort -r | tail -n +3 |
               while read -r old; do gh release delete "$old" --repo "$REPO" --yes --cleanup-tag; done
           done

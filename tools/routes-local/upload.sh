@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Выкладка наборов дорог в выпуски карт и дописывание их в maps.json.
 #   GH_TOKEN=… tools/routes-local/upload.sh <папка с routes-*.tar> [ГГГГ-ММ]
-# Азия лежит в своём выпуске asia-ГГГГ-ММ (в выпуске GitHub не больше 1000 файлов), остальное —
+# Азия и Северная Америка — в своих выпусках asia- и america-ГГГГ-ММ (в выпуске GitHub не больше
+# 1000 файлов), остальное —
 # в maps-ГГГГ-ММ; список maps.json — всегда в maps-ГГГГ-ММ. Повторный запуск продолжает: уже
 # описанные наборы (parts/<имя>.json) не выкладываются заново. Ключ GitHub — только в окружении.
 set -u
@@ -15,6 +16,9 @@ mkdir -p "$WORK/parts" "$WORK/base"
 ASIA=" $(node -e "
   const r = require('$ROOT/tools/maps-build/regions.json').regions
   console.log(r.filter((x) => x.group === 'asia').map((x) => x.id).join(' '))") "
+AMERICA=" $(node -e "
+  const r = require('$ROOT/tools/maps-build/regions.json').regions
+  console.log(r.filter((x) => x.group === 'north-america').map((x) => x.id).join(' '))") "
 n=0
 for f in "$PACKS"/routes-*_"$V".tar; do
   b=$(basename "$f" .tar)
@@ -22,6 +26,9 @@ for f in "$PACKS"/routes-*_"$V".tar; do
   id=${b#routes-}; id=${id%_"$V"}
   tag=maps-$V
   case "$ASIA" in *" $id "*) tag=asia-$V ;; esac
+  case "$AMERICA" in *" $id "*) tag=america-$V ;; esac
+  gh release view "$tag" --repo "$REPO" >/dev/null 2>&1 ||
+    gh release create "$tag" --repo "$REPO" --title "Карты $tag" --latest=false --notes "Для Кладезя: список карт — в выпуске maps-$V."
   ok=false
   for i in 1 2 3 4 5; do
     gh release upload "$tag" "$f" --repo "$REPO" --clobber && { ok=true; break; }

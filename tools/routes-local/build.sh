@@ -13,8 +13,8 @@ set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 REPO=$(cd "$HERE/../.." && pwd)
 BUILD=${BUILD:-$(cd "$REPO/../routes-build" && pwd)}
-OUT=$BUILD/packs
-OUTLINES=$BUILD/outlines
+OUT=${OUT:-$BUILD/packs}
+OUTLINES=${OUTLINES:-$BUILD/outlines}
 VERSION=${VERSION:-2026-11}
 D=/data
 log() { echo "[$(date '+%F %T')] $*"; }
@@ -32,13 +32,13 @@ data() {
   # Европа у Geofabrik уже включает Украину, Беларусь, Молдову, Грузию и Турцию; остальное СНГ и
   # Израиль — из Азии; Восточная, Южная и Юго-Восточная Азия — тоже из Азии (с ноября 2026). Всё одной
   # сборкой: соседние страны стыкуются на границах (Владивосток → Харбин, Алматы → Урумчи).
-  SOURCES="russia russia/crimean-fed-district europe
+  SOURCES=${ROAD_SOURCES:-"russia russia/crimean-fed-district europe
     asia/kazakhstan asia/uzbekistan asia/kyrgyzstan asia/tajikistan asia/turkmenistan asia/azerbaijan asia/armenia
     asia/israel-and-palestine asia/lebanon asia/syria asia/jordan asia/iraq asia/iran asia/gcc-states asia/yemen africa/egypt
     asia/china asia/taiwan asia/mongolia asia/south-korea asia/north-korea asia/japan
     asia/india asia/pakistan asia/afghanistan asia/bangladesh asia/nepal asia/bhutan asia/sri-lanka asia/maldives
     asia/myanmar asia/thailand asia/laos asia/cambodia asia/vietnam asia/malaysia-singapore-brunei asia/philippines
-    asia/indonesia asia/east-timor"
+    asia/indonesia asia/east-timor"}
   for s in $SOURCES; do
     b=$(basename "$s")
     [ -s "$D/src/$b.roads.osm.pbf" ] && continue

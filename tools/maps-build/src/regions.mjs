@@ -11,7 +11,7 @@ const ISO2_RE = /^[A-Z]{2}$/
 
 /**
  * @typedef {{ id: string, title: string, group: string, country: string, contents?: string,
- *   source: { countries?: string[], admin1?: string[] }, variants: ('full'|'overview')[],
+ *   source: { countries?: string[], admin1?: string[], clip?: [number, number, number, number] }, variants: ('full'|'overview')[],
  *   maps?: boolean, parent?: string }} Region
  *
  * maps: false — регион без своей карты (слишком большой — карта частями), но с указателем поиска и
@@ -54,6 +54,11 @@ export function validateRegions(regions) {
     if (!Array.isArray(countries) || !Array.isArray(admin1)) fail('source.countries и source.admin1 — массивы')
     if (countries.length + admin1.length === 0) fail('пустой source')
     if (countries.some((c) => !ISO2_RE.test(c))) fail('source.countries — коды ISO из двух букв')
+    const clip = r.source?.clip
+    if (clip !== undefined) {
+      const ok = Array.isArray(clip) && clip.length === 4 && clip.every((v) => typeof v === 'number') && clip[0] < clip[2] && clip[1] < clip[3]
+      if (!ok) fail('source.clip — [запад, юг, восток, север], числа, запад < восток, юг < север')
+    }
     if (!Array.isArray(r.variants) || r.variants.length === 0 || r.variants.some((v) => !VARIANTS.includes(v)))
       fail(`variants — непустой список из ${VARIANTS.join(', ')}`)
   }

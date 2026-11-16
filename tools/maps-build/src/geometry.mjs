@@ -27,14 +27,59 @@ export function regionGeometry(region, ne0, ne1, buffer = REGION_BUFFER_DEGREES)
       picked.push(...found)
     }
   }
-  return {
-    type: 'FeatureCollection',
-    features: picked.map((f) => ({
-      type: 'Feature',
-      properties: {},
-      geometry: clampGeometry(bufferGeometry(f.geometry, buffer)),
-    })),
+  const clip = region.source.clip
+  const features = picked
+    .map((f) => {
+      let g = clampGeometry(bufferGeometry(f.geometry, buffer))
+      if (clip) g = clipGeometry(g, clip)
+      return g ? { type: 'Feature', properties: {}, geometry: g } : null
+    })
+    .filter(Boolean)
+  if (features.length === 0) throw new Error(`${region.id}: после обрезки source.clip ничего не осталось`)
+  return { type: 'FeatureCollection', features }
+}
+
+/**
+ * Обрезка контура прямоугольником [запад, юг, восток, север] — для частей больших субъектов, у
+ * которых в Natural Earth нет деления мельче (Квебек, Нунавут). Сазерленд — Ходжмен по каждому
+ * кольцу: окно выпуклое, этого достаточно для вырезки карт. Пустое — null.
+ */
+export function clipGeometry(geometry, [w, s, e, n]) {
+  const edges = [
+    (p) => p[0] >= w, (p) => p[0] <= e, (p) => p[1] >= s, (p) => p[1] <= n,
+  ]
+  const cut = [
+    (a, b) => [w, a[1] + ((b[1] - a[1]) * (w - a[0])) / (b[0] - a[0])],
+    (a, b) => [e, a[1] + ((b[1] - a[1]) * (e - a[0])) / (b[0] - a[0])],
+    (a, b) => [a[0] + ((b[0] - a[0]) * (s - a[1])) / (b[1] - a[1]), s],
+    (a, b) => [a[0] + ((b[0] - a[0]) * (n - a[1])) / (b[1] - a[1]), n],
+  ]
+  const clipRing = (ring) => {
+    let pts = ring.slice(0, -1)
+    for (let k = 0; k < 4 && pts.length; k++) {
+      const out = []
+      for (let i = 0; i < pts.length; i++) {
+        const cur = pts[i]
+        const prev = pts[(i - 1 + pts.length) % pts.length]
+        const inC = edges[k](cur)
+        const inP = edges[k](prev)
+        if (inC) {
+          if (!inP) out.push(cut[k](prev, cur))
+          out.push(cur)
+        } else if (inP) out.push(cut[k](prev, cur))
+      }
+      pts = out
+    }
+    return pts.length >= 3 ? [...pts, pts[0]] : null
   }
+  const clipPoly = (rings) => {
+    const outer = clipRing(rings[0])
+    if (!outer) return null
+    return [outer, ...rings.slice(1).map(clipRing).filter(Boolean)]
+  }
+  const polys = (geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates).map(clipPoly).filter(Boolean)
+  if (polys.length === 0) return null
+  return { type: 'MultiPolygon', coordinates: polys }
 }
 
 // ---- Запас по краю: перенос на JS алгоритма из admin/app/services/countries_service.ts ----

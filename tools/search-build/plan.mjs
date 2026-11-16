@@ -118,6 +118,74 @@ export const GEOFABRIK = {
   TL: ['asia/east-timor'],
 }
 
+/** США и Канада: у каждого штата и провинции свой файл Geofabrik (вся страна — десятки ГБ). */
+export const GEOFABRIK_ADMIN1 = {
+  'CA-AB': ['north-america/canada/alberta'],
+  'CA-BC': ['north-america/canada/british-columbia'],
+  'CA-MB': ['north-america/canada/manitoba'],
+  'CA-NB': ['north-america/canada/new-brunswick'],
+  'CA-NL': ['north-america/canada/newfoundland-and-labrador'],
+  'CA-NS': ['north-america/canada/nova-scotia'],
+  'CA-NT': ['north-america/canada/northwest-territories'],
+  'CA-NU': ['north-america/canada/nunavut'],
+  'CA-ON': ['north-america/canada/ontario'],
+  'CA-PE': ['north-america/canada/prince-edward-island'],
+  'CA-QC': ['north-america/canada/quebec'],
+  'CA-SK': ['north-america/canada/saskatchewan'],
+  'CA-YT': ['north-america/canada/yukon'],
+  'US-AK': ['north-america/us/alaska'],
+  'US-AL': ['north-america/us/alabama'],
+  'US-AR': ['north-america/us/arkansas'],
+  'US-AZ': ['north-america/us/arizona'],
+  'US-CA': ['north-america/us/california'],
+  'US-CO': ['north-america/us/colorado'],
+  'US-CT': ['north-america/us/connecticut'],
+  'US-DC': ['north-america/us/district-of-columbia'],
+  'US-DE': ['north-america/us/delaware'],
+  'US-FL': ['north-america/us/florida'],
+  'US-GA': ['north-america/us/georgia'],
+  'US-HI': ['north-america/us/hawaii'],
+  'US-IA': ['north-america/us/iowa'],
+  'US-ID': ['north-america/us/idaho'],
+  'US-IL': ['north-america/us/illinois'],
+  'US-IN': ['north-america/us/indiana'],
+  'US-KS': ['north-america/us/kansas'],
+  'US-KY': ['north-america/us/kentucky'],
+  'US-LA': ['north-america/us/louisiana'],
+  'US-MA': ['north-america/us/massachusetts'],
+  'US-MD': ['north-america/us/maryland'],
+  'US-ME': ['north-america/us/maine'],
+  'US-MI': ['north-america/us/michigan'],
+  'US-MN': ['north-america/us/minnesota'],
+  'US-MO': ['north-america/us/missouri'],
+  'US-MS': ['north-america/us/mississippi'],
+  'US-MT': ['north-america/us/montana'],
+  'US-NC': ['north-america/us/north-carolina'],
+  'US-ND': ['north-america/us/north-dakota'],
+  'US-NE': ['north-america/us/nebraska'],
+  'US-NH': ['north-america/us/new-hampshire'],
+  'US-NJ': ['north-america/us/new-jersey'],
+  'US-NM': ['north-america/us/new-mexico'],
+  'US-NV': ['north-america/us/nevada'],
+  'US-NY': ['north-america/us/new-york'],
+  'US-OH': ['north-america/us/ohio'],
+  'US-OK': ['north-america/us/oklahoma'],
+  'US-OR': ['north-america/us/oregon'],
+  'US-PA': ['north-america/us/pennsylvania'],
+  'US-RI': ['north-america/us/rhode-island'],
+  'US-SC': ['north-america/us/south-carolina'],
+  'US-SD': ['north-america/us/south-dakota'],
+  'US-TN': ['north-america/us/tennessee'],
+  'US-TX': ['north-america/us/texas'],
+  'US-UT': ['north-america/us/utah'],
+  'US-VA': ['north-america/us/virginia'],
+  'US-VT': ['north-america/us/vermont'],
+  'US-WA': ['north-america/us/washington'],
+  'US-WI': ['north-america/us/wisconsin'],
+  'US-WV': ['north-america/us/west-virginia'],
+  'US-WY': ['north-america/us/wyoming'],
+}
+
 /**
  * Задания: по файлу Geofabrik (Сан-Марино и Ватикан — в задании Италии, Аланды — Финляндии),
  * регионы — те, у которых своя карта (у нарезанной страны — её части).
@@ -128,7 +196,10 @@ export function plan(regions, group, only = null) {
     if (r.group !== group) continue
     const country = r.country.toLowerCase()
     if (only && !only.has(country) && !only.has(r.id)) continue
-    const sources = GEOFABRIK[r.country]
+    const a1 = r.source?.admin1 ?? []
+    // Штаты и провинции — своими файлами (Мэриленд с Вашингтоном — двумя, они сливаются).
+    const byAdmin1 = a1.length > 0 && a1.every((c) => GEOFABRIK_ADMIN1[c]) ? [...new Set(a1.flatMap((c) => GEOFABRIK_ADMIN1[c]))] : null
+    const sources = byAdmin1 || GEOFABRIK[r.country]
     if (!sources) throw new Error(`нет файла Geofabrik для страны ${r.country}`)
     const k = sources.join(' ')
     if (!bySource.has(k)) bySource.set(k, { key: sources[0].split('/').pop(), regions: [], sources: k })

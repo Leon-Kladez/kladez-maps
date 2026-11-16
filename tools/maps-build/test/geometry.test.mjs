@@ -59,3 +59,13 @@ test('simplifyGeometry убирает лишние точки и сохраня�
   const g = simplifyGeometry({ type: 'Polygon', coordinates: [ring] }, 0.05)
   assert.deepEqual(g.coordinates[0], [[0, 0], [2, 0], [2, 2], [0, 2], [0, 0]])
 })
+
+test('clipGeometry: прямоугольник режет контур, вне окна — null', async () => {
+  const { clipGeometry } = await import('../src/geometry.mjs')
+  const square = { type: 'Polygon', coordinates: [[[0, 0], [10, 0], [10, 10], [0, 10], [0, 0]]] }
+  const half = clipGeometry(square, [0, 0, 5, 10])
+  const xs = half.coordinates[0][0].map((p) => p[0])
+  assert.equal(Math.max(...xs), 5)
+  assert.equal(Math.min(...xs), 0)
+  assert.equal(clipGeometry(square, [20, 20, 30, 30]), null)
+})

@@ -63,9 +63,15 @@ jobs:
             json=$(echo "$r" | jq -R -c --arg g "$group" 'split(",") | map(gsub("^[[:space:]]+|[[:space:]]+$"; "")) | map(select(length > 0))
               | map({key: ., regions: ., sources: "", group: $g})')
           else
+            # Несколько групп через запятую — одним запуском: GitHub держит в очереди только один
+            # ожидающий запуск, и запуски по группам друг за другом отменяли бы друг друга.
             only=()
             [ -n "$ONLY_INPUT" ] && only=(--only "$ONLY_INPUT")
-            json=$(node tools/search-build/plan.mjs --group "$group" "${only[@]}" | jq -c --arg g "$group" 'map(. + {group: $g})')
+            json='[]'
+            for g in ${group//,/ }; do
+              part=$(node tools/search-build/plan.mjs --group "$g" "${only[@]}" | jq -c --arg g "$g" 'map(. + {group: $g})')
+              json=$(jq -c -n --argjson a "$json" --argjson b "$part" '$a + $b')
+            done
           fi
           echo "$json" | jq -r '.[] | "\(.key): \(.regions)"'
           echo "json=$json" >> "$GITHUB_OUTPUT"

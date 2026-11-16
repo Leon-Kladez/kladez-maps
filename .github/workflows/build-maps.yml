@@ -165,12 +165,11 @@ jobs:
           gh release upload "$TAG" parts/maps.json tools/maps-build/LICENSE-ODbL.md --repo "$REPO" --clobber
           gh release edit "$TAG" --repo "$REPO" --latest
           # Храним две последние версии карт.
-          # Поиск — следом, по группам этой сборки (Россия собирается отдельно, по округам).
+          # Поиск — следом, одним запуском на все группы этой сборки (Россия собирается отдельно, по
+          # округам): GitHub держит в очереди один ожидающий запуск, лишние отменяет.
           if [ "${{ inputs.search_after }}" = "true" ]; then
-            for g in $(echo '${{ needs.prepare.outputs.groups }}' | jq -r '.[]'); do
-              [ "$g" = russia ] && continue
-              gh workflow run build-search.yml --repo "$REPO" --ref "${{ github.ref_name }}" -f group="$g" && echo "поиск: запущен для $g"
-            done
+            g=$(echo '${{ needs.prepare.outputs.groups }}' | jq -r 'map(select(. != "russia")) | join(",")')
+            [ -n "$g" ] && gh workflow run build-search.yml --repo "$REPO" --ref "${{ github.ref_name }}" -f group="$g" && echo "поиск: запущен для $g"
           fi
           for p in maps asia america latam africa oceania; do
             gh release list --repo "$REPO" --limit 100 --json tagName -q '.[].tagName' | grep "^$p-" | sort -r | tail -n +3 |

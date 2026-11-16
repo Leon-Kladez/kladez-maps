@@ -3813,11 +3813,11 @@
    ]
   },
   {
-   "id": "ca-nu-west",
-   "title": "Канада: Нунавут, запад",
+   "id": "ca-nu-southwest",
+   "title": "Канада: Нунавут, юго-запад",
    "group": "north-america",
    "country": "CA",
-   "contents": "Кугаарук, Кембридж-Бей, западный Арктический архипелаг",
+   "contents": "Кугаарук, Кембридж-Бей, Арвиат, Ранкин-Инлет",
    "source": {
     "admin1": [
      "CA-NU"
@@ -3825,6 +3825,28 @@
     "clip": [
      -121,
      55,
+     -90,
+     70
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-nu-northwest",
+   "title": "Канада: Нунавут, северо-запад",
+   "group": "north-america",
+   "country": "CA",
+   "contents": "Западная часть Арктического архипелага",
+   "source": {
+    "admin1": [
+     "CA-NU"
+    ],
+    "clip": [
+     -121,
+     70,
      -90,
      84
     ]
@@ -3835,11 +3857,11 @@
    ]
   },
   {
-   "id": "ca-nu-east",
-   "title": "Канада: Нунавут, восток",
+   "id": "ca-nu-southeast",
+   "title": "Канада: Нунавут, юго-восток",
    "group": "north-america",
    "country": "CA",
-   "contents": "Икалуит, Баффинова Земля, острова Гудзонова залива",
+   "contents": "Икалуит, юг Баффиновой Земли, острова Гудзонова залива",
    "source": {
     "admin1": [
      "CA-NU"
@@ -3847,6 +3869,28 @@
     "clip": [
      -90,
      51,
+     -60,
+     66
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ca-nu-northeast",
+   "title": "Канада: Нунавут, северо-восток",
+   "group": "north-america",
+   "country": "CA",
+   "contents": "Север Баффиновой Земли, остров Элсмир",
+   "source": {
+    "admin1": [
+     "CA-NU"
+    ],
+    "clip": [
+     -90,
+     66,
      -60,
      84
     ]

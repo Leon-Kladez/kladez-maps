@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
     inputs:
       group:
-        description: 'Группа: russia, europe, cis, middle-east, asia или north-america'
+        description: 'Группа: russia, europe, cis, middle-east, asia, north-america, latin-america, africa или oceania'
         default: 'russia'
       only:
         description: 'Только эти регионы (Россия: id; другие группы: коды стран или id), пусто — вся группа'

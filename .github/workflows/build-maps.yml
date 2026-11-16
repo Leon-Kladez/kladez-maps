@@ -13,8 +13,8 @@ on:
   workflow_dispatch:
     inputs:
       groups:
-        description: 'Группы через запятую (russia,cis,europe,middle-east,asia,north-america)'
-        default: 'russia,cis,europe,middle-east,asia,north-america'
+        description: 'Группы через запятую (russia,cis,europe,middle-east,asia,north-america,latin-america,africa,oceania)'
+        default: 'russia,cis,europe,middle-east,asia,north-america,latin-america,africa,oceania'
       only:
         description: 'Только эти регионы (id через запятую), пусто — все из выбранных групп'
         default: ''
@@ -64,7 +64,7 @@ jobs:
         env:
           GROUPS_INPUT: ${{ inputs.groups }}
         run: |
-          g="${GROUPS_INPUT:-russia,cis,europe,middle-east,asia,north-america}"
+          g="${GROUPS_INPUT:-russia,cis,europe,middle-east,asia,north-america,latin-america,africa,oceania}"
           echo "json=$(echo "$g" | jq -R -c 'split(",") | map(gsub("^[[:space:]]+|[[:space:]]+$"; "")) | map(select(length > 0))')" >> "$GITHUB_OUTPUT"
       - name: Создать выпуск
         if: env.DRY_RUN != 'true'
@@ -108,14 +108,20 @@ jobs:
           TAG: ${{ needs.prepare.outputs.tag }}
           VERSION: ${{ needs.prepare.outputs.version }}
         run: |
-          # Азия — в своём выпуске asia-ГГГГ-ММ: в выпуске GitHub не больше 1000 файлов, а в maps-…
-          # их уже около 900. Список maps.json остаётся в maps-…, ссылки ведут в оба выпуска.
-          if [ "$GROUP" = "asia" ]; then
-            TAG="asia-$VERSION"
-            if [ "$DRY_RUN" != "true" ]; then
-              gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1 ||
-                gh release create "$TAG" --repo "$REPO" --title "Карты Азии $VERSION" --latest=false                   --notes "Карты Азии для Кладезя (список — в выпуске maps-$VERSION). Данные © участники OpenStreetMap (ODbL), © Protomaps."
-            fi
+          # Азия, Латинская Америка, Африка и Океания — в своих выпусках (asia-, latam-, africa-,
+          # oceania-ГГГГ-ММ): в выпуске GitHub не больше 1000 файлов, а в maps-… их уже около 900.
+          # Список maps.json остаётся в maps-…, ссылки ведут во все выпуски.
+          case "$GROUP" in
+            asia) TAG="asia-$VERSION"; NAME="Азии" ;;
+            latin-america) TAG="latam-$VERSION"; NAME="Латинской Америки" ;;
+            africa) TAG="africa-$VERSION"; NAME="Африки" ;;
+            oceania) TAG="oceania-$VERSION"; NAME="Австралии и Океании" ;;
+            *) NAME="" ;;
+          esac
+          if [ -n "$NAME" ] && [ "$DRY_RUN" != "true" ]; then
+            gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1 ||
+              gh release create "$TAG" --repo "$REPO" --title "Карты $NAME $VERSION" --latest=false \
+                --notes "Карты $NAME для Кладезя (список — в выпуске maps-$VERSION). Данные © участники OpenStreetMap (ODbL), © Protomaps."
           fi
           args=(build --group "$GROUP" --out out --tag "$TAG" --repo "$REPO")
           [ -n "$ONLY_INPUT" ] && args+=(--only "$ONLY_INPUT")
@@ -166,7 +172,7 @@ jobs:
               gh workflow run build-search.yml --repo "$REPO" --ref "${{ github.ref_name }}" -f group="$g" && echo "поиск: запущен для $g"
             done
           fi
-          for p in maps asia america; do
+          for p in maps asia america latam africa oceania; do
             gh release list --repo "$REPO" --limit 100 --json tagName -q '.[].tagName' | grep "^$p-" | sort -r | tail -n +3 |
               while read -r old; do gh release delete "$old" --repo "$REPO" --yes --cleanup-tag; done
           done

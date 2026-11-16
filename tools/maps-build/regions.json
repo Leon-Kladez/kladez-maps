@@ -4706,6 +4706,1722 @@
     "full",
     "overview"
    ]
+  },
+  {
+   "id": "gl",
+   "title": "Гренландия",
+   "group": "north-america",
+   "country": "GL",
+   "source": {
+    "countries": [
+     "GL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mx-north",
+   "title": "Мексика: север",
+   "group": "latin-america",
+   "country": "MX",
+   "contents": "Нижняя Калифорния (Тихуана), Южная Нижняя Калифорния, Сонора, Чиуауа, Коауила, Нуэво-Леон (Монтеррей), Тамаулипас, Синалоа, Дуранго, Сакатекас, Сан-Луис-Потоси",
+   "source": {
+    "admin1": [
+     "MX-BCN",
+     "MX-BCS",
+     "MX-SON",
+     "MX-CHH",
+     "MX-COA",
+     "MX-NLE",
+     "MX-TAM",
+     "MX-SIN",
+     "MX-DUR",
+     "MX-ZAC",
+     "MX-SLP"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mx-center",
+   "title": "Мексика: Мехико и центр",
+   "group": "latin-america",
+   "country": "MX",
+   "contents": "Мехико, штат Мехико, Пуэбла, Морелос, Тласкала, Идальго, Керетаро, Гуанахуато, Агуаскальентес, Халиско (Гвадалахара), Наярит, Колима, Мичоакан, Герреро (Акапулько)",
+   "source": {
+    "admin1": [
+     "MX-DIF",
+     "MX-MEX",
+     "MX-MOR",
+     "MX-TLA",
+     "MX-PUE",
+     "MX-HID",
+     "MX-QUE",
+     "MX-GUA",
+     "MX-AGU",
+     "MX-JAL",
+     "MX-NAY",
+     "MX-COL",
+     "MX-MIC",
+     "MX-GRO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mx-south",
+   "title": "Мексика: юг и Юкатан",
+   "group": "latin-america",
+   "country": "MX",
+   "contents": "Веракрус, Оахака, Чьяпас, Табаско, Кампече, Юкатан (Мерида), Кинтана-Роо (Канкун)",
+   "source": {
+    "admin1": [
+     "MX-VER",
+     "MX-OAX",
+     "MX-CHP",
+     "MX-TAB",
+     "MX-CAM",
+     "MX-YUC",
+     "MX-ROO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gt",
+   "title": "Гватемала",
+   "group": "latin-america",
+   "country": "GT",
+   "source": {
+    "countries": [
+     "GT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bz",
+   "title": "Белиз",
+   "group": "latin-america",
+   "country": "BZ",
+   "source": {
+    "countries": [
+     "BZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sv",
+   "title": "Сальвадор",
+   "group": "latin-america",
+   "country": "SV",
+   "source": {
+    "countries": [
+     "SV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "hn",
+   "title": "Гондурас",
+   "group": "latin-america",
+   "country": "HN",
+   "source": {
+    "countries": [
+     "HN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ni",
+   "title": "Никарагуа",
+   "group": "latin-america",
+   "country": "NI",
+   "source": {
+    "countries": [
+     "NI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cr",
+   "title": "Коста-Рика",
+   "group": "latin-america",
+   "country": "CR",
+   "source": {
+    "countries": [
+     "CR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "pa",
+   "title": "Панама",
+   "group": "latin-america",
+   "country": "PA",
+   "source": {
+    "countries": [
+     "PA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cu",
+   "title": "Куба",
+   "group": "latin-america",
+   "country": "CU",
+   "source": {
+    "countries": [
+     "CU"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ht",
+   "title": "Гаити",
+   "group": "latin-america",
+   "country": "HT",
+   "source": {
+    "countries": [
+     "HT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "do",
+   "title": "Доминиканская Республика",
+   "group": "latin-america",
+   "country": "DO",
+   "source": {
+    "countries": [
+     "DO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "jm",
+   "title": "Ямайка",
+   "group": "latin-america",
+   "country": "JM",
+   "source": {
+    "countries": [
+     "JM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bs",
+   "title": "Багамские Острова",
+   "group": "latin-america",
+   "country": "BS",
+   "source": {
+    "countries": [
+     "BS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "pr",
+   "title": "Пуэрто-Рико",
+   "group": "latin-america",
+   "country": "PR",
+   "source": {
+    "countries": [
+     "PR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "caribbean-islands",
+   "title": "Карибские острова: Малые Антилы, Каймановы, Тёркс и Кайкос",
+   "group": "latin-america",
+   "country": "TT",
+   "contents": "Тринидад и Тобаго, Барбадос, Сент-Люсия, Гренада, Сент-Винсент и Гренадины, Доминика, Мартиника, Гваделупа, Антигуа и Барбуда, Сент-Китс и Невис, Монтсеррат, Ангилья, Сен-Мартен и Синт-Мартен, Сен-Бартелеми, Виргинские острова (США и Британские), Аруба, Кюрасао, Каймановы острова, Тёркс и Кайкос",
+   "source": {
+    "countries": [
+     "TT",
+     "BB",
+     "LC",
+     "GD",
+     "VC",
+     "DM",
+     "AG",
+     "KN",
+     "MS",
+     "AI",
+     "MF",
+     "SX",
+     "BL",
+     "VG",
+     "VI",
+     "AW",
+     "CW",
+     "KY",
+     "TC"
+    ],
+    "admin1": [
+     "FR-GP",
+     "FR-MQ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "br-north",
+   "title": "Бразилия: север и Амазония",
+   "group": "latin-america",
+   "country": "BR",
+   "contents": "Амазонас (Манаус), Пара (Белен), Акри, Рондония, Рорайма, Амапа, Токантинс",
+   "source": {
+    "admin1": [
+     "BR-AM",
+     "BR-PA",
+     "BR-AC",
+     "BR-RO",
+     "BR-RR",
+     "BR-AP",
+     "BR-TO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "br-northeast",
+   "title": "Бразилия: северо-восток",
+   "group": "latin-america",
+   "country": "BR",
+   "contents": "Баия (Салвадор), Пернамбуку (Ресифи), Сеара (Форталеза), Мараньян, Пиауи, Риу-Гранди-ду-Норти, Параиба, Алагоас, Сержипи",
+   "source": {
+    "admin1": [
+     "BR-MA",
+     "BR-PI",
+     "BR-CE",
+     "BR-RN",
+     "BR-PB",
+     "BR-PE",
+     "BR-AL",
+     "BR-SE",
+     "BR-BA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "br-center",
+   "title": "Бразилия: центр и Бразилиа",
+   "group": "latin-america",
+   "country": "BR",
+   "contents": "Бразилиа, Гояс, Мату-Гросу, Мату-Гросу-ду-Сул",
+   "source": {
+    "admin1": [
+     "BR-DF",
+     "BR-GO",
+     "BR-MT",
+     "BR-MS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "br-sao-paulo",
+   "title": "Бразилия: Сан-Паулу",
+   "group": "latin-america",
+   "country": "BR",
+   "contents": "Штат Сан-Паулу: Сан-Паулу, Кампинас, Сантус",
+   "source": {
+    "admin1": [
+     "BR-SP"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "br-rio-minas",
+   "title": "Бразилия: Рио-де-Жанейро и Минас-Жерайс",
+   "group": "latin-america",
+   "country": "BR",
+   "contents": "Рио-де-Жанейро, Минас-Жерайс (Белу-Оризонти), Эспириту-Санту",
+   "source": {
+    "admin1": [
+     "BR-RJ",
+     "BR-MG",
+     "BR-ES"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "br-south",
+   "title": "Бразилия: юг",
+   "group": "latin-america",
+   "country": "BR",
+   "contents": "Парана (Куритиба), Санта-Катарина (Флорианополис), Риу-Гранди-ду-Сул (Порту-Алегри)",
+   "source": {
+    "admin1": [
+     "BR-PR",
+     "BR-SC",
+     "BR-RS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ar",
+   "title": "Аргентина",
+   "group": "latin-america",
+   "country": "AR",
+   "source": {
+    "countries": [
+     "AR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bo",
+   "title": "Боливия",
+   "group": "latin-america",
+   "country": "BO",
+   "source": {
+    "countries": [
+     "BO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cl",
+   "title": "Чили",
+   "group": "latin-america",
+   "country": "CL",
+   "source": {
+    "countries": [
+     "CL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "co",
+   "title": "Колумбия",
+   "group": "latin-america",
+   "country": "CO",
+   "source": {
+    "countries": [
+     "CO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ec",
+   "title": "Эквадор",
+   "group": "latin-america",
+   "country": "EC",
+   "contents": "Вместе с Галапагосскими островами",
+   "source": {
+    "countries": [
+     "EC"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gy",
+   "title": "Гайана",
+   "group": "latin-america",
+   "country": "GY",
+   "source": {
+    "countries": [
+     "GY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "py",
+   "title": "Парагвай",
+   "group": "latin-america",
+   "country": "PY",
+   "source": {
+    "countries": [
+     "PY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "pe",
+   "title": "Перу",
+   "group": "latin-america",
+   "country": "PE",
+   "source": {
+    "countries": [
+     "PE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sr",
+   "title": "Суринам",
+   "group": "latin-america",
+   "country": "SR",
+   "source": {
+    "countries": [
+     "SR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "uy",
+   "title": "Уругвай",
+   "group": "latin-america",
+   "country": "UY",
+   "source": {
+    "countries": [
+     "UY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ve",
+   "title": "Венесуэла",
+   "group": "latin-america",
+   "country": "VE",
+   "source": {
+    "countries": [
+     "VE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fr-guiana",
+   "title": "Франция: Французская Гвиана",
+   "group": "latin-america",
+   "country": "FR",
+   "source": {
+    "admin1": [
+     "FR-GF"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "dz",
+   "title": "Алжир",
+   "group": "africa",
+   "country": "DZ",
+   "source": {
+    "countries": [
+     "DZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ao",
+   "title": "Ангола",
+   "group": "africa",
+   "country": "AO",
+   "source": {
+    "countries": [
+     "AO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bj",
+   "title": "Бенин",
+   "group": "africa",
+   "country": "BJ",
+   "source": {
+    "countries": [
+     "BJ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bw",
+   "title": "Ботсвана",
+   "group": "africa",
+   "country": "BW",
+   "source": {
+    "countries": [
+     "BW"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bf",
+   "title": "Буркина-Фасо",
+   "group": "africa",
+   "country": "BF",
+   "source": {
+    "countries": [
+     "BF"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "bi",
+   "title": "Бурунди",
+   "group": "africa",
+   "country": "BI",
+   "source": {
+    "countries": [
+     "BI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cm",
+   "title": "Камерун",
+   "group": "africa",
+   "country": "CM",
+   "source": {
+    "countries": [
+     "CM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cv",
+   "title": "Кабо-Верде",
+   "group": "africa",
+   "country": "CV",
+   "source": {
+    "countries": [
+     "CV"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cf",
+   "title": "Центральноафриканская Республика",
+   "group": "africa",
+   "country": "CF",
+   "source": {
+    "countries": [
+     "CF"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "td",
+   "title": "Чад",
+   "group": "africa",
+   "country": "TD",
+   "source": {
+    "countries": [
+     "TD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "km",
+   "title": "Коморские Острова",
+   "group": "africa",
+   "country": "KM",
+   "source": {
+    "countries": [
+     "KM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cg",
+   "title": "Республика Конго",
+   "group": "africa",
+   "country": "CG",
+   "source": {
+    "countries": [
+     "CG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "cd",
+   "title": "Демократическая Республика Конго",
+   "group": "africa",
+   "country": "CD",
+   "source": {
+    "countries": [
+     "CD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "dj",
+   "title": "Джибути",
+   "group": "africa",
+   "country": "DJ",
+   "source": {
+    "countries": [
+     "DJ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gq",
+   "title": "Экваториальная Гвинея",
+   "group": "africa",
+   "country": "GQ",
+   "source": {
+    "countries": [
+     "GQ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "er",
+   "title": "Эритрея",
+   "group": "africa",
+   "country": "ER",
+   "source": {
+    "countries": [
+     "ER"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "et",
+   "title": "Эфиопия",
+   "group": "africa",
+   "country": "ET",
+   "source": {
+    "countries": [
+     "ET"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ga",
+   "title": "Габон",
+   "group": "africa",
+   "country": "GA",
+   "source": {
+    "countries": [
+     "GA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gh",
+   "title": "Гана",
+   "group": "africa",
+   "country": "GH",
+   "source": {
+    "countries": [
+     "GH"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gn",
+   "title": "Гвинея",
+   "group": "africa",
+   "country": "GN",
+   "source": {
+    "countries": [
+     "GN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gw",
+   "title": "Гвинея-Бисау",
+   "group": "africa",
+   "country": "GW",
+   "source": {
+    "countries": [
+     "GW"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ci",
+   "title": "Кот-д’Ивуар",
+   "group": "africa",
+   "country": "CI",
+   "source": {
+    "countries": [
+     "CI"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ke",
+   "title": "Кения",
+   "group": "africa",
+   "country": "KE",
+   "source": {
+    "countries": [
+     "KE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ls",
+   "title": "Лесото",
+   "group": "africa",
+   "country": "LS",
+   "source": {
+    "countries": [
+     "LS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "lr",
+   "title": "Либерия",
+   "group": "africa",
+   "country": "LR",
+   "source": {
+    "countries": [
+     "LR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ly",
+   "title": "Ливия",
+   "group": "africa",
+   "country": "LY",
+   "source": {
+    "countries": [
+     "LY"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mg",
+   "title": "Мадагаскар",
+   "group": "africa",
+   "country": "MG",
+   "source": {
+    "countries": [
+     "MG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mw",
+   "title": "Малави",
+   "group": "africa",
+   "country": "MW",
+   "source": {
+    "countries": [
+     "MW"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ml",
+   "title": "Мали",
+   "group": "africa",
+   "country": "ML",
+   "source": {
+    "countries": [
+     "ML"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mr",
+   "title": "Мавритания",
+   "group": "africa",
+   "country": "MR",
+   "source": {
+    "countries": [
+     "MR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mu",
+   "title": "Маврикий",
+   "group": "africa",
+   "country": "MU",
+   "source": {
+    "countries": [
+     "MU"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ma",
+   "title": "Марокко",
+   "group": "africa",
+   "country": "MA",
+   "source": {
+    "countries": [
+     "MA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "eh",
+   "title": "Западная Сахара",
+   "group": "africa",
+   "country": "EH",
+   "source": {
+    "countries": [
+     "EH"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "mz",
+   "title": "Мозамбик",
+   "group": "africa",
+   "country": "MZ",
+   "source": {
+    "countries": [
+     "MZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "na",
+   "title": "Намибия",
+   "group": "africa",
+   "country": "NA",
+   "source": {
+    "countries": [
+     "NA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ne",
+   "title": "Нигер",
+   "group": "africa",
+   "country": "NE",
+   "source": {
+    "countries": [
+     "NE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ng",
+   "title": "Нигерия",
+   "group": "africa",
+   "country": "NG",
+   "source": {
+    "countries": [
+     "NG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "rw",
+   "title": "Руанда",
+   "group": "africa",
+   "country": "RW",
+   "source": {
+    "countries": [
+     "RW"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "st",
+   "title": "Сан-Томе и Принсипи",
+   "group": "africa",
+   "country": "ST",
+   "source": {
+    "countries": [
+     "ST"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sn",
+   "title": "Сенегал",
+   "group": "africa",
+   "country": "SN",
+   "source": {
+    "countries": [
+     "SN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "gm",
+   "title": "Гамбия",
+   "group": "africa",
+   "country": "GM",
+   "source": {
+    "countries": [
+     "GM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sc",
+   "title": "Сейшельские Острова",
+   "group": "africa",
+   "country": "SC",
+   "source": {
+    "countries": [
+     "SC"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sl",
+   "title": "Сьерра-Леоне",
+   "group": "africa",
+   "country": "SL",
+   "source": {
+    "countries": [
+     "SL"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "so",
+   "title": "Сомали",
+   "group": "africa",
+   "country": "SO",
+   "contents": "Вместе с Сомалилендом",
+   "source": {
+    "countries": [
+     "SO"
+    ],
+    "admin1": [
+     "-99-X11~"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "za",
+   "title": "Южно-Африканская Республика",
+   "group": "africa",
+   "country": "ZA",
+   "source": {
+    "countries": [
+     "ZA"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ss",
+   "title": "Южный Судан",
+   "group": "africa",
+   "country": "SS",
+   "source": {
+    "countries": [
+     "SS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sd",
+   "title": "Судан",
+   "group": "africa",
+   "country": "SD",
+   "source": {
+    "countries": [
+     "SD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sz",
+   "title": "Эсватини",
+   "group": "africa",
+   "country": "SZ",
+   "source": {
+    "countries": [
+     "SZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "tz",
+   "title": "Танзания",
+   "group": "africa",
+   "country": "TZ",
+   "contents": "Вместе с Занзибаром",
+   "source": {
+    "countries": [
+     "TZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "tg",
+   "title": "Того",
+   "group": "africa",
+   "country": "TG",
+   "source": {
+    "countries": [
+     "TG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "tn",
+   "title": "Тунис",
+   "group": "africa",
+   "country": "TN",
+   "source": {
+    "countries": [
+     "TN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ug",
+   "title": "Уганда",
+   "group": "africa",
+   "country": "UG",
+   "source": {
+    "countries": [
+     "UG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "zm",
+   "title": "Замбия",
+   "group": "africa",
+   "country": "ZM",
+   "source": {
+    "countries": [
+     "ZM"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "zw",
+   "title": "Зимбабве",
+   "group": "africa",
+   "country": "ZW",
+   "source": {
+    "countries": [
+     "ZW"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fr-reunion",
+   "title": "Франция: Реюньон",
+   "group": "africa",
+   "country": "FR",
+   "source": {
+    "admin1": [
+     "FR-RE"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fr-mayotte",
+   "title": "Франция: Майотта",
+   "group": "africa",
+   "country": "FR",
+   "source": {
+    "admin1": [
+     "FR-YT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "au-nsw",
+   "title": "Австралия: Новый Южный Уэльс и Канберра",
+   "group": "oceania",
+   "country": "AU",
+   "contents": "Сидней, Ньюкасл, Канберра, остров Лорд-Хау",
+   "source": {
+    "admin1": [
+     "AU-NSW",
+     "AU-ACT",
+     "AU-X02~"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "au-vic",
+   "title": "Австралия: Виктория и Тасмания",
+   "group": "oceania",
+   "country": "AU",
+   "contents": "Мельбурн, Джилонг, Хобарт, Лонсестон",
+   "source": {
+    "admin1": [
+     "AU-VIC",
+     "AU-TAS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "au-qld",
+   "title": "Австралия: Квинсленд",
+   "group": "oceania",
+   "country": "AU",
+   "contents": "Брисбен, Голд-Кост, Кэрнс, Таунсвилл",
+   "source": {
+    "admin1": [
+     "AU-QLD"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "au-west",
+   "title": "Австралия: запад, юг и север",
+   "group": "oceania",
+   "country": "AU",
+   "contents": "Западная Австралия (Перт), Южная Австралия (Аделаида), Северная территория (Дарвин, Алис-Спрингс)",
+   "source": {
+    "admin1": [
+     "AU-WA",
+     "AU-SA",
+     "AU-NT"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "nz",
+   "title": "Новая Зеландия",
+   "group": "oceania",
+   "country": "NZ",
+   "source": {
+    "countries": [
+     "NZ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "pg",
+   "title": "Папуа — Новая Гвинея",
+   "group": "oceania",
+   "country": "PG",
+   "source": {
+    "countries": [
+     "PG"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "fj",
+   "title": "Фиджи",
+   "group": "oceania",
+   "country": "FJ",
+   "source": {
+    "countries": [
+     "FJ"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "nc",
+   "title": "Новая Каледония",
+   "group": "oceania",
+   "country": "NC",
+   "source": {
+    "countries": [
+     "NC"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "pf",
+   "title": "Французская Полинезия",
+   "group": "oceania",
+   "country": "PF",
+   "contents": "Таити, Бора-Бора, Маркизские острова",
+   "source": {
+    "countries": [
+     "PF"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "sb",
+   "title": "Соломоновы Острова",
+   "group": "oceania",
+   "country": "SB",
+   "source": {
+    "countries": [
+     "SB"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "vu",
+   "title": "Вануату",
+   "group": "oceania",
+   "country": "VU",
+   "source": {
+    "countries": [
+     "VU"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "ws",
+   "title": "Самоа",
+   "group": "oceania",
+   "country": "WS",
+   "source": {
+    "countries": [
+     "WS"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "to",
+   "title": "Тонга",
+   "group": "oceania",
+   "country": "TO",
+   "source": {
+    "countries": [
+     "TO"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "micronesia-islands",
+   "title": "Микронезия: Гуам, Палау, Маршалловы Острова и другие",
+   "group": "oceania",
+   "country": "FM",
+   "contents": "Федеративные Штаты Микронезии, Гуам, Северные Марианские острова, Палау, Маршалловы Острова, Науру",
+   "source": {
+    "countries": [
+     "FM",
+     "GU",
+     "MP",
+     "PW",
+     "MH",
+     "NR"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
+  },
+  {
+   "id": "polynesia-islands",
+   "title": "Полинезия: Острова Кука, Кирибати, Тувалу и другие",
+   "group": "oceania",
+   "country": "CK",
+   "contents": "Острова Кука, Кирибати, Тувалу, Ниуэ, Уоллис и Футуна, Американское Самоа, Питкэрн",
+   "source": {
+    "countries": [
+     "CK",
+     "KI",
+     "TV",
+     "NU",
+     "WF",
+     "AS",
+     "PN"
+    ]
+   },
+   "variants": [
+    "full",
+    "overview"
+   ]
   }
  ]
 }

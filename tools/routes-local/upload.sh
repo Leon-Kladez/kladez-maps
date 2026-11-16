@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # Выкладка наборов дорог в выпуски карт и дописывание их в maps.json.
 #   GH_TOKEN=… tools/routes-local/upload.sh <папка с routes-*.tar> [ГГГГ-ММ]
-# Азия и Северная Америка — в своих выпусках asia- и america-ГГГГ-ММ (в выпуске GitHub не больше
-# 1000 файлов), остальное —
-# в maps-ГГГГ-ММ; список maps.json — всегда в maps-ГГГГ-ММ. Повторный запуск продолжает: уже
+# Азия, обе Америки, Африка и Океания — в своих выпусках (asia-, america-, latam-, africa-,
+# oceania-ГГГГ-ММ: в выпуске GitHub не больше 1000 файлов), остальное — в maps-ГГГГ-ММ; список maps.json — всегда в maps-ГГГГ-ММ. Повторный запуск продолжает: уже
 # описанные наборы (parts/<имя>.json) не выкладываются заново. Ключ GitHub — только в окружении.
 set -u
 PACKS=${1:?папка с наборами}
@@ -13,20 +12,18 @@ HERE=$(cd "$(dirname "$0")" && pwd)
 ROOT=$(cd "$HERE/../.." && pwd)
 WORK=${WORK:-$PACKS/../upload}
 mkdir -p "$WORK/parts" "$WORK/base"
-ASIA=" $(node -e "
+# Выпуск для каждого региона: группа → asia-, america-, latam-, africa-, oceania- или maps-ГГГГ-ММ.
+TAGS=$(node -e "
+  const pre = { asia: 'asia', 'north-america': 'america', 'latin-america': 'latam', africa: 'africa', oceania: 'oceania' }
   const r = require('$ROOT/tools/maps-build/regions.json').regions
-  console.log(r.filter((x) => x.group === 'asia').map((x) => x.id).join(' '))") "
-AMERICA=" $(node -e "
-  const r = require('$ROOT/tools/maps-build/regions.json').regions
-  console.log(r.filter((x) => x.group === 'north-america').map((x) => x.id).join(' '))") "
+  for (const x of r) console.log(x.id + ' ' + (pre[x.group] ?? 'maps'))")
 n=0
 for f in "$PACKS"/routes-*_"$V".tar; do
   b=$(basename "$f" .tar)
   [ -s "$WORK/parts/$b.json" ] && continue
   id=${b#routes-}; id=${id%_"$V"}
-  tag=maps-$V
-  case "$ASIA" in *" $id "*) tag=asia-$V ;; esac
-  case "$AMERICA" in *" $id "*) tag=america-$V ;; esac
+  tag=$(echo "$TAGS" | awk -v id="$id" '$1 == id { print $2 }')-$V
+  [ "$tag" = "-$V" ] && { echo "нет региона $id в regions.json"; exit 1; }
   gh release view "$tag" --repo "$REPO" >/dev/null 2>&1 ||
     gh release create "$tag" --repo "$REPO" --title "Карты $tag" --latest=false --notes "Для Кладезя: список карт — в выпуске maps-$V."
   ok=false

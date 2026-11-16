@@ -123,8 +123,9 @@ packs() {
 # Valhalla на порту 8102 (у самого Кладезя свой на 8002) по указанной папке кусочков графа.
 serve() {
   tiles=${1:-$D/tiles}
+  # Прежний сервис закрывается не сразу — ждать, пока освободит порт, иначе новый падает.
   pkill -f valhalla_service 2>/dev/null || true
-  sleep 1
+  for i in $(seq 1 60); do pgrep -f valhalla_service >/dev/null || break; sleep 1; done
   sed -e "s#$D/tiles#$tiles#g" -e 's#tcp://\*:8002#tcp://*:8102#' "$D/valhalla.json" > "$D/serve.json"
   nohup valhalla_service "$D/serve.json" 2 > "$D/serve.log" 2>&1 &
   for i in $(seq 1 120); do curl -sf localhost:8102/status >/dev/null && { log "Valhalla готова: $tiles"; return; }; sleep 2; done

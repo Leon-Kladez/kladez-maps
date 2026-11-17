@@ -66,7 +66,7 @@ if [ "$what" != americas ]; then
     ru-central cross eu-cross ru-eu cn-east jp-center asia-cross za ke africa-cross au-nsw nz || ok=false
 fi
 if [ "$what" != world ]; then
-  graph americas americas "us-ca mx-north" latam-cross \
+  graph americas americas "mx-center mx-north" mx-center \
     us-ny us-ca ca-on na-cross mx-center br-sao-paulo latam-cross || ok=false
 fi
 $ok && log "ВСЁ ГОТОВО" || log "ЕСТЬ ОШИБКИ"

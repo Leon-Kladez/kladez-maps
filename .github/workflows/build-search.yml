@@ -136,15 +136,18 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p parts
-          # Азия лежит в своём выпуске asia-ГГГГ-ММ (лимит 1000 файлов на выпуск); список — в maps-….
-          [ "$GROUP" = "asia" ] && TAG="asia-$VERSION"
-          # Северная Америка — в america-ГГГГ-ММ: в maps-… уже около 900 файлов из 1000 возможных.
-          if [ "$GROUP" = "north-america" ]; then
-            TAG="america-$VERSION"
-            gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1 ||
-              gh release create "$TAG" --repo "$REPO" --title "Поиск и дороги Северной Америки $VERSION" --latest=false \
-                --notes "Для Кладезя (список карт — в выпуске maps-$VERSION). Данные © участники OpenStreetMap (ODbL)." || true
-          fi
+          # Азия, Северная и Латинская Америка, Африка, Океания — в своих выпусках (лимит 1000 файлов
+          # на выпуск, maps-… уже заполнен); список карт — в maps-….
+          case "$GROUP" in
+            asia) TAG="asia-$VERSION" ;;
+            north-america) TAG="america-$VERSION" ;;
+            latin-america) TAG="latam-$VERSION" ;;
+            africa) TAG="africa-$VERSION" ;;
+            oceania) TAG="oceania-$VERSION" ;;
+          esac
+          gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1 ||
+            gh release create "$TAG" --repo "$REPO" --title "Данные для Кладезя $TAG" --latest=false \
+              --notes "Для Кладезя (список карт — в выпуске maps-$VERSION). Данные © участники OpenStreetMap (ODbL)." || true
           for REGION in ${REGIONS//,/ }; do
             echo "::group::$REGION"
             osmium tags-filter "work/pbf/$REGION.osm.pbf" \

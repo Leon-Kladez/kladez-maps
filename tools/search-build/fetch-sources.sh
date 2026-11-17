@@ -10,8 +10,18 @@ files=()
 for path in "$@"; do
   s=$(basename "$path")
   url="https://download.geofabrik.de/${path}-latest.osm.pbf"
-  # Geofabrik бывает перегружен (503) — много попыток с паузой, с докачкой.
-  if curl -fsSL --retry 10 --retry-delay 60 --retry-all-errors -C - -o "$DIR/src/$s.osm.pbf" "$url"; then
+  # Geofabrik бывает перегружен (503) или не пускает серверы GitHub — несколько попыток с паузой,
+  # с докачкой; потом — с начала с официального зеркала (download.geofabrik.de и так шлёт туда).
+  mirror="https://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/${path}-latest.osm.pbf"
+  ok=false
+  if curl -fsSL --retry 4 --retry-delay 60 --retry-all-errors -C - -o "$DIR/src/$s.osm.pbf" "$url"; then
+    ok=true
+  else
+    echo "::warning::Geofabrik не ответил для $path — качаю с зеркала"
+    rm -f "$DIR/src/$s.osm.pbf"
+    curl -fsSL --retry 6 --retry-delay 60 --retry-all-errors -o "$DIR/src/$s.osm.pbf" "$mirror" && { ok=true; url=$mirror; }
+  fi
+  if $ok; then
     # Контрольная сумма: у зеркал Geofabrik она иногда появляется позже файла (404) — тогда
     # пробуем ещё раз через минуту, а без неё — с предупреждением (файл уже проверен curl -f).
     if curl -fsSL --retry 3 -o "$DIR/src/$s.md5" "$url.md5" ||
